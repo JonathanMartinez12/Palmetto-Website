@@ -13,18 +13,22 @@ const reasons = [
   {
     title: 'Built on technicians',
     text: 'We’re a field-first company. Leadership came up through the trades, and the people swinging wrenches set the standard.',
+    accent: 'bg-cloud',
   },
   {
     title: 'Invested in growth',
     text: 'NICET study support, paid certifications, and a path from apprentice to foreman to superintendent.',
+    accent: 'bg-burnt',
   },
   {
     title: 'Real benefits',
     text: 'Competitive pay, company truck programs where applicable, health insurance, PTO, and retirement.',
+    accent: 'bg-flame',
   },
   {
     title: 'Backed by a platform',
     text: `Part of the ${siteConfig.parent.name} family — local identity, national resources.`,
+    accent: 'bg-light-600',
   },
 ]
 
@@ -47,15 +51,15 @@ export default function CareersPage() {
             {reasons.map((r, i) => (
               <div
                 key={r.title}
-                className="bg-cream rounded-[8px] p-[24px] animate-fade-in-up"
+                className="bg-cream rounded-[8px] p-[24px] border border-stone-100 animate-fade-in-up"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
                 <div
-                  className="w-[48px] h-[4px] bg-cloud mb-[16px]"
+                  className={`w-[48px] h-[4px] ${r.accent} mb-[16px]`}
                   aria-hidden="true"
                 />
                 <h3 className="heading-4 text-maroon mb-[8px]">{r.title}</h3>
-                <p className="body-text">{r.text}</p>
+                <p className="body-text text-stone-600">{r.text}</p>
               </div>
             ))}
           </div>

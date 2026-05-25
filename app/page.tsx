@@ -116,7 +116,7 @@ export default function Home() {
 
       {/* Orange accent strip */}
       <div
-        className="w-full h-[12px] bg-gradient-to-r from-cloud via-flame to-cloud"
+        className="w-full h-[12px] bg-gradient-to-r from-cloud via-burnt to-cloud"
         aria-hidden="true"
       />
 

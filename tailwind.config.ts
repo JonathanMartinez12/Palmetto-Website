@@ -9,8 +9,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Palmetto Maroon — primary brand color (named "Maroon" in the brand
-        // guide; visually a deep indigo). Used for headings, nav, and dark UI chrome.
+        // Palm — dark forest green sampled from the logo palm/wordmark
+        // subtitle. Used as the dominant dark UI chrome (header, footer,
+        // hero, dark sections) so the site reads green-first like the logo.
+        palm: {
+          DEFAULT: '#2F5E46',
+          50: '#E6F0EA',
+          100: '#CCE0D4',
+          200: '#99C2AA',
+          300: '#66A37F',
+          400: '#3F805C',
+          500: '#2F5E46',
+          600: '#264C38',
+          700: '#1D392A',
+          800: '#13261C',
+          900: '#0A130E',
+        },
+        // Palmetto Maroon — secondary brand color from the brand guide.
+        // Used for select headings and accents that need a cool contrast
+        // against palm green and cream backgrounds.
         maroon: {
           DEFAULT: '#324173',
           50: '#E8EBF1',

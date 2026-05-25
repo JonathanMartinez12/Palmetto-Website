@@ -30,14 +30,18 @@ const defaultColumns: ValueColumn[] = [
   },
 ]
 
+// Each column gets a different accent color so the full Palmetto palette
+// shows up across the row.
+const accentColors = ['bg-cloud', 'bg-burnt', 'bg-flame', 'bg-light-600'] as const
+
 export default function WhyPalmetto({
   label = 'WHY PALMETTO',
   headline = 'Why Palmetto Fire Services',
   columns = defaultColumns,
 }: WhyPalmettoProps) {
   return (
-    <section className="w-full bg-cream py-[40px]">
-      <div className="w-full bg-white py-[60px] px-[24px] md:px-[40px] lg:px-[80px]">
+    <section className="w-full bg-stone-50 py-[40px]">
+      <div className="w-full bg-white py-[60px] px-[24px] md:px-[40px] lg:px-[80px] border-y border-stone-100">
         <div className="max-w-[1200px] mx-auto">
           <div className="text-center mb-[48px] animate-fade-in">
             <p className="label-text text-maroon mb-[16px]">{label}</p>
@@ -54,11 +58,11 @@ export default function WhyPalmetto({
                 style={{ animationDelay: `${i * 100}ms` }}
               >
                 <div
-                  className="w-[48px] h-[4px] bg-cloud mx-auto mb-[20px]"
+                  className={`w-[48px] h-[4px] ${accentColors[i % accentColors.length]} mx-auto mb-[20px]`}
                   aria-hidden="true"
                 />
                 <h3 className="heading-palatino-24 text-maroon mb-[12px]">{col.title}</h3>
-                <p className="body-palatino-18 text-black">{col.text}</p>
+                <p className="body-palatino-18 text-stone-700">{col.text}</p>
               </div>
             ))}
           </div>

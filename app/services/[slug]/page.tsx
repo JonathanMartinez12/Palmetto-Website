@@ -88,7 +88,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
         <Container>
           <nav
             aria-label="Breadcrumb"
-            className="mb-[24px] text-[13px] text-gray-600"
+            className="mb-[24px] text-[13px] text-stone-600"
           >
             <Link href="/" className="hover:text-cloud">
               Home
@@ -133,7 +133,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
 
       {/* Coming soon banner */}
       {svc.comingSoon && (
-        <section className="bg-flame/10 border-y border-flame">
+        <section className="bg-burnt/10 border-y border-flame">
           <Container>
             <div className="py-[24px] text-center">
               <p className="text-maroon font-semibold text-[15px]">
@@ -168,19 +168,23 @@ export default function ServiceDetailPage({ params }: PageProps) {
               <h2 className="heading-2 text-maroon">Scope of Work</h2>
             </div>
             <div className="grid sm:grid-cols-2 gap-[12px]">
-              {svc.features.map((f, i) => (
-                <div
-                  key={f}
-                  className="flex items-start gap-[12px] bg-white p-[16px] rounded-[8px] shadow-sm animate-fade-in-up"
-                  style={{ animationDelay: `${i * 40}ms` }}
-                >
+              {svc.features.map((f, i) => {
+                const dotColors = ['bg-cloud', 'bg-burnt', 'bg-flame', 'bg-light-600']
+                const dot = dotColors[i % dotColors.length]
+                return (
                   <div
-                    className="w-[8px] h-[8px] bg-cloud rounded-full flex-shrink-0 mt-[8px]"
-                    aria-hidden="true"
-                  />
-                  <span className="text-maroon font-medium">{f}</span>
-                </div>
-              ))}
+                    key={f}
+                    className="flex items-start gap-[12px] bg-white p-[16px] rounded-[8px] shadow-sm border border-stone-100 animate-fade-in-up"
+                    style={{ animationDelay: `${i * 40}ms` }}
+                  >
+                    <div
+                      className={`w-[8px] h-[8px] ${dot} rounded-full flex-shrink-0 mt-[8px]`}
+                      aria-hidden="true"
+                    />
+                    <span className="text-maroon font-medium">{f}</span>
+                  </div>
+                )
+              })}
             </div>
             {svc.compliance && (
               <div className="mt-[32px] text-center">
@@ -213,7 +217,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
                     <p className="text-maroon font-semibold group-hover:text-cloud transition-colors">
                       {a.name}
                     </p>
-                    <p className="text-gray-600 text-[13px] mt-[4px]">
+                    <p className="text-stone-600 text-[13px] mt-[4px]">
                       {a.shortName}
                     </p>
                   </Link>

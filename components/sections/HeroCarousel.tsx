@@ -27,7 +27,7 @@ export default function HeroCarousel() {
   }, [])
 
   return (
-    <section className="relative w-full overflow-hidden bg-maroon" aria-label="Hero">
+    <section className="relative w-full overflow-hidden bg-palm" aria-label="Hero">
       <div className="relative h-[520px] md:h-[620px] lg:h-[680px]">
         {slides.map((slide, i) => (
           <div
@@ -78,7 +78,7 @@ export default function HeroCarousel() {
                   href={siteConfig.phoneHref}
                   variant="outline"
                   size="lg"
-                  className="!bg-white/10 !border-white !text-white hover:!bg-white hover:!text-maroon"
+                  className="!bg-white/10 !border-white !text-white hover:!bg-white hover:!text-palm"
                 >
                   {siteConfig.phone}
                 </Button>

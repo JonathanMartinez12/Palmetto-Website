@@ -39,7 +39,7 @@ export default function ServicesGrid({
                   {svc.name}
                 </h3>
                 {svc.comingSoon && (
-                  <span className="text-[10px] uppercase tracking-wide text-flame font-bold bg-flame/10 px-[8px] py-[2px] rounded-full flex-shrink-0 ml-[8px]">
+                  <span className="text-[10px] uppercase tracking-wide text-burnt font-bold bg-burnt/10 px-[8px] py-[2px] rounded-full flex-shrink-0 ml-[8px]">
                     Soon
                   </span>
                 )}

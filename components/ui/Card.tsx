@@ -15,7 +15,7 @@ export default function Card({
     default: 'bg-white shadow-md',
     cream: 'bg-cream',
     white: 'bg-white',
-    maroon: 'bg-maroon text-white',
+    maroon: 'bg-palm text-white',
   }
 
   return (

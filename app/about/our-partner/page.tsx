@@ -78,24 +78,27 @@ export default function OurPartnerPage() {
                 {
                   title: 'Local Crews',
                   text: 'The technicians, designers, and project managers you work with day-to-day are right here in the Carolinas.',
+                  accent: 'bg-cloud',
                 },
                 {
                   title: 'Deeper Bench',
                   text: 'Engineering support, code expertise, and specialty equipment available across the Atlantis network when a project calls for it.',
+                  accent: 'bg-burnt',
                 },
                 {
                   title: 'Long-Term Stability',
                   text: 'A platform that invests in equipment, training, and benefits — so the team you trust stays for the long haul.',
+                  accent: 'bg-light-600',
                 },
               ].map((v, i) => (
                 <div
                   key={v.title}
-                  className="bg-white rounded-[8px] p-[24px] shadow-sm animate-fade-in-up"
+                  className="bg-white rounded-[8px] p-[24px] shadow-sm border border-stone-100 animate-fade-in-up"
                   style={{ animationDelay: `${i * 100}ms` }}
                 >
-                  <div className="w-[48px] h-[4px] bg-cloud mb-[16px]" aria-hidden="true" />
+                  <div className={`w-[48px] h-[4px] ${v.accent} mb-[16px]`} aria-hidden="true" />
                   <h3 className="heading-4 text-maroon mb-[12px]">{v.title}</h3>
-                  <p className="body-text">{v.text}</p>
+                  <p className="body-text text-stone-600">{v.text}</p>
                 </div>
               ))}
             </div>

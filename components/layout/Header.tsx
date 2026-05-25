@@ -40,7 +40,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50">
       {/* Utility Bar - maroon */}
-      <div className="w-full bg-maroon text-white">
+      <div className="w-full bg-palm text-white">
         <div className="max-w-[1440px] mx-auto px-[16px] lg:px-[32px]">
           <div className="flex flex-col md:flex-row items-center justify-between py-[8px] md:h-[40px] gap-[6px] md:gap-[16px]">
             {/* Left: phone + email */}
@@ -119,10 +119,10 @@ export default function Header() {
               onClick={closeAll}
             >
               <Image
-                src="/palmetto-logo.svg"
+                src="/palmetto-logo.png"
                 alt={siteConfig.name}
-                width={240}
-                height={60}
+                width={800}
+                height={432}
                 className="w-[180px] md:w-[220px] h-auto"
                 priority
               />
@@ -163,7 +163,7 @@ export default function Header() {
                       </Link>
                       {openDropdown === item.hasDropdown && (
                         <div className="absolute top-full left-1/2 -translate-x-1/2 pt-[8px] animate-fade-in">
-                          <div className="bg-white shadow-xl border border-gray-100 rounded-[8px] py-[12px] min-w-[280px]">
+                          <div className="bg-white shadow-xl border border-stone-100 rounded-[8px] py-[12px] min-w-[280px]">
                             {item.hasDropdown === 'about' &&
                               navigation.about.map((sub) => (
                                 <Link
@@ -187,7 +187,7 @@ export default function Header() {
                                 >
                                   <span className="font-medium">{svc.name}</span>
                                   {svc.comingSoon && (
-                                    <span className="ml-[8px] text-[11px] uppercase tracking-wide text-flame font-semibold">
+                                    <span className="ml-[8px] text-[11px] uppercase tracking-wide text-burnt font-semibold">
                                       Coming Soon
                                     </span>
                                   )}
@@ -338,7 +338,7 @@ export default function Header() {
                                 >
                                   {svc.name}
                                   {svc.comingSoon && (
-                                    <span className="ml-[8px] text-[10px] uppercase tracking-wide text-flame font-semibold">
+                                    <span className="ml-[8px] text-[10px] uppercase tracking-wide text-burnt font-semibold">
                                       Coming Soon
                                     </span>
                                   )}

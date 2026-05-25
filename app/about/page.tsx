@@ -75,24 +75,27 @@ export default function AboutPage() {
                 {
                   title: 'Engineered Correctly',
                   text: 'Every design starts with the right hazard classification and ends with a system that passes the first AHJ review.',
+                  accent: 'bg-cloud',
                 },
                 {
                   title: 'Installed Cleanly',
                   text: 'Field crews who take pride in inspectable, maintainable work — because we’re the team coming back to service it.',
+                  accent: 'bg-burnt',
                 },
                 {
                   title: 'Serviced for the Long Haul',
                   text: 'Annual inspections, emergency service, and documentation kept inspection-ready in a portal you control.',
+                  accent: 'bg-light-600',
                 },
               ].map((v, i) => (
                 <div
                   key={v.title}
-                  className="bg-white rounded-[8px] p-[24px] shadow-sm animate-fade-in-up"
+                  className="bg-white rounded-[8px] p-[24px] shadow-sm border border-stone-100 animate-fade-in-up"
                   style={{ animationDelay: `${i * 100}ms` }}
                 >
-                  <div className="w-[48px] h-[4px] bg-cloud mb-[16px]" aria-hidden="true" />
+                  <div className={`w-[48px] h-[4px] ${v.accent} mb-[16px]`} aria-hidden="true" />
                   <h3 className="heading-4 text-maroon mb-[12px]">{v.title}</h3>
-                  <p className="body-text">{v.text}</p>
+                  <p className="body-text text-stone-600">{v.text}</p>
                 </div>
               ))}
             </div>
@@ -101,7 +104,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Partner: Atlantis Fire */}
-      <section className="w-full bg-maroon">
+      <section className="w-full bg-palm">
         <Container className="py-[64px] md:py-[96px]">
           <div className="grid lg:grid-cols-2 gap-[48px] items-center">
             <div className="animate-fade-in-up">
@@ -129,14 +132,14 @@ export default function AboutPage() {
                   external
                   variant="outline"
                   size="lg"
-                  className="!bg-transparent !border-white !text-white hover:!bg-white hover:!text-maroon"
+                  className="!bg-transparent !border-white !text-white hover:!bg-white hover:!text-palm"
                 >
                   Visit Atlantis Fire
                 </Button>
               </div>
             </div>
 
-            <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden bg-maroon-700 animate-slide-in-right">
+            <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden bg-palm-700 animate-slide-in-right">
               <Image
                 src="/images/atlantis-partner.jpg"
                 alt="Atlantis Fire Protection family of companies"

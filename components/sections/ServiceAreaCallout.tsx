@@ -4,7 +4,11 @@ import { siteConfig } from '@/lib/data/siteConfig'
 
 export default function ServiceAreaCallout() {
   return (
-    <section className="bg-maroon section-padding">
+    <section className="bg-palm section-padding relative overflow-hidden">
+      <div
+        className="absolute inset-x-0 top-0 h-[4px] bg-gradient-to-r from-cloud via-burnt to-flame"
+        aria-hidden="true"
+      />
       <Container>
         <div className="grid lg:grid-cols-2 gap-[48px] items-center">
           <div className="animate-fade-in-up">
@@ -30,7 +34,7 @@ export default function ServiceAreaCallout() {
             {siteConfig.serviceAreas.map((area) => (
               <div
                 key={area}
-                className="bg-maroon-700 border border-maroon-400/40 rounded-[8px] p-[24px] text-center flex flex-col justify-center min-h-[140px]"
+                className="bg-palm-700 border border-light-500/40 rounded-[8px] p-[24px] text-center flex flex-col justify-center min-h-[140px]"
               >
                 <p className="font-serif text-flame text-[22px] md:text-[26px] leading-tight">
                   {area}

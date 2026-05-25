@@ -5,7 +5,7 @@ import { ReactNode, ButtonHTMLAttributes } from 'react'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost'
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'maroon' | 'burnt'
   size?: 'sm' | 'md' | 'lg'
   href?: string
   external?: boolean
@@ -28,11 +28,15 @@ export default function Button({
     primary:
       'bg-cloud text-white hover:bg-cloud-600 focus:ring-cloud shadow-md hover:shadow-lg',
     secondary:
-      'bg-maroon text-white hover:bg-maroon-600 focus:ring-maroon shadow-md hover:shadow-lg',
+      'bg-palm text-white hover:bg-palm-600 focus:ring-palm shadow-md hover:shadow-lg',
     outline:
-      'border-2 border-maroon text-maroon hover:bg-maroon hover:text-white focus:ring-maroon',
+      'border-2 border-palm text-palm hover:bg-palm hover:text-white focus:ring-palm',
     ghost:
       'text-maroon hover:text-cloud focus:ring-maroon',
+    maroon:
+      'bg-maroon text-white hover:bg-maroon-600 focus:ring-maroon shadow-md hover:shadow-lg',
+    burnt:
+      'bg-burnt text-white hover:bg-burnt-600 focus:ring-burnt shadow-md hover:shadow-lg',
   }
 
   const sizes = {

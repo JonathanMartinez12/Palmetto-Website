@@ -6,7 +6,7 @@ interface CTASectionProps {
   text: string
   buttonText: string
   buttonHref: string
-  variant?: 'cream' | 'white' | 'maroon'
+  variant?: 'cream' | 'white' | 'palm' | 'maroon'
   secondaryText?: string
   secondaryHref?: string
 }
@@ -20,12 +20,35 @@ export default function CTASection({
   secondaryText,
   secondaryHref,
 }: CTASectionProps) {
-  const bg = { cream: 'bg-cream', white: 'bg-white', maroon: 'bg-maroon' }
-  const heading = { cream: 'text-maroon', white: 'text-maroon', maroon: 'text-white' }
-  const body = { cream: 'text-gray-600', white: 'text-gray-600', maroon: 'text-gray-200' }
+  const bg = {
+    cream: 'bg-cream',
+    white: 'bg-white',
+    palm: 'bg-palm',
+    maroon: 'bg-maroon',
+  }
+  const heading = {
+    cream: 'text-maroon',
+    white: 'text-maroon',
+    palm: 'text-white',
+    maroon: 'text-white',
+  }
+  const body = {
+    cream: 'text-stone-600',
+    white: 'text-stone-600',
+    palm: 'text-cream-200',
+    maroon: 'text-cream-200',
+  }
+  const isDark = variant === 'palm' || variant === 'maroon'
 
   return (
-    <section className={`${bg[variant]} section-padding`}>
+    <section className={`${bg[variant]} section-padding relative overflow-hidden`}>
+      {/* Burnt accent strip on light variants */}
+      {!isDark && (
+        <div
+          className="absolute inset-x-0 top-0 h-[4px] bg-gradient-to-r from-cloud via-burnt to-flame"
+          aria-hidden="true"
+        />
+      )}
       <Container>
         <div className="max-w-[768px] mx-auto text-center animate-fade-in">
           <h2 className={`heading-2 ${heading[variant]} mb-[16px]`}>{headline}</h2>
@@ -37,11 +60,11 @@ export default function CTASection({
             {secondaryText && secondaryHref && (
               <Button
                 href={secondaryHref}
-                variant={variant === 'maroon' ? 'outline' : 'outline'}
+                variant="outline"
                 size="lg"
                 className={
-                  variant === 'maroon'
-                    ? '!bg-transparent !border-white !text-white hover:!bg-white hover:!text-maroon'
+                  isDark
+                    ? '!bg-transparent !border-white !text-white hover:!bg-white hover:!text-palm'
                     : ''
                 }
               >

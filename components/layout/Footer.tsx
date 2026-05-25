@@ -6,17 +6,17 @@ import { activeServices } from '@/lib/data/services'
 
 export default function Footer() {
   return (
-    <footer className="bg-maroon text-white">
+    <footer className="bg-palm text-white">
       <Container>
         <div className="py-[56px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[32px]">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center mb-[16px]" aria-label={`${siteConfig.name} Home`}>
               <Image
-                src="/palmetto-logo-reverse.svg"
+                src="/palmetto-logo-reverse.png"
                 alt={siteConfig.name}
-                width={240}
-                height={60}
+                width={800}
+                height={432}
                 className="w-[200px] h-auto"
               />
             </Link>
@@ -103,7 +103,7 @@ export default function Footer() {
               </p>
             </address>
             <div className="mt-[16px]">
-              <p className="text-[12px] uppercase tracking-wide text-flame font-semibold mb-[4px]">
+              <p className="text-[12px] uppercase tracking-wide text-burnt font-semibold mb-[4px]">
                 Service Area
               </p>
               <p className="text-[14px] text-gray-300">
@@ -114,7 +114,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-[24px] pb-[24px] border-t border-maroon-400/50 flex flex-col md:flex-row items-center justify-between gap-[12px]">
+        <div className="pt-[24px] pb-[24px] border-t border-palm-400/50 flex flex-col md:flex-row items-center justify-between gap-[12px]">
           <p className="text-gray-400 text-[13px]">{siteConfig.copyright}</p>
           <p className="text-gray-400 text-[13px]">
             A proud member of the{' '}

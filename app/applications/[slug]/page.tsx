@@ -69,7 +69,7 @@ export default function ApplicationDetailPage({ params }: PageProps) {
         <Container>
           <nav
             aria-label="Breadcrumb"
-            className="mb-[24px] text-[13px] text-gray-600"
+            className="mb-[24px] text-[13px] text-stone-600"
           >
             <Link href="/" className="hover:text-cloud">
               Home
@@ -139,12 +139,12 @@ export default function ApplicationDetailPage({ params }: PageProps) {
                       {svc.name}
                     </p>
                     {svc.comingSoon && (
-                      <span className="text-[10px] uppercase tracking-wide text-flame font-bold bg-flame/10 px-[8px] py-[2px] rounded-full">
+                      <span className="text-[10px] uppercase tracking-wide text-burnt font-bold bg-burnt/10 px-[8px] py-[2px] rounded-full">
                         Soon
                       </span>
                     )}
                   </div>
-                  <p className="text-gray-600 text-[13px] mt-[4px]">
+                  <p className="text-stone-600 text-[13px] mt-[4px]">
                     {svc.summary}
                   </p>
                 </Link>
