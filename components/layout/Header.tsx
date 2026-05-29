@@ -180,13 +180,13 @@ export default function Header() {
                                   key={svc.slug}
                                   href={`/services/${svc.slug}`}
                                   className={`block px-[20px] py-[8px] text-[14px] transition-colors ${
-                                    svc.comingSoon
+                                    svc.isPlaceholder
                                       ? 'text-gray-400 hover:bg-gray-50'
                                       : 'text-maroon hover:bg-cream hover:text-cloud'
                                   }`}
                                 >
                                   <span className="font-medium">{svc.name}</span>
-                                  {svc.comingSoon && (
+                                  {svc.isPlaceholder && (
                                     <span className="ml-[8px] text-[11px] uppercase tracking-wide text-burnt font-semibold">
                                       Coming Soon
                                     </span>
@@ -333,11 +333,11 @@ export default function Header() {
                                   href={`/services/${svc.slug}`}
                                   onClick={closeAll}
                                   className={`py-[6px] text-[14px] ${
-                                    svc.comingSoon ? 'text-gray-400' : 'text-maroon hover:text-cloud'
+                                    svc.isPlaceholder ? 'text-gray-400' : 'text-maroon hover:text-cloud'
                                   }`}
                                 >
                                   {svc.name}
-                                  {svc.comingSoon && (
+                                  {svc.isPlaceholder && (
                                     <span className="ml-[8px] text-[10px] uppercase tracking-wide text-burnt font-semibold">
                                       Coming Soon
                                     </span>

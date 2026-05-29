@@ -7,52 +7,104 @@ import Button from '@/components/ui/Button'
 import { siteConfig } from '@/lib/data/siteConfig'
 
 export const metadata: Metadata = {
-  title: 'About Us',
-  description: `Learn about ${siteConfig.name} — a Little River, South Carolina-based life safety contractor serving Myrtle Beach and surrounding areas as part of the Atlantis Fire Protection family.`,
+  title: 'About',
+  description: `${siteConfig.legalName} — advanced life safety solutions built on trust and reliability, serving Myrtle Beach and surrounding communities for more than 17 years.`,
 }
+
+const commitmentBullets = [
+  'Responsive local support from experienced professionals',
+  'Clear communication throughout projects and service work',
+  'Long-term customer relationships built on trust',
+  'Dependable inspection, monitoring, and maintenance support',
+  'Solutions designed around reliability and compliance',
+]
+
+const technologies = [
+  'Edwards EST fire alarm and mass notification systems',
+  'Talk-A-Phone emergency communication systems',
+  'Stanley Healthcare solutions',
+  'RS2 Technologies',
+  'Telecor systems',
+  'IDenticard access control and digital imaging systems',
+  'UL listed central station monitoring services',
+]
+
+const facilities = [
+  'Apartment and condo communities',
+  'Hotels and high-rise properties',
+  'Healthcare and senior housing facilities',
+  'Government buildings',
+  'Educational facilities',
+  'Commercial and retail properties',
+  'Restaurants and hospitality environments',
+]
+
+const accentColors = ['bg-cloud', 'bg-burnt', 'bg-flame', 'bg-light-600', 'bg-maroon'] as const
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
-        label="ABOUT PALMETTO"
-        headline="Built on people. Proven by results."
-        body="We’re a South Carolina-based life safety contractor delivering design, installation, monitoring, and inspection across Myrtle Beach and the surrounding areas — with the culture and bench strength of a national platform behind us."
+        label={siteConfig.legalName.toUpperCase()}
+        headline="Advanced Life Safety Solutions Built on Trust and Reliability."
+        body="Palmetto Fire Services was built on the belief that life safety systems should do more than meet code requirements. They should provide dependable protection, clear communication, and confidence for the people who rely on them every day."
       />
 
-      {/* Our Story */}
+      {/* Intro continued */}
       <section className="w-full bg-white">
+        <Container className="py-[48px] md:py-[64px]">
+          <div className="max-w-[820px] mx-auto animate-fade-in">
+            <p className="body-palatino-18 mb-[16px]">
+              For more than 17 years, Palmetto Fire has served Myrtle Beach and
+              surrounding communities with integrated fire alarm and life safety
+              solutions designed to protect people, properties, and critical facilities.
+              Over the years, the company has built a strong reputation through
+              responsive service, technical expertise, and long-term customer
+              relationships grounded in trust.
+            </p>
+            <p className="body-palatino-18">
+              Today, that commitment to reliability and accountability continues to
+              define who we are.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      {/* A Company Built Around Life Safety Expertise */}
+      <section className="w-full bg-cream">
         <Container className="py-[64px] md:py-[96px]">
           <div className="grid lg:grid-cols-2 gap-[48px] items-center">
             <div className="animate-fade-in-up">
-              <p className="label-text text-maroon mb-[16px]">OUR STORY</p>
-              <h2 className="font-serif text-maroon text-[32px] md:text-[40px] lg:text-[44px] leading-tight mb-[24px]">
-                A fast-growing contractor built around technicians.
+              <p className="label-text text-burnt mb-[16px]">EXPERTISE</p>
+              <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+                A Company Built Around Life Safety Expertise
               </h2>
               <p className="body-palatino-18 mb-[16px]">
-                Palmetto Fire Services was founded to deliver full-scope fire
-                protection services the way they should be done — with a team
-                that treats every technician, engineer, and project manager as
-                a partner in the work.
+                Palmetto Fire specializes in commercial fire alarm systems, mass
+                notification systems, nurse call systems, area of rescue systems,
+                monitoring, inspections, and integrated life safety technologies.
               </p>
               <p className="body-palatino-18 mb-[16px]">
-                Our crews design, install, monitor, and inspect fire alarm,
-                mass notification, nurse call, area of rescue, and access
-                control systems across the Myrtle Beach area. We handle the
-                engineering in-house, coordinate directly with AHJs, and manage
-                ongoing inspection plans so building owners never have to chase
-                paperwork.
+                From healthcare and education to hospitality, government, and
+                commercial facilities, Palmetto works closely with customers to design,
+                install, inspect, monitor, and maintain systems that support occupant
+                safety and code compliance while remaining practical and user-friendly
+                for day-to-day operations.
+              </p>
+              <p className="body-palatino-18 mb-[16px]">
+                As an EST Authorized Strategic Partner, Palmetto delivers advanced
+                technology solutions backed by trusted manufacturers, experienced
+                professionals, and responsive local support.
               </p>
               <p className="body-palatino-18">
-                {/* TODO: real copy from client */}
-                Today Palmetto is one of the fastest-growing providers in the
-                region, and we’re just getting started.
+                Over the years, customers have continued turning to Palmetto because
+                they know the team will be there when it matters most.
               </p>
             </div>
-            <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden animate-fade-in">
+            <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden border border-stone-100 animate-fade-in">
               <Image
-                src="/images/about-story.jpg"
-                alt="Palmetto Fire Services team on a job site"
+                src="/images/about-expertise.jpg"
+                alt="Palmetto Fire technician working on a commercial fire alarm system"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 50vw, 100vw"
@@ -62,103 +114,192 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Our Promise */}
-      <section className="w-full bg-cream">
+      {/* Service and Responsiveness Still Matter */}
+      <section className="w-full bg-white">
         <Container className="py-[64px] md:py-[96px]">
-          <div className="max-w-[900px] mx-auto text-center animate-fade-in">
-            <p className="label-text text-maroon mb-[16px]">OUR PROMISE</p>
-            <h2 className="font-serif text-maroon text-[32px] md:text-[40px] lg:text-[44px] leading-tight mb-[32px]">
-              Do the work right, on time, and stand behind it.
+          <div className="max-w-[900px] mx-auto animate-fade-in-up">
+            <p className="label-text text-maroon mb-[16px]">RESPONSIVENESS</p>
+            <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+              Service and Responsiveness Still Matter
             </h2>
-            <div className="grid md:grid-cols-3 gap-[32px] text-left">
-              {[
-                {
-                  title: 'Engineered Correctly',
-                  text: 'Every design starts with the right hazard classification and ends with a system that passes the first AHJ review.',
-                  accent: 'bg-cloud',
-                },
-                {
-                  title: 'Installed Cleanly',
-                  text: 'Field crews who take pride in inspectable, maintainable work — because we’re the team coming back to service it.',
-                  accent: 'bg-burnt',
-                },
-                {
-                  title: 'Serviced for the Long Haul',
-                  text: 'Annual inspections, emergency service, and documentation kept inspection-ready in a portal you control.',
-                  accent: 'bg-light-600',
-                },
-              ].map((v, i) => (
-                <div
-                  key={v.title}
-                  className="bg-white rounded-[8px] p-[24px] shadow-sm border border-stone-100 animate-fade-in-up"
-                  style={{ animationDelay: `${i * 100}ms` }}
-                >
-                  <div className={`w-[48px] h-[4px] ${v.accent} mb-[16px]`} aria-hidden="true" />
-                  <h3 className="heading-4 text-maroon mb-[12px]">{v.title}</h3>
-                  <p className="body-text text-stone-600">{v.text}</p>
-                </div>
-              ))}
-            </div>
+            <p className="body-palatino-18 mb-[16px]">
+              At Palmetto Fire, we understand that life safety systems are critical
+              systems. Customers depend on them to function properly during
+              emergencies, inspections, and everyday operations.
+            </p>
+            <p className="body-palatino-18 mb-[16px]">
+              That’s why responsiveness, communication, and accountability remain
+              central to how we operate.
+            </p>
+            <p className="body-palatino-18 mb-[24px]">
+              Our customers work with people who understand their facilities, their
+              systems, and their expectations. We believe long-term relationships
+              matter, and we work hard to earn and maintain trust through consistent
+              support and dependable service.
+            </p>
+            <p className="label-text text-burnt mb-[16px]">
+              That commitment shows up in real ways:
+            </p>
+            <ul className="grid sm:grid-cols-2 gap-[12px] mb-[24px]">
+              {commitmentBullets.map((b, i) => {
+                const accent = accentColors[i % accentColors.length]
+                return (
+                  <li
+                    key={b}
+                    className="flex items-start gap-[12px] bg-cream border border-stone-100 rounded-[8px] px-[16px] py-[12px]"
+                  >
+                    <span
+                      className={`w-[10px] h-[10px] ${accent} rounded-full flex-shrink-0 mt-[6px]`}
+                      aria-hidden="true"
+                    />
+                    <span className="text-maroon font-medium">{b}</span>
+                  </li>
+                )
+              })}
+            </ul>
+            <p className="body-palatino-18">
+              At Palmetto Fire, we believe customers deserve more than a vendor. They
+              deserve a partner who understands the importance of protecting people and
+              supporting critical operations.
+            </p>
           </div>
         </Container>
       </section>
 
-      {/* Our Partner: Atlantis Fire */}
-      <section className="w-full bg-palm">
+      {/* Experience and Technology That Perform When It Counts */}
+      <section className="w-full bg-cream">
+        <Container className="py-[64px] md:py-[96px]">
+          <div className="max-w-[900px] mx-auto animate-fade-in-up">
+            <p className="label-text text-maroon mb-[16px]">EXPERIENCE & TECHNOLOGY</p>
+            <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+              Experience and Technology That Perform When It Counts
+            </h2>
+            <p className="body-palatino-18 mb-[24px]">
+              Palmetto Fire works with leading manufacturers and technologies to
+              deliver dependable fire alarm and life safety systems tailored to each
+              facility’s needs.
+            </p>
+
+            <p className="label-text text-burnt mb-[16px]">
+              Our team supports systems and technologies including:
+            </p>
+            <ul className="grid sm:grid-cols-2 gap-[10px] mb-[32px]">
+              {technologies.map((t, i) => {
+                const accent = accentColors[i % accentColors.length]
+                return (
+                  <li
+                    key={t}
+                    className="flex items-start gap-[12px] bg-white border border-stone-100 rounded-[8px] px-[16px] py-[12px]"
+                  >
+                    <span
+                      className={`w-[8px] h-[8px] ${accent} rounded-full flex-shrink-0 mt-[8px]`}
+                      aria-hidden="true"
+                    />
+                    <span className="text-maroon font-medium text-[15px]">{t}</span>
+                  </li>
+                )
+              })}
+            </ul>
+
+            <p className="body-palatino-18 mb-[16px]">
+              Our experience spans a wide range of commercial and institutional
+              facilities throughout South Carolina and surrounding areas, including:
+            </p>
+            <ul className="flex flex-wrap gap-[8px] mb-[24px]">
+              {facilities.map((f) => (
+                <li
+                  key={f}
+                  className="text-[13px] font-semibold uppercase tracking-wide text-maroon bg-white border border-stone-200 rounded-full px-[14px] py-[6px]"
+                >
+                  {f}
+                </li>
+              ))}
+            </ul>
+
+            <p className="body-palatino-18">
+              Every system we support reflects our commitment to reliability, code
+              compliance, and long-term customer support.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      {/* Growing with Purpose as Part of the Atlantis Fire Family */}
+      <section className="w-full bg-palm relative overflow-hidden">
+        <div
+          className="absolute inset-x-0 top-0 h-[4px] bg-gradient-to-r from-cloud via-burnt to-flame"
+          aria-hidden="true"
+        />
         <Container className="py-[64px] md:py-[96px]">
           <div className="grid lg:grid-cols-2 gap-[48px] items-center">
             <div className="animate-fade-in-up">
-              <p className="label-text text-flame mb-[16px]">OUR PARTNER</p>
-              <h2 className="font-serif text-white text-[32px] md:text-[40px] lg:text-[44px] leading-tight mb-[24px]">
-                Backed by Atlantis Fire Protection.
+              <p className="label-text text-flame mb-[16px]">ATLANTIS FIRE FAMILY</p>
+              <h2 className="font-serif text-white text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+                Growing with Purpose as Part of the Atlantis Fire Family
               </h2>
-              <p className="text-gray-200 text-[17px] leading-relaxed mb-[16px]">
-                Palmetto is proud to be part of the {siteConfig.parent.name}{' '}
-                family — a family-owned holding company of regionally strong
-                fire protection companies across the U.S.
+              <p className="text-cream-100 text-[17px] leading-relaxed mb-[16px]">
+                In 2026, Palmetto Fire Services became part of the Atlantis Fire
+                Protection family of companies. Atlantis recognized Palmetto for its
+                strong reputation, technical expertise, customer relationships, and
+                long-standing commitment to service.
               </p>
-              <p className="text-gray-200 text-[17px] leading-relaxed mb-[32px]">
-                The partnership gives us access to shared engineering
-                expertise, procurement advantages, and best-practice sharing
-                with sister companies — without changing the local identity or
-                culture that our customers count on.
+              <p className="text-cream-100 text-[17px] leading-relaxed mb-[16px]">
+                The partnership allows Palmetto to continue serving customers with the
+                same trusted local team while gaining access to additional resources,
+                operational support, and long-term growth opportunities.
               </p>
-              <div className="flex flex-wrap gap-[12px]">
-                <Button href="/about/our-partner" variant="primary" size="lg">
-                  Learn More
-                </Button>
-                <Button
-                  href={siteConfig.parent.url}
-                  external
-                  variant="outline"
-                  size="lg"
-                  className="!bg-transparent !border-white !text-white hover:!bg-white hover:!text-palm"
-                >
-                  Visit Atlantis Fire
-                </Button>
-              </div>
+              <p className="text-cream-100 text-[17px] leading-relaxed mb-[16px]">
+                Most importantly, Palmetto remains focused on what has always mattered
+                most: responsive service, dependable systems, and protecting the
+                communities we serve.
+              </p>
+              <p className="text-cream-100 text-[17px] leading-relaxed italic mb-[32px]">
+                Simply put: Palmetto Fire Services gained additional support and
+                resources while remaining locally focused and relationship-driven.
+              </p>
+              <Button href="/about/our-partner" variant="primary" size="lg">
+                Learn More
+              </Button>
             </div>
-
-            <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden bg-palm-700 animate-slide-in-right">
+            <div className="bg-white rounded-[8px] p-[32px] flex items-center justify-center min-h-[220px] border border-light-500/30 animate-slide-in-right">
               <Image
-                src="/images/atlantis-partner.jpg"
-                alt="Atlantis Fire Protection family of companies"
-                fill
-                className="object-cover opacity-90"
-                sizes="(min-width: 1024px) 50vw, 100vw"
+                src="/images/atlantis-logo.png"
+                alt="Atlantis Fire Protection"
+                width={400}
+                height={200}
+                className="w-full h-auto max-w-[280px]"
               />
             </div>
           </div>
         </Container>
       </section>
 
-      <CTASection
-        headline="Have a project in mind?"
-        text="Tell us about the building and we’ll put the right team on it."
-        buttonText="Contact Palmetto"
-        buttonHref="/contact"
-        variant="cream"
-      />
+      {/* Built to Protect What Matters Most — closing */}
+      <section className="w-full bg-cream relative overflow-hidden">
+        <div
+          className="absolute inset-x-0 top-0 h-[4px] bg-gradient-to-r from-cloud via-burnt to-flame"
+          aria-hidden="true"
+        />
+        <Container className="py-[64px] md:py-[96px]">
+          <div className="max-w-[820px] mx-auto text-center animate-fade-in">
+            <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[16px]">
+              Built to Protect What Matters Most
+            </h2>
+            <p className="body-large text-stone-700 mb-[16px]">
+              Whether you need a trusted partner for fire alarm systems, emergency
+              communication technologies, inspections, monitoring, or long-term life
+              safety support, Palmetto Fire is ready to help.
+            </p>
+            <p className="body-large text-stone-700 mb-[32px]">
+              We believe reliability matters. Responsiveness matters. And the people
+              behind the systems matter too.
+            </p>
+            <Button href="/contact" variant="primary" size="lg">
+              Contact Us
+            </Button>
+          </div>
+        </Container>
+      </section>
     </>
   )
 }

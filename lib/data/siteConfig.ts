@@ -1,9 +1,10 @@
 export const siteConfig = {
   name: 'Palmetto Fire Services',
+  legalName: 'Palmetto Fire Services, LLC',
   shortName: 'Palmetto Fire',
-  tagline: 'Life safety, fire alarm, and security integration across the Carolinas',
+  tagline: 'Advanced Life Safety. Trusted Local Service.',
   description:
-    'Palmetto Fire Services delivers design, installation, monitoring, testing, and inspection of fire alarm, mass notification, nurse call, area of rescue, and access control systems across Myrtle Beach and surrounding areas.',
+    'Palmetto Fire Services provides integrated fire alarm and life safety solutions designed to protect people, properties, and critical facilities with responsive service, trusted technology, and long-term support.',
   url: 'https://palmettofireservices.com',
   phone: '843-399-9390',
   phoneHref: 'tel:+18433999390',
@@ -24,13 +25,12 @@ export const siteConfig = {
     full: 'PO Box 55, Little River, SC 29566',
   },
   geo: {
-    // Little River, SC
     latitude: 33.8782,
     longitude: -78.6483,
   },
-  serviceAreas: ['Myrtle Beach', 'Grand Strand', 'Coastal Carolinas'],
-  serviceAreaShort: 'Myrtle Beach & Surrounding Areas',
-  certifications: ['NFPA', 'NICET'],
+  serviceAreas: ['South Carolina', 'North Carolina'],
+  serviceAreaShort: 'SC • NC',
+  certifications: ['EST Authorized Strategic Partner'],
   portals: {
     // TODO: real ServiceTrade portal link from client
     customer: '#',
@@ -39,9 +39,10 @@ export const siteConfig = {
   },
   parent: {
     name: 'Atlantis Fire Protection',
+    shortName: 'Atlantis Fire',
     url: 'https://atlantis-fire.vercel.app',
   },
-  copyright: `Palmetto Fire Services © ${new Date().getFullYear()}`,
+  copyright: `Palmetto Fire Services, LLC © ${new Date().getFullYear()}`,
 }
 
 export const navigation = {
@@ -53,7 +54,7 @@ export const navigation = {
     { name: 'Careers', href: '/careers' },
   ],
   about: [
-    { name: 'Our Story', href: '/about' },
+    { name: 'About Palmetto Fire Services', href: '/about' },
     { name: 'Our Partner — Atlantis Fire', href: '/about/our-partner' },
   ],
   footer: {

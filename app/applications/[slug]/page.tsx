@@ -6,7 +6,6 @@ import Container from '@/components/layout/Container'
 import Button from '@/components/ui/Button'
 import CTASection from '@/components/sections/CTASection'
 import { applications, getApplicationBySlug } from '@/lib/data/applications'
-import { services, getServiceBySlug } from '@/lib/data/services'
 import { siteConfig } from '@/lib/data/siteConfig'
 
 interface PageProps {
@@ -17,17 +16,16 @@ export async function generateStaticParams() {
   return applications.map((a) => ({ slug: a.slug }))
 }
 
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const app = getApplicationBySlug(params.slug)
   if (!app) return { title: 'Application Not Found' }
   return {
     title: app.name,
-    description: app.tagline,
+    description: app.summary,
+    robots: app.isPlaceholder ? { index: false, follow: true } : undefined,
     openGraph: {
       title: `${app.name} | ${siteConfig.name}`,
-      description: app.tagline,
+      description: app.summary,
       url: `${siteConfig.url}/applications/${app.slug}`,
     },
   }
@@ -36,12 +34,6 @@ export async function generateMetadata({
 export default function ApplicationDetailPage({ params }: PageProps) {
   const app = getApplicationBySlug(params.slug)
   if (!app) notFound()
-
-  const relatedServices = app.applicableServices
-    .map((slug) => getServiceBySlug(slug))
-    .filter(
-      (s): s is NonNullable<ReturnType<typeof getServiceBySlug>> => Boolean(s)
-    )
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -65,7 +57,11 @@ export default function ApplicationDetailPage({ params }: PageProps) {
 
   return (
     <>
-      <section className="bg-cream section-padding">
+      <section className="bg-cream section-padding relative overflow-hidden">
+        <div
+          className="absolute inset-x-0 top-0 h-[4px] bg-gradient-to-r from-cloud via-burnt to-flame"
+          aria-hidden="true"
+        />
         <Container>
           <nav
             aria-label="Breadcrumb"
@@ -83,16 +79,16 @@ export default function ApplicationDetailPage({ params }: PageProps) {
 
           <div className="grid lg:grid-cols-2 gap-[48px] items-center">
             <div className="animate-fade-in-up">
-              <p className="label-text text-maroon mb-[16px]">APPLICATION</p>
+              <p className="label-text text-burnt mb-[16px]">APPLICATION</p>
               <h1 className="font-serif text-maroon text-[36px] md:text-[42px] lg:text-[52px] leading-tight mb-[16px]">
                 {app.name}
               </h1>
-              <p className="body-large mb-[32px]">{app.tagline}</p>
+              <p className="body-large mb-[32px]">{app.summary}</p>
               <Button href="/contact" variant="primary" size="lg">
-                Discuss a Project
+                Request a Quote
               </Button>
             </div>
-            <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden animate-fade-in">
+            <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden border border-stone-100 animate-fade-in">
               <Image
                 src={app.image}
                 alt={app.name}
@@ -105,87 +101,26 @@ export default function ApplicationDetailPage({ params }: PageProps) {
         </Container>
       </section>
 
-      {/* Overview */}
-      <section className="bg-white section-padding">
-        <Container>
-          <div className="max-w-[820px] mx-auto">
-            <h2 className="heading-2 text-maroon mb-[32px]">Overview</h2>
-            {app.overview.map((p, i) => (
-              <p key={i} className="body-palatino-18 mb-[16px]">
-                {p}
+      {app.isPlaceholder && (
+        <section className="bg-burnt/10 border-y border-burnt">
+          <Container>
+            <div className="py-[24px] text-center">
+              <p className="text-maroon font-semibold text-[15px]">
+                Detailed information for this application is coming soon. Contact
+                Palmetto Fire Services today to learn more.
               </p>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Services that apply */}
-      <section className="bg-cream section-padding">
-        <Container>
-          <div className="max-w-[1100px] mx-auto">
-            <div className="text-center mb-[40px]">
-              <p className="label-text text-maroon mb-[16px]">SERVICES WE PROVIDE</p>
-              <h2 className="heading-2 text-maroon">What Applies Here</h2>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-[16px]">
-              {relatedServices.map((svc) => (
-                <Link
-                  key={svc.slug}
-                  href={`/services/${svc.slug}`}
-                  className="group bg-white rounded-[8px] p-[20px] shadow-sm hover:shadow-md transition-all"
-                >
-                  <div className="flex items-start justify-between">
-                    <p className="text-maroon font-semibold group-hover:text-cloud transition-colors">
-                      {svc.name}
-                    </p>
-                    {svc.comingSoon && (
-                      <span className="text-[10px] uppercase tracking-wide text-burnt font-bold bg-burnt/10 px-[8px] py-[2px] rounded-full">
-                        Soon
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-stone-600 text-[13px] mt-[4px]">
-                    {svc.summary}
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Considerations */}
-      <section className="bg-white section-padding">
-        <Container>
-          <div className="max-w-[820px] mx-auto">
-            <p className="label-text text-maroon mb-[16px]">KEY CONSIDERATIONS</p>
-            <h2 className="heading-2 text-maroon mb-[32px]">
-              What matters for this property type
-            </h2>
-            <ul className="space-y-[12px]">
-              {app.considerations.map((c, i) => (
-                <li
-                  key={c}
-                  className="flex items-start gap-[12px] animate-fade-in-up"
-                  style={{ animationDelay: `${i * 40}ms` }}
-                >
-                  <div
-                    className="w-[24px] h-[24px] bg-cloud flex-shrink-0 mt-[4px]"
-                    aria-hidden="true"
-                  />
-                  <span className="body-palatino-18 text-black">{c}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Container>
-      </section>
+          </Container>
+        </section>
+      )}
 
       <CTASection
-        headline={`Planning a ${app.shortName.toLowerCase()} project?`}
-        text="Tell us about the building and we’ll put the right scope together."
-        buttonText="Contact Us"
+        headline="Let’s Protect What Matters"
+        text="Tell us about your facility and we’ll put the right team on it."
+        buttonText="Request a Quote"
         buttonHref="/contact"
+        secondaryText={`Call ${siteConfig.phone}`}
+        secondaryHref={siteConfig.phoneHref}
         variant="cream"
       />
 

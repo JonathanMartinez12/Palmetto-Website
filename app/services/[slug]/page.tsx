@@ -5,8 +5,7 @@ import { notFound } from 'next/navigation'
 import Container from '@/components/layout/Container'
 import Button from '@/components/ui/Button'
 import CTASection from '@/components/sections/CTASection'
-import { services, getServiceBySlug } from '@/lib/data/services'
-import { applications } from '@/lib/data/applications'
+import { services, getServiceBySlug, type Section } from '@/lib/data/services'
 import { siteConfig } from '@/lib/data/siteConfig'
 
 interface PageProps {
@@ -17,55 +16,121 @@ export async function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }))
 }
 
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const svc = getServiceBySlug(params.slug)
   if (!svc) return { title: 'Service Not Found' }
-
   return {
     title: svc.name,
-    description: svc.tagline,
-    robots: svc.comingSoon ? { index: false, follow: true } : undefined,
+    description: svc.tagline || svc.summary,
+    robots: svc.isPlaceholder ? { index: false, follow: true } : undefined,
     openGraph: {
       title: `${svc.name} | ${siteConfig.name}`,
-      description: svc.tagline,
+      description: svc.tagline || svc.summary,
       url: `${siteConfig.url}/services/${svc.slug}`,
     },
   }
+}
+
+const accentColors = ['bg-cloud', 'bg-burnt', 'bg-flame', 'bg-light-600', 'bg-maroon'] as const
+
+function BulletList({ items, dark = false }: { items: string[]; dark?: boolean }) {
+  return (
+    <ul className="grid sm:grid-cols-2 gap-[12px]">
+      {items.map((item, i) => {
+        const accent = accentColors[i % accentColors.length]
+        return (
+          <li
+            key={item}
+            className={`flex items-start gap-[12px] ${
+              dark
+                ? 'bg-palm-700/60 border-light-500/30'
+                : 'bg-white border-stone-100'
+            } border rounded-[8px] px-[16px] py-[12px]`}
+          >
+            <span
+              className={`w-[10px] h-[10px] ${accent} rounded-full flex-shrink-0 mt-[6px]`}
+              aria-hidden="true"
+            />
+            <span
+              className={`${dark ? 'text-white' : 'text-maroon'} font-medium text-[15px]`}
+            >
+              {item}
+            </span>
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
+
+function SectionBlock({
+  section,
+  labelText,
+  labelColor = 'text-maroon',
+  background = 'bg-white',
+  dark = false,
+}: {
+  section: Section
+  labelText?: string
+  labelColor?: string
+  background?: string
+  dark?: boolean
+}) {
+  return (
+    <section className={`w-full ${background}`}>
+      <Container className="py-[64px] md:py-[96px]">
+        <div className="max-w-[900px] mx-auto animate-fade-in-up">
+          {labelText && (
+            <p className={`label-text ${labelColor} mb-[16px]`}>{labelText}</p>
+          )}
+          {section.heading && (
+            <h2
+              className={`font-serif ${
+                dark ? 'text-white' : 'text-maroon'
+              } text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]`}
+            >
+              {section.heading}
+            </h2>
+          )}
+          {section.intro && (
+            <p
+              className={`${
+                dark ? 'text-cream-100 text-[17px] leading-relaxed' : 'body-palatino-18'
+              } mb-[24px]`}
+            >
+              {section.intro}
+            </p>
+          )}
+          {section.bullets && section.bullets.length > 0 && (
+            <div className="mb-[24px]">
+              <BulletList items={section.bullets} dark={dark} />
+            </div>
+          )}
+          {section.paragraphs?.map((p, i) => (
+            <p
+              key={i}
+              className={`${
+                dark ? 'text-cream-100 text-[17px] leading-relaxed' : 'body-palatino-18'
+              } mb-[16px] last:mb-0`}
+            >
+              {p}
+            </p>
+          ))}
+        </div>
+      </Container>
+    </section>
+  )
 }
 
 export default function ServiceDetailPage({ params }: PageProps) {
   const svc = getServiceBySlug(params.slug)
   if (!svc) notFound()
 
-  const relatedApps = applications.filter((a) =>
-    svc.whoItsFor.includes(a.slug)
-  )
-
-  const serviceJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: svc.name,
-    description: svc.tagline,
-    provider: {
-      '@type': 'LocalBusiness',
-      name: siteConfig.name,
-      telephone: siteConfig.phone,
-    },
-    areaServed: siteConfig.serviceAreas,
-  }
-
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: siteConfig.url,
-      },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteConfig.url },
       {
         '@type': 'ListItem',
         position: 2,
@@ -84,7 +149,11 @@ export default function ServiceDetailPage({ params }: PageProps) {
   return (
     <>
       {/* Hero */}
-      <section className="bg-cream section-padding">
+      <section className="bg-cream section-padding relative overflow-hidden">
+        <div
+          className="absolute inset-x-0 top-0 h-[4px] bg-gradient-to-r from-cloud via-burnt to-flame"
+          aria-hidden="true"
+        />
         <Container>
           <nav
             aria-label="Breadcrumb"
@@ -102,23 +171,24 @@ export default function ServiceDetailPage({ params }: PageProps) {
 
           <div className="grid lg:grid-cols-2 gap-[48px] items-center">
             <div className="animate-fade-in-up">
-              <p className="label-text text-maroon mb-[16px]">
-                {svc.comingSoon ? 'COMING SOON' : 'SERVICE'}
-              </p>
+              <p className="label-text text-burnt mb-[16px]">SERVICE</p>
               <h1 className="font-serif text-maroon text-[36px] md:text-[42px] lg:text-[52px] leading-tight mb-[16px]">
                 {svc.name}
               </h1>
-              <p className="body-large mb-[32px]">{svc.tagline}</p>
-              <Button
-                href={`/contact?service=${svc.slug}`}
-                variant="primary"
-                size="lg"
-              >
-                Request Service
+              {svc.tagline && (
+                <p className="font-serif text-stone-700 text-[20px] md:text-[24px] leading-snug mb-[24px]">
+                  {svc.tagline}
+                </p>
+              )}
+              <p className="body-large mb-[32px]">
+                {svc.heroBody || svc.summary}
+              </p>
+              <Button href="/contact" variant="primary" size="lg">
+                Request a Quote
               </Button>
             </div>
 
-            <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden animate-fade-in">
+            <div className="relative aspect-[4/3] rounded-[8px] overflow-hidden border border-stone-100 animate-fade-in">
               <Image
                 src={svc.image}
                 alt={svc.name}
@@ -131,117 +201,84 @@ export default function ServiceDetailPage({ params }: PageProps) {
         </Container>
       </section>
 
-      {/* Coming soon banner */}
-      {svc.comingSoon && (
-        <section className="bg-burnt/10 border-y border-flame">
+      {/* Placeholder banner for services without full copy yet */}
+      {svc.isPlaceholder && (
+        <section className="bg-burnt/10 border-y border-burnt">
           <Container>
             <div className="py-[24px] text-center">
               <p className="text-maroon font-semibold text-[15px]">
-                This service is launching soon. Contact us to discuss upcoming
-                availability or a referral in the meantime.
+                Detailed information for this service is coming soon. Contact Palmetto
+                Fire Services today to learn more.
               </p>
             </div>
           </Container>
         </section>
       )}
 
-      {/* Overview */}
-      <section className="bg-white section-padding">
-        <Container>
-          <div className="max-w-[820px] mx-auto">
-            <h2 className="heading-2 text-maroon mb-[32px]">Overview</h2>
-            {svc.overview.map((p, i) => (
-              <p key={i} className="body-palatino-18 mb-[16px]">
-                {p}
-              </p>
-            ))}
-          </div>
-        </Container>
-      </section>
+      {/* Our [X] Services */}
+      {svc.servicesSection && (
+        <SectionBlock
+          section={svc.servicesSection}
+          labelText="WHAT WE PROVIDE"
+          labelColor="text-maroon"
+          background="bg-white"
+        />
+      )}
 
-      {/* Features / What's included */}
-      <section className="bg-cream section-padding">
-        <Container>
-          <div className="max-w-[900px] mx-auto">
-            <div className="text-center mb-[48px]">
-              <p className="label-text text-maroon mb-[16px]">WHAT’S INCLUDED</p>
-              <h2 className="heading-2 text-maroon">Scope of Work</h2>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-[12px]">
-              {svc.features.map((f, i) => {
-                const dotColors = ['bg-cloud', 'bg-burnt', 'bg-flame', 'bg-light-600']
-                const dot = dotColors[i % dotColors.length]
-                return (
-                  <div
-                    key={f}
-                    className="flex items-start gap-[12px] bg-white p-[16px] rounded-[8px] shadow-sm border border-stone-100 animate-fade-in-up"
-                    style={{ animationDelay: `${i * 40}ms` }}
-                  >
-                    <div
-                      className={`w-[8px] h-[8px] ${dot} rounded-full flex-shrink-0 mt-[8px]`}
-                      aria-hidden="true"
-                    />
-                    <span className="text-maroon font-medium">{f}</span>
-                  </div>
-                )
-              })}
-            </div>
-            {svc.compliance && (
-              <div className="mt-[32px] text-center">
-                <p className="label-text text-maroon mb-[8px]">COMPLIANCE</p>
-                <p className="text-maroon font-semibold text-[18px]">
-                  Inspection &amp; documentation per {svc.compliance}
-                </p>
-              </div>
-            )}
-          </div>
-        </Container>
-      </section>
+      {/* Why [X] Matter */}
+      {svc.whyMattersSection && (
+        <SectionBlock
+          section={svc.whyMattersSection}
+          labelText="WHY IT MATTERS"
+          labelColor="text-burnt"
+          background="bg-cream"
+        />
+      )}
 
-      {/* Who it's for */}
-      {relatedApps.length > 0 && (
-        <section className="bg-white section-padding">
-          <Container>
-            <div className="max-w-[1100px] mx-auto">
-              <div className="text-center mb-[40px]">
-                <p className="label-text text-maroon mb-[16px]">WHO IT’S FOR</p>
-                <h2 className="heading-2 text-maroon">Applications We Serve</h2>
-              </div>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-[16px]">
-                {relatedApps.map((a) => (
-                  <Link
-                    key={a.slug}
-                    href={`/applications/${a.slug}`}
-                    className="group bg-cream rounded-[8px] p-[20px] border border-transparent hover:border-cloud transition-all"
-                  >
-                    <p className="text-maroon font-semibold group-hover:text-cloud transition-colors">
-                      {a.name}
-                    </p>
-                    <p className="text-stone-600 text-[13px] mt-[4px]">
-                      {a.shortName}
-                    </p>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </Container>
-        </section>
+      {/* The Palmetto Fire Approach */}
+      {svc.approachSection && (
+        <SectionBlock
+          section={svc.approachSection}
+          labelText="OUR APPROACH"
+          labelColor="text-maroon"
+          background="bg-white"
+        />
+      )}
+
+      {/* Experience and Technology You Can Trust */}
+      {svc.technologySection && (
+        <SectionBlock
+          section={svc.technologySection}
+          labelText="EXPERIENCE & TECHNOLOGY"
+          labelColor="text-flame"
+          background="bg-palm"
+          dark
+        />
+      )}
+
+      {/* Who We Serve */}
+      {svc.whoWeServeSection && (
+        <SectionBlock
+          section={svc.whoWeServeSection}
+          labelText="WHO WE SERVE"
+          labelColor="text-burnt"
+          background="bg-cream"
+        />
       )}
 
       <CTASection
-        headline={`Need ${svc.shortName.toLowerCase()} service?`}
-        text="Tell us about the property and we’ll put the right team on it."
-        buttonText="Request Service"
-        buttonHref={`/contact?service=${svc.slug}`}
+        headline={svc.closingHeading || `Need help with ${svc.shortName}?`}
+        text={
+          svc.closingText ||
+          'Tell us about the property and we’ll put the right team on it.'
+        }
+        buttonText="Request a Quote"
+        buttonHref="/contact"
         secondaryText={`Call ${siteConfig.phone}`}
         secondaryHref={siteConfig.phoneHref}
         variant="cream"
       />
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}

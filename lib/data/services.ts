@@ -1,15 +1,31 @@
+// A service may either be "fully written" (rich content from the client copy
+// doc) or a "placeholder" awaiting detailed copy. The detail page template
+// renders a complete layout for fully-written services and a minimal hero +
+// CTA for placeholders.
+
+export interface Section {
+  heading?: string
+  intro?: string
+  paragraphs?: string[]
+  bullets?: string[]
+}
+
 export interface Service {
   slug: string
   name: string
   shortName: string
   tagline: string
   summary: string
-  overview: string[]
-  features: string[]
-  whoItsFor: string[]
-  compliance?: string
+  heroBody?: string
+  servicesSection?: Section // "Our [X] Services" block
+  whyMattersSection?: Section // "Why [X] Matter"
+  approachSection?: Section // "The Palmetto Fire Approach"
+  technologySection?: Section // "Experience and Technology You Can Trust"
+  whoWeServeSection?: Section // "Who We Serve"
+  closingHeading?: string
+  closingText?: string
   image: string
-  comingSoon?: boolean
+  isPlaceholder?: boolean
 }
 
 export const services: Service[] = [
@@ -17,235 +33,300 @@ export const services: Service[] = [
     slug: 'fire-alarm-systems',
     name: 'Fire Alarm Systems',
     shortName: 'Fire Alarms',
-    tagline: 'Detection, notification, and control engineered and serviced to NFPA 72.',
+    tagline: 'Reliable Design, Installation, Monitoring & Long-Term Support',
     summary:
-      'Addressable and conventional fire alarm systems — designed, installed, tested, and serviced end to end.',
-    overview: [
-      'Palmetto Fire Services delivers full life-cycle fire alarm work — from initial design and AHJ submittal through device installation, acceptance testing, and ongoing maintenance. We work across major manufacturers so your system fits your building, not the other way around.',
-      'Every system we touch is commissioned against NFPA 72 and documented for easy annual testing and inspection.',
-    ],
-    features: [
-      'Addressable & conventional design',
-      'Smoke, heat & duct detection',
-      'Voice evacuation integration',
-      'Acceptance & annual testing',
-      'System upgrades & retrofits',
-      '24/7 monitoring integration',
-    ],
-    whoItsFor: [
-      'apartment-condo-communities',
-      'hotels-high-rise',
-      'healthcare-senior-housing',
-      'government-facilities',
-      'educational-facilities',
-      'commercial-retail',
-      'restaurants-hospitality',
-    ],
-    compliance: 'NFPA 72',
+      'Design, installation, upgrades, inspections, monitoring, and ongoing support for commercial fire alarm systems.',
+    heroBody:
+      'Fire alarm systems are one of the most important components of a building’s life safety infrastructure. When properly designed, installed, monitored, and maintained, they provide early detection, clear communication, and dependable protection during emergencies. Palmetto Fire Services provides complete fire alarm system solutions for commercial and institutional facilities throughout Myrtle Beach and surrounding communities. Our systems are designed to support code compliance, occupant safety, and long-term reliability.',
+    servicesSection: {
+      heading: 'Our Fire Alarm Services',
+      intro:
+        'Palmetto Fire Services supports fire alarm systems from initial design through ongoing inspections, monitoring, and long-term system support, including:',
+      bullets: [
+        'System design and engineering',
+        'Installation for new construction and existing facilities',
+        'Inspections and testing',
+        'Service, troubleshooting, and repairs',
+        'System upgrades and modifications',
+        'UL listed central station monitoring',
+        'ADA upgrades and elevator recall solutions',
+        'Support for advanced EST fire alarm systems and related technologies',
+      ],
+      paragraphs: [
+        'Our team works closely with property owners, facility managers, contractors, and authorities having jurisdiction to help ensure systems meet applicable codes, operational needs, and local requirements.',
+      ],
+    },
+    whyMattersSection: {
+      heading: 'Why Fire Alarm Systems Matter',
+      paragraphs: [
+        'Fire alarm systems play a critical role in protecting occupants and supporting emergency response efforts. Systems that are outdated, improperly maintained, or not routinely inspected can create unnecessary risks, compliance issues, and operational disruptions.',
+        'Routine inspections, monitoring, and preventative service help:',
+      ],
+      bullets: [
+        'Provide early detection and occupant notification',
+        'Support code compliance and inspection readiness',
+        'Reduce liability and operational downtime',
+        'Protect people, facilities, and critical assets',
+        'Keep systems functioning as intended',
+        'Support emergency communication and response coordination',
+      ],
+    },
+    approachSection: {
+      heading: 'The Palmetto Fire Services Approach',
+      paragraphs: [
+        'At Palmetto Fire Services, fire alarm service is built around responsiveness, reliability, and accountability. We understand customers depend on these systems every day, and especially during emergencies.',
+        'Our customers work with a local team that understands their facilities, their compliance requirements, and the importance of dependable system performance. When service is needed, we respond quickly, communicate clearly, and follow through until the issue is resolved.',
+        'Palmetto Fire focuses on proactive system support to help customers identify and resolve issues before they become larger problems. We believe every facility deserves life safety systems that are reliable, practical, and supported by experienced professionals who stand behind their work.',
+      ],
+    },
+    technologySection: {
+      heading: 'Experience and Technology You Can Trust',
+      paragraphs: [
+        'As an EST Authorized Strategic Partner, Palmetto Fire Services works with advanced fire alarm and emergency communication technologies trusted across commercial, healthcare, hospitality, government, and educational environments.',
+        'Our team supports a wide range of fire alarm systems and technologies, including:',
+      ],
+      bullets: [
+        'Edwards EST fire alarm systems',
+        'Mass notification systems',
+        'Voice evacuation systems',
+        'Central station monitoring services',
+        'Integrated emergency communication technologies',
+        'ADA and code-compliance upgrades',
+      ],
+    },
+    whoWeServeSection: {
+      heading: 'Who We Serve',
+      bullets: [
+        'Commercial & Retail Properties',
+        'Apartment & Condo Communities',
+        'Hotels & High-Rise Properties',
+        'Healthcare & Senior Housing Facilities',
+        'Government Buildings',
+        'Educational Facilities',
+        'Restaurants & Hospitality Environments',
+      ],
+      paragraphs: [
+        'Whether you manage a single property or multiple facilities, Palmetto Fire Services provides dependable fire alarm solutions tailored to your operational and life safety needs.',
+      ],
+    },
+    closingHeading: 'Let’s Keep Your System Ready',
+    closingText:
+      'If you need fire alarm system design, installation, inspections, monitoring, upgrades, or ongoing service support, contact Palmetto Fire Services today.',
     image: '/images/service-fire-alarm.jpg',
   },
   {
     slug: 'mass-notification-systems',
     name: 'Mass Notification Systems',
     shortName: 'Mass Notification',
-    tagline: 'Targeted, multi-channel emergency communication for large occupancies.',
+    tagline: 'Reliable Emergency Communication When Every Second Matters',
     summary:
-      'Voice evacuation and emergency communication systems that reach the right people, in the right zone, at the right time.',
-    overview: [
-      'Mass notification goes beyond traditional fire alarm — delivering targeted messages by zone, integrating with severe weather alerts, lockdown protocols, and other emergency scenarios. Palmetto designs and installs ECS / MNS systems to meet NFPA 72 Chapter 24 and campus-specific requirements.',
-      'We coordinate closely with facility safety teams and local AHJs so the system you install today can be reconfigured as protocols evolve.',
-    ],
-    features: [
-      'Voice evacuation & paging',
-      'Zoned & targeted messaging',
-      'Severe weather integration',
-      'Lockdown & shelter-in-place protocols',
-      'Campus-wide notification',
-      'Annual ITM',
-    ],
-    whoItsFor: [
-      'hotels-high-rise',
-      'healthcare-senior-housing',
-      'government-facilities',
-      'educational-facilities',
-      'commercial-retail',
-    ],
-    compliance: 'NFPA 72 Chapter 24',
+      'Emergency communication systems designed to quickly distribute critical information during emergencies and facility-wide events.',
+    heroBody:
+      'Mass notification systems play a critical role in protecting occupants during emergencies by delivering clear, immediate communication across facilities and campuses. Whether responding to fire events, severe weather, security threats, or other emergencies, dependable communication systems help people respond quickly and safely. Palmetto Fire Services provides mass notification system design, installation, integration, and ongoing support for commercial and institutional facilities throughout Myrtle Beach and surrounding communities.',
+    servicesSection: {
+      heading: 'Our Mass Notification Services',
+      intro:
+        'Palmetto Fire supports mass notification systems from initial planning through long-term operation and maintenance, including:',
+      bullets: [
+        'System design and engineering',
+        'New system installation',
+        'Integration with fire alarm and emergency communication systems',
+        'Voice evacuation systems',
+        'Speaker and paging systems',
+        'Emergency communication upgrades',
+        'Inspections and testing',
+        'System service and troubleshooting',
+        'Preventative maintenance and ongoing support',
+        'Code-compliant emergency communication solutions',
+      ],
+      paragraphs: [
+        'Our team works closely with facility owners, property managers, contractors, and authorities having jurisdiction to help ensure systems meet operational needs and applicable life safety requirements.',
+      ],
+    },
+    whyMattersSection: {
+      heading: 'Why Mass Notification Systems Matter',
+      paragraphs: [
+        'During emergencies, communication is critical. Mass notification systems help facilities quickly deliver important instructions and information to building occupants, helping improve response times and support safer evacuations or shelter procedures.',
+        'Modern emergency communication systems help facilities:',
+      ],
+      bullets: [
+        'Provide clear emergency instructions',
+        'Improve occupant awareness during emergencies',
+        'Support coordinated evacuation procedures',
+        'Enhance communication during severe weather or security events',
+        'Support code compliance and emergency preparedness efforts',
+        'Reduce confusion during critical situations',
+      ],
+    },
+    approachSection: {
+      heading: 'The Palmetto Fire Approach',
+      paragraphs: [
+        'At Palmetto Fire, we understand emergency communication systems must be dependable, practical, and easy to operate during high-pressure situations.',
+        'Our team focuses on designing systems that work reliably while remaining user-friendly for facility personnel and first responders. We take the time to understand each facility’s layout, operational needs, and communication requirements to help deliver solutions that perform when they are needed most.',
+        'Customers rely on Palmetto Fire because we provide responsive service, experienced support, and long-term accountability behind every system we install and maintain.',
+      ],
+    },
+    technologySection: {
+      heading: 'Experience and Technology You Can Trust',
+      paragraphs: [
+        'As an EST Authorized Strategic Partner, Palmetto Fire Services works with advanced emergency communication and life safety technologies trusted across commercial, healthcare, hospitality, education, and government environments.',
+        'Our team supports:',
+      ],
+      bullets: [
+        'EST fire alarm and mass notification systems',
+        'Voice evacuation systems',
+        'Integrated emergency communication technologies',
+        'Area-wide occupant notification systems',
+        'Emergency paging and communication solutions',
+        'Integrated life safety technologies',
+      ],
+    },
+    whoWeServeSection: {
+      heading: 'Who We Serve',
+      bullets: [
+        'Commercial & Retail Properties',
+        'Apartment & Condo Communities',
+        'Hotels & High-Rise Properties',
+        'Healthcare & Senior Housing Facilities',
+        'Government Buildings',
+        'Educational Facilities',
+        'Restaurants & Hospitality Environments',
+      ],
+      paragraphs: [
+        'Whether you manage a single facility or a large campus environment, Palmetto Fire Services provides dependable emergency communication solutions tailored to your facility’s needs.',
+      ],
+    },
+    closingHeading: 'Let’s Improve Emergency Communication at Your Facility',
+    closingText:
+      'If you need mass notification system design, installation, inspections, upgrades, or ongoing support, contact Palmetto Fire Services today.',
     image: '/images/service-mass-notification.jpg',
   },
   {
     slug: 'nurse-call-systems',
     name: 'Nurse Call Systems',
     shortName: 'Nurse Call',
-    tagline: 'Reliable resident-to-staff communication for healthcare and senior housing.',
+    tagline: 'Reliable Communication Systems for Healthcare & Senior Living Facilities',
     summary:
-      'UL 1069-listed nurse call systems for hospitals, assisted living, memory care, and skilled nursing.',
-    overview: [
-      'Nurse call is mission-critical infrastructure. Palmetto designs and installs UL 1069-listed systems that connect residents and patients to caregivers reliably — with the audit trail and staff workflow integrations modern facilities require.',
-      'We service all major platforms and can upgrade aging systems incrementally so a single floor or wing can be modernized without taking the whole facility offline.',
-    ],
-    features: [
-      'UL 1069-listed equipment',
-      'Wired & wireless options',
-      'Staff workflow integration',
-      'Reporting & audit trail',
-      'Phased upgrade paths',
-      'Annual testing & service',
-    ],
-    whoItsFor: ['healthcare-senior-housing'],
-    compliance: 'UL 1069, UL 2560',
+      'Reliable communication systems that support faster response times and improved patient care environments.',
+    heroBody:
+      'Nurse call systems play a critical role in patient care, staff communication, and occupant safety within healthcare and senior living environments. Reliable systems help improve response times, support staff efficiency, and provide patients and residents with confidence that assistance is always within reach. Palmetto Fire Services provides nurse call system design, installation, integration, and ongoing support for healthcare, senior housing, and assisted living facilities throughout Myrtle Beach and surrounding communities.',
+    servicesSection: {
+      heading: 'Our Nurse Call Services',
+      intro:
+        'Palmetto Fire supports nurse call systems from initial planning through long-term service and support, including:',
+      bullets: [
+        'System design and engineering',
+        'New system installation',
+        'System upgrades and expansions',
+        'Integration with life safety and communication systems',
+        'Patient and resident communication systems',
+        'Inspections and testing',
+        'System troubleshooting and repairs',
+        'Preventative maintenance',
+        'Ongoing service and technical support',
+        'Technology integration and modernization',
+      ],
+      paragraphs: [
+        'Our team works closely with facility administrators, contractors, and healthcare personnel to help ensure systems are dependable, user-friendly, and aligned with operational needs.',
+      ],
+    },
+    whyMattersSection: {
+      heading: 'Why Nurse Call Systems Matter',
+      paragraphs: [
+        'In healthcare and senior living environments, communication systems directly impact response times, patient experience, staff coordination, and occupant safety.',
+        'Modern nurse call systems help facilities:',
+      ],
+      bullets: [
+        'Improve communication between patients and staff',
+        'Support faster response times',
+        'Enhance resident and patient safety',
+        'Improve staff workflow and efficiency',
+        'Reduce communication delays',
+        'Support long-term operational reliability',
+      ],
+    },
+    approachSection: {
+      heading: 'The Palmetto Fire Approach',
+      paragraphs: [
+        'At Palmetto Fire, we understand nurse call systems are mission-critical communication tools that healthcare teams rely on every day.',
+        'Our approach focuses on reliability, ease of use, and long-term system performance. We work closely with facilities to understand their operational requirements and provide solutions that support both staff efficiency and occupant care.',
+        'Customers trust Palmetto Fire because we provide responsive local service, experienced support, and long-term accountability behind every system we install and maintain.',
+      ],
+    },
+    technologySection: {
+      heading: 'Experience and Technology You Can Trust',
+      paragraphs: [
+        'Palmetto Fire works with trusted manufacturers and technologies designed specifically for healthcare and senior living environments.',
+        'Our team supports:',
+      ],
+      bullets: [
+        'Telecor nurse call systems',
+        'Integrated communication technologies',
+        'Emergency communication systems',
+        'Life safety system integration',
+        'Facility-wide communication solutions',
+        'Monitoring and support services',
+      ],
+    },
+    whoWeServeSection: {
+      heading: 'Who We Serve',
+      bullets: [
+        'Healthcare Facilities',
+        'Hospitals & Medical Offices',
+        'Senior Living Communities',
+        'Assisted Living Facilities',
+        'Rehabilitation Centers',
+        'Long-Term Care Facilities',
+        'Government & Institutional Healthcare Environments',
+      ],
+      paragraphs: [
+        'Whether you operate a single facility or manage multiple healthcare properties, Palmetto Fire Services provides dependable nurse call solutions tailored to your operational and communication needs.',
+      ],
+    },
+    closingHeading: 'Let’s Support Better Communication and Care',
+    closingText:
+      'If you need nurse call system design, installation, upgrades, inspections, or ongoing support, contact Palmetto Fire Services today.',
     image: '/images/service-nurse-call.jpg',
   },
   {
     slug: 'area-of-rescue-systems',
     name: 'Area of Rescue Systems',
     shortName: 'Area of Rescue',
-    tagline: 'Two-way emergency communication for accessible egress areas.',
+    tagline: '',
     summary:
-      'IBC and ADA-compliant area of rescue assistance systems for multi-story and public buildings.',
-    overview: [
-      'Area of rescue assistance systems are required in many multi-story and accessible buildings — providing two-way communication between people awaiting evacuation and emergency responders. Palmetto installs and services systems that meet IBC, ADA, and local AHJ requirements.',
-      'We handle the design, head-end equipment, station hardware, and the annual testing required to keep the system inspection-ready.',
-    ],
-    features: [
-      'Hands-free two-way communication',
-      'Stairwell & elevator lobby stations',
-      'ADA-compliant signage',
-      'Central monitoring console',
-      'Battery backup',
-      'Annual testing & inspection',
-    ],
-    whoItsFor: [
-      'hotels-high-rise',
-      'government-facilities',
-      'educational-facilities',
-      'healthcare-senior-housing',
-    ],
-    compliance: 'IBC, ADA, NFPA 72',
+      'Code-compliant emergency communication solutions that support occupant safety and evacuation procedures.',
     image: '/images/service-area-of-rescue.jpg',
+    isPlaceholder: true,
   },
   {
-    slug: 'monitoring-services',
-    name: 'Monitoring Services',
-    shortName: 'Monitoring',
-    tagline: 'UL-listed central station monitoring with dispatch to your local AHJ.',
+    slug: 'monitoring-testing-inspections',
+    name: 'Monitoring, Testing & Inspections',
+    shortName: 'Monitoring & Inspections',
+    tagline: '',
     summary:
-      'Fire alarm and life safety signal monitoring on cellular, IP, and dual-path communicators.',
-    overview: [
-      'Palmetto monitors fire alarm, sprinkler supervisory, and security signals through a UL-listed central station — with redundant paths and rapid dispatch to the AHJ of record. Customers get a portal for real-time signal history, monthly reports, and contact roster management.',
-      'Pair monitoring with our recurring inspection plan and your building stays inspection-ready year round, on one account and one invoice.',
-    ],
-    features: [
-      'UL-listed central station',
-      'Cellular, IP & dual-path communicators',
-      'Signal history & reporting portal',
-      'AHJ dispatch coordination',
-      'Contact roster management',
-      'Bundled with ITM available',
-    ],
-    whoItsFor: [
-      'apartment-condo-communities',
-      'hotels-high-rise',
-      'healthcare-senior-housing',
-      'government-facilities',
-      'educational-facilities',
-      'commercial-retail',
-      'restaurants-hospitality',
-    ],
-    compliance: 'UL 827, NFPA 72',
+      'UL listed central station monitoring, testing, preventative maintenance, and NFPA-focused inspections.',
     image: '/images/service-monitoring.jpg',
-  },
-  {
-    slug: 'design-installation-lifecycle-support',
-    name: 'Design, Installation & Lifecycle Support',
-    shortName: 'Design & Install',
-    tagline: 'Engineering, install, and long-term system support — handled in-house.',
-    summary:
-      'New construction, retrofit, and lifecycle management for every life safety system we offer.',
-    overview: [
-      'Palmetto provides the engineering and installation horsepower behind every system we sell. Our designers produce stamped drawings and battery calcs ready for AHJ submittal, and our field crews install with a focus on inspectable, maintainable work.',
-      'Once a system is live, we stay with it — managing software updates, code-required upgrades, and end-of-life replacement planning so building owners are never caught off guard.',
-    ],
-    features: [
-      'Engineered design & stamped drawings',
-      'AHJ submittal & coordination',
-      'New construction installation',
-      'Retrofit & system upgrade',
-      'Lifecycle & end-of-life planning',
-      'Single point of accountability',
-    ],
-    whoItsFor: [
-      'apartment-condo-communities',
-      'hotels-high-rise',
-      'healthcare-senior-housing',
-      'government-facilities',
-      'educational-facilities',
-      'commercial-retail',
-      'restaurants-hospitality',
-    ],
-    compliance: 'NFPA 72, IBC, NEC',
-    image: '/images/service-design-install.jpg',
+    isPlaceholder: true,
   },
   {
     slug: 'access-control-security-integration',
     name: 'Access Control & Security Integration',
     shortName: 'Access Control',
-    tagline: 'Card access, intrusion, and video integrated with fire and life safety.',
+    tagline: '',
     summary:
-      'Unified access control, intrusion detection, and CCTV that work alongside your fire alarm system.',
-    overview: [
-      'Modern life safety doesn’t stop at the fire alarm panel. Palmetto designs and installs access control, intrusion detection, and video surveillance systems that integrate cleanly with fire alarm and mass notification — so doors release on alarm, video clips are tagged to events, and a single dashboard shows the whole building.',
-      'We work with leading platforms and integrate with existing systems wherever possible to avoid forklift upgrades.',
-    ],
-    features: [
-      'Card & mobile credential access',
-      'Intrusion detection',
-      'IP video surveillance',
-      'Fire alarm & MNS integration',
-      'Visitor management',
-      'Hosted & on-prem options',
-    ],
-    whoItsFor: [
-      'apartment-condo-communities',
-      'hotels-high-rise',
-      'healthcare-senior-housing',
-      'government-facilities',
-      'educational-facilities',
-      'commercial-retail',
-    ],
-    compliance: 'UL 294, UL 1076',
+      'Integrated access control, security, and digital imaging systems designed to improve visibility and facility management.',
     image: '/images/service-access-control.jpg',
+    isPlaceholder: true,
   },
   {
-    slug: 'testing-inspections',
-    name: 'Testing & Inspections',
-    shortName: 'Testing & Inspection',
-    tagline: 'NFPA-compliant inspection, testing, and maintenance on every system we touch.',
+    slug: 'design-installation-services',
+    name: 'Design & Installation Services',
+    shortName: 'Design & Install',
+    tagline: '',
     summary:
-      'Annual, semi-annual, and quarterly ITM for fire alarm, nurse call, area of rescue, and access control.',
-    overview: [
-      'Testing and inspection is the backbone of a life safety program. Palmetto performs annual, semi-annual, and quarterly ITM on fire alarm, mass notification, nurse call, area of rescue, and access control systems — and we file documentation directly with your records so audits are painless.',
-      'Customers on a Palmetto inspection plan get reminders before each visit, a portal with every report, and one number to call for any issue found in the field.',
-    ],
-    features: [
-      'NFPA 72 annual & semi-annual testing',
-      'Nurse call & area of rescue ITM',
-      'Battery & device replacement',
-      'Online inspection records',
-      'AHJ filing on your behalf',
-      'Single point of accountability',
-    ],
-    whoItsFor: [
-      'apartment-condo-communities',
-      'hotels-high-rise',
-      'healthcare-senior-housing',
-      'government-facilities',
-      'educational-facilities',
-      'commercial-retail',
-      'restaurants-hospitality',
-    ],
-    compliance: 'NFPA 72, NFPA 25 (where applicable)',
-    image: '/images/service-testing-inspection.jpg',
+      'Advanced system design, ADA upgrades, elevator recall solutions, and technology integration services.',
+    image: '/images/service-design-install.jpg',
+    isPlaceholder: true,
   },
 ]
 
@@ -253,5 +334,4 @@ export function getServiceBySlug(slug: string): Service | undefined {
   return services.find((s) => s.slug === slug)
 }
 
-export const activeServices = services.filter((s) => !s.comingSoon)
-export const futureServices = services.filter((s) => s.comingSoon)
+export const activeServices = services
