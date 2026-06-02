@@ -86,6 +86,12 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">{children}</main>
+          {/* Brand gradient strip — appears at the bottom of every page,
+              just above the footer. */}
+          <div
+            className="w-full h-[10px] bg-gradient-to-r from-cloud via-burnt via-flame to-cloud"
+            aria-hidden="true"
+          />
           <Footer />
         </div>
       </body>

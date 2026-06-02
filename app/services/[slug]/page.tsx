@@ -76,6 +76,10 @@ function SectionBlock({
   background?: string
   dark?: boolean
 }) {
+  const paragraphClass = dark
+    ? 'text-cream-100 text-[17px] leading-relaxed mb-[16px] last:mb-0'
+    : 'body-palatino-18 mb-[16px] last:mb-0'
+
   return (
     <section className={`w-full ${background}`}>
       <Container className="py-[64px] md:py-[96px]">
@@ -92,27 +96,18 @@ function SectionBlock({
               {section.heading}
             </h2>
           )}
-          {section.intro && (
-            <p
-              className={`${
-                dark ? 'text-cream-100 text-[17px] leading-relaxed' : 'body-palatino-18'
-              } mb-[24px]`}
-            >
-              {section.intro}
+          {section.intro?.map((p, i) => (
+            <p key={`intro-${i}`} className={paragraphClass}>
+              {p}
             </p>
-          )}
+          ))}
           {section.bullets && section.bullets.length > 0 && (
-            <div className="mb-[24px]">
+            <div className={section.intro?.length ? 'mt-[24px] mb-[24px]' : 'mb-[24px]'}>
               <BulletList items={section.bullets} dark={dark} />
             </div>
           )}
-          {section.paragraphs?.map((p, i) => (
-            <p
-              key={i}
-              className={`${
-                dark ? 'text-cream-100 text-[17px] leading-relaxed' : 'body-palatino-18'
-              } mb-[16px] last:mb-0`}
-            >
+          {section.closing?.map((p, i) => (
+            <p key={`closing-${i}`} className={paragraphClass}>
               {p}
             </p>
           ))}
@@ -201,7 +196,6 @@ export default function ServiceDetailPage({ params }: PageProps) {
         </Container>
       </section>
 
-      {/* Placeholder banner for services without full copy yet */}
       {svc.isPlaceholder && (
         <section className="bg-burnt/10 border-y border-burnt">
           <Container>
@@ -215,53 +209,39 @@ export default function ServiceDetailPage({ params }: PageProps) {
         </section>
       )}
 
-      {/* Our [X] Services */}
       {svc.servicesSection && (
         <SectionBlock
           section={svc.servicesSection}
-          labelText="WHAT WE PROVIDE"
-          labelColor="text-maroon"
           background="bg-white"
         />
       )}
 
-      {/* Why [X] Matter */}
       {svc.whyMattersSection && (
         <SectionBlock
           section={svc.whyMattersSection}
-          labelText="WHY IT MATTERS"
-          labelColor="text-burnt"
           background="bg-cream"
         />
       )}
 
-      {/* The Palmetto Fire Approach */}
       {svc.approachSection && (
         <SectionBlock
           section={svc.approachSection}
-          labelText="OUR APPROACH"
-          labelColor="text-maroon"
           background="bg-white"
         />
       )}
 
-      {/* Experience and Technology You Can Trust */}
       {svc.technologySection && (
         <SectionBlock
           section={svc.technologySection}
-          labelText="EXPERIENCE & TECHNOLOGY"
           labelColor="text-flame"
           background="bg-palm"
           dark
         />
       )}
 
-      {/* Who We Serve */}
       {svc.whoWeServeSection && (
         <SectionBlock
           section={svc.whoWeServeSection}
-          labelText="WHO WE SERVE"
-          labelColor="text-burnt"
           background="bg-cream"
         />
       )}
@@ -274,8 +254,6 @@ export default function ServiceDetailPage({ params }: PageProps) {
         }
         buttonText="Request a Quote"
         buttonHref="/contact"
-        secondaryText={`Call ${siteConfig.phone}`}
-        secondaryHref={siteConfig.phoneHref}
         variant="cream"
       />
 

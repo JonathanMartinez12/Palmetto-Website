@@ -51,6 +51,7 @@ export const navigation = {
     { name: 'About', href: '/about', hasDropdown: 'about' as const },
     { name: 'Services', href: '/services', hasDropdown: 'services' as const },
     { name: 'Applications', href: '/applications', hasDropdown: 'applications' as const },
+    { name: 'Industries Served', href: '/industries-served' },
     { name: 'Careers', href: '/careers' },
   ],
   about: [
@@ -64,6 +65,7 @@ export const navigation = {
       { name: 'Our Partner', href: '/about/our-partner' },
       { name: 'Services', href: '/services' },
       { name: 'Applications', href: '/applications' },
+      { name: 'Industries Served', href: '/industries-served' },
       { name: 'Careers', href: '/careers' },
       { name: 'Contact', href: '/contact' },
     ],

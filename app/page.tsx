@@ -41,6 +41,54 @@ const commitmentBullets = [
 
 const accentColors = ['bg-cloud', 'bg-burnt', 'bg-flame', 'bg-light-600', 'bg-maroon'] as const
 
+// Home Row 3 tiles — matches the client copy doc verbatim. Monitoring,
+// Testing & Inspections is shown as a single combined tile on the home
+// page, but the detail-page navigation has them as two separate pages.
+const homeServiceTiles = [
+  {
+    name: 'Fire Alarm Systems',
+    summary:
+      'Design, installation, upgrades, inspections, monitoring, and ongoing support for commercial fire alarm systems',
+    href: '/services/fire-alarm-systems',
+  },
+  {
+    name: 'Mass Notification Systems',
+    summary:
+      'Emergency communication systems designed to quickly distribute critical information during emergencies and facility-wide events',
+    href: '/services/mass-notification-systems',
+  },
+  {
+    name: 'Nurse Call Systems',
+    summary:
+      'Reliable communication systems that support faster response times and improved patient care environments',
+    href: '/services/nurse-call-systems',
+  },
+  {
+    name: 'Area of Rescue Systems',
+    summary:
+      'Code-compliant emergency communication solutions that support occupant safety and evacuation procedures',
+    href: '/services/area-of-rescue-systems',
+  },
+  {
+    name: 'Monitoring, Testing & Inspections',
+    summary:
+      'UL listed central station monitoring, testing, preventative maintenance, and NFPA-focused inspections',
+    href: '/services/monitoring-services',
+  },
+  {
+    name: 'Access Control & Security Integration',
+    summary:
+      'Integrated access control, security, and digital imaging systems designed to improve visibility and facility management',
+    href: '/services/access-control-security-integration',
+  },
+  {
+    name: 'Design & Installation Services',
+    summary:
+      'Advanced system design, ADA upgrades, elevator recall solutions, and technology integration services',
+    href: '/services/design-installation-lifecycle-support',
+  },
+]
+
 export default function Home() {
   return (
     <>
@@ -171,12 +219,12 @@ export default function Home() {
           <p className="text-center label-text text-burnt mb-[24px]">Our Services Include</p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-[16px] max-w-[1200px] mx-auto">
-            {services.map((svc, i) => {
+            {homeServiceTiles.map((tile, i) => {
               const accent = accentColors[i % accentColors.length]
               return (
                 <Link
-                  key={svc.slug}
-                  href={`/services/${svc.slug}`}
+                  key={tile.name}
+                  href={tile.href}
                   className="group block bg-white rounded-[8px] p-[24px] border border-stone-100 hover:border-cloud hover:shadow-md transition-all duration-300 animate-fade-in-up"
                   style={{ animationDelay: `${i * 60}ms` }}
                 >
@@ -185,10 +233,10 @@ export default function Home() {
                     aria-hidden="true"
                   />
                   <h3 className="text-maroon font-semibold text-[17px] mb-[8px] group-hover:text-cloud transition-colors">
-                    {svc.name}
+                    {tile.name}
                   </h3>
                   <p className="text-stone-600 text-[14px] leading-relaxed">
-                    {svc.summary}
+                    {tile.summary}
                   </p>
                 </Link>
               )
@@ -403,12 +451,6 @@ export default function Home() {
           </div>
         </Container>
       </section>
-
-      {/* Brand accent strip */}
-      <div
-        className="w-full h-[10px] bg-gradient-to-r from-cloud via-burnt via-flame to-cloud"
-        aria-hidden="true"
-      />
 
       <script
         type="application/ld+json"
