@@ -2,16 +2,72 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Container from './Container'
 import { navigation, siteConfig } from '@/lib/data/siteConfig'
-import { activeServices } from '@/lib/data/services'
+import { services } from '@/lib/data/services'
+
+const utilityNav = [
+  {
+    label: 'Customer Portal (ServiceTrade)',
+    href: siteConfig.portals.customer,
+    external: true,
+  },
+  {
+    label: 'Payment Portal',
+    href: siteConfig.portals.payment,
+    external: true,
+  },
+  {
+    label: 'Certifications & Associations',
+    href: '#',
+  },
+  {
+    label: 'Service Areas',
+    href: '#service-areas',
+  },
+]
 
 export default function Footer() {
   return (
     <footer className="bg-palm text-white">
       <Container>
-        <div className="py-[56px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[32px]">
+        {/* Utility Navigation row — Customer Portal, Payment Portal,
+            Certifications & Associations, Service Areas. Mirrors the header
+            utility bar so the four entry points are accessible at the top
+            and bottom of every page. */}
+        <div className="py-[24px] border-b border-palm-400/40">
+          <ul className="grid grid-cols-2 md:grid-cols-4 gap-[12px]">
+            {utilityNav.map((item) => (
+              <li key={item.label}>
+                {item.external ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-center text-[13px] uppercase tracking-wide font-semibold text-cream-100 hover:text-flame transition-colors px-[12px] py-[8px] border border-light-500/30 rounded-[6px]"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="block text-center text-[13px] uppercase tracking-wide font-semibold text-cream-100 hover:text-flame transition-colors px-[12px] py-[8px] border border-light-500/30 rounded-[6px]"
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Main footer grid */}
+        <div className="py-[48px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[32px]">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center mb-[16px]" aria-label={`${siteConfig.name} Home`}>
+            <Link
+              href="/"
+              className="flex items-center mb-[16px]"
+              aria-label={`${siteConfig.name} Home`}
+            >
               <Image
                 src="/palmetto-logo-reverse.png"
                 alt={siteConfig.name}
@@ -20,11 +76,8 @@ export default function Footer() {
                 className="w-[200px] h-auto"
               />
             </Link>
-            <p className="text-gray-300 text-[14px] leading-relaxed mb-[12px]">
+            <p className="text-cream-100/80 text-[14px] leading-relaxed">
               {siteConfig.description}
-            </p>
-            <p className="text-flame text-[13px] font-semibold uppercase tracking-wide">
-              {siteConfig.certifications.join(' • ')}
             </p>
           </div>
 
@@ -38,7 +91,7 @@ export default function Footer() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-gray-300 hover:text-flame transition-colors duration-200 text-[14px]"
+                    className="text-cream-100/80 hover:text-flame transition-colors duration-200 text-[14px]"
                   >
                     {item.name}
                   </Link>
@@ -53,11 +106,11 @@ export default function Footer() {
               Services
             </h3>
             <ul className="space-y-[8px]">
-              {activeServices.slice(0, 6).map((svc) => (
+              {services.slice(0, 7).map((svc) => (
                 <li key={svc.slug}>
                   <Link
                     href={`/services/${svc.slug}`}
-                    className="text-gray-300 hover:text-flame transition-colors duration-200 text-[14px]"
+                    className="text-cream-100/80 hover:text-flame transition-colors duration-200 text-[14px]"
                   >
                     {svc.name}
                   </Link>
@@ -74,16 +127,17 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact + Certifications + Service Areas */}
           <div>
             <h3 className="text-white font-semibold text-[16px] mb-[16px] uppercase tracking-wide">
               Contact
             </h3>
-            <address className="not-italic space-y-[10px] text-[14px] text-gray-300">
+            <address className="not-italic space-y-[10px] text-[14px] text-cream-100/80">
               <p>
                 {siteConfig.address.street}
                 <br />
-                {siteConfig.address.city}, {siteConfig.address.state} {siteConfig.address.zip}
+                {siteConfig.address.city}, {siteConfig.address.state}{' '}
+                {siteConfig.address.zip}
               </p>
               <p>
                 <a
@@ -96,37 +150,53 @@ export default function Footer() {
               <p>
                 <a
                   href={siteConfig.emailHref}
-                  className="hover:text-flame transition-colors"
+                  className="hover:text-flame transition-colors break-all"
                 >
                   {siteConfig.email}
                 </a>
               </p>
             </address>
-            <div className="mt-[16px]">
+
+            {/* Certifications & Associations */}
+            <div className="mt-[20px]">
               <p className="text-[12px] uppercase tracking-wide text-burnt font-semibold mb-[4px]">
-                Service Area
+                Certifications & Associations
               </p>
-              <p className="text-[14px] text-gray-300">
-                {siteConfig.serviceAreas.join(' • ')}
+              <p className="text-flame text-[13px] font-semibold leading-snug">
+                {siteConfig.certifications.join(' • ')}
+              </p>
+            </div>
+
+            {/* Service Areas */}
+            <div id="service-areas" className="mt-[16px] scroll-mt-[80px]">
+              <p className="text-[12px] uppercase tracking-wide text-burnt font-semibold mb-[4px]">
+                Service Areas
+              </p>
+              <p className="text-cream-100 text-[14px]">
+                {siteConfig.serviceAreaShort}
               </p>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-[24px] pb-[24px] border-t border-palm-400/50 flex flex-col md:flex-row items-center justify-between gap-[12px]">
-          <p className="text-gray-400 text-[13px]">{siteConfig.copyright}</p>
-          <p className="text-gray-400 text-[13px]">
-            A proud member of the{' '}
+        {/* Copyright bar */}
+        <div className="pt-[24px] pb-[24px] border-t border-palm-400/50">
+          <p className="text-cream-100/60 text-[13px] text-center md:text-left flex flex-col md:flex-row md:items-center md:justify-center md:gap-[12px] gap-[6px]">
+            <span>© Copyright 2026 Atlantis Fire Protection, LLC</span>
+            <span className="hidden md:inline text-cream-100/30">|</span>
             <a
-              href={siteConfig.parent.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-flame hover:text-white transition-colors font-semibold"
+              href="#"
+              className="hover:text-flame transition-colors"
             >
-              {siteConfig.parent.name}
-            </a>{' '}
-            family.
+              Privacy Policy
+            </a>
+            <span className="hidden md:inline text-cream-100/30">|</span>
+            <a
+              href="mailto:info@atlantisfire.com"
+              className="hover:text-flame transition-colors break-all"
+            >
+              info@atlantisfire.com
+            </a>
           </p>
         </div>
       </Container>

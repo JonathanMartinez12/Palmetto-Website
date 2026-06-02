@@ -86,10 +86,11 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">{children}</main>
-          {/* Brand gradient strip — appears at the bottom of every page,
-              just above the footer. */}
+          {/* Brand gradient strip — palm → cream → palm, per the Palmetto
+              brand asset. Appears at the bottom of every page, above the
+              footer. */}
           <div
-            className="w-full h-[10px] bg-gradient-to-r from-cloud via-burnt via-flame to-cloud"
+            className="w-full h-[28px] bg-gradient-to-r from-palm via-cream-100 to-palm"
             aria-hidden="true"
           />
           <Footer />

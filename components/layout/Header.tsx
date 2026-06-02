@@ -89,7 +89,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Customer Portal
+                Customer Portal (ServiceTrade)
               </a>
               <span className="text-white/30 hidden sm:inline" aria-hidden="true">|</span>
               <a
