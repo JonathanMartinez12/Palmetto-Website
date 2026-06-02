@@ -185,7 +185,7 @@ export default function IndustriesServedPage() {
                         className="flex items-start gap-[10px] bg-white border border-stone-100 rounded-[8px] px-[14px] py-[10px]"
                       >
                         <span
-                          className={`w-[8px] h-[8px] ${dot} rounded-full flex-shrink-0 mt-[7px]`}
+                          className={`w-[8px] h-[8px] bg-stone-400 rounded-full flex-shrink-0 mt-[7px]`}
                           aria-hidden="true"
                         />
                         <span className="text-maroon font-medium text-[14px]">
@@ -212,10 +212,6 @@ export default function IndustriesServedPage() {
 
       {/* Closing — A Trusted Life Safety Partner Across Industries */}
       <section className="w-full bg-palm relative overflow-hidden">
-        <div
-          className="absolute inset-x-0 top-0 h-[4px] bg-gradient-to-r from-cloud via-burnt to-flame"
-          aria-hidden="true"
-        />
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[820px] mx-auto text-center animate-fade-in">
             <p className="label-text text-flame mb-[16px]">ACROSS INDUSTRIES</p>

@@ -24,7 +24,6 @@ export interface Application {
   closingHeading?: string
   closingText?: string
   image: string
-  isPlaceholder?: boolean
 }
 
 const standardServiceLinks = [

@@ -24,7 +24,6 @@ export interface Service {
   closingHeading?: string
   closingText?: string
   image: string
-  isPlaceholder?: boolean
 }
 
 const standardWhoWeServe = [

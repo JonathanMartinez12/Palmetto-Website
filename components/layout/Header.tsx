@@ -179,18 +179,9 @@ export default function Header() {
                                 <Link
                                   key={svc.slug}
                                   href={`/services/${svc.slug}`}
-                                  className={`block px-[20px] py-[8px] text-[14px] transition-colors ${
-                                    svc.isPlaceholder
-                                      ? 'text-gray-400 hover:bg-gray-50'
-                                      : 'text-maroon hover:bg-cream hover:text-cloud'
-                                  }`}
+                                  className="block px-[20px] py-[8px] text-[14px] text-maroon hover:bg-cream hover:text-cloud transition-colors font-medium"
                                 >
-                                  <span className="font-medium">{svc.name}</span>
-                                  {svc.isPlaceholder && (
-                                    <span className="ml-[8px] text-[11px] uppercase tracking-wide text-burnt font-semibold">
-                                      Coming Soon
-                                    </span>
-                                  )}
+                                  {svc.name}
                                 </Link>
                               ))}
                             {item.hasDropdown === 'applications' &&
@@ -332,16 +323,9 @@ export default function Header() {
                                   key={svc.slug}
                                   href={`/services/${svc.slug}`}
                                   onClick={closeAll}
-                                  className={`py-[6px] text-[14px] ${
-                                    svc.isPlaceholder ? 'text-gray-400' : 'text-maroon hover:text-cloud'
-                                  }`}
+                                  className="py-[6px] text-[14px] text-maroon hover:text-cloud"
                                 >
                                   {svc.name}
-                                  {svc.isPlaceholder && (
-                                    <span className="ml-[8px] text-[10px] uppercase tracking-wide text-burnt font-semibold">
-                                      Coming Soon
-                                    </span>
-                                  )}
                                 </Link>
                               ))}
                             {key === 'applications' &&

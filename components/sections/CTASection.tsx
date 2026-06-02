@@ -41,14 +41,7 @@ export default function CTASection({
   const isDark = variant === 'palm' || variant === 'maroon'
 
   return (
-    <section className={`${bg[variant]} section-padding relative overflow-hidden`}>
-      {/* Burnt accent strip on light variants */}
-      {!isDark && (
-        <div
-          className="absolute inset-x-0 top-0 h-[4px] bg-gradient-to-r from-cloud via-burnt to-flame"
-          aria-hidden="true"
-        />
-      )}
+    <section className={`${bg[variant]} section-padding`}>
       <Container>
         <div className="max-w-[768px] mx-auto text-center animate-fade-in">
           <h2 className={`heading-2 ${heading[variant]} mb-[16px]`}>{headline}</h2>

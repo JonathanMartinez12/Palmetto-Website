@@ -124,7 +124,7 @@ export default function OurPartnerPage() {
                     className="flex items-start gap-[12px] bg-cream border border-stone-100 rounded-[8px] px-[16px] py-[12px]"
                   >
                     <span
-                      className={`w-[10px] h-[10px] ${accent} rounded-full flex-shrink-0 mt-[6px]`}
+                      className={`w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]`}
                       aria-hidden="true"
                     />
                     <span className="text-maroon font-medium">{b}</span>
@@ -142,10 +142,6 @@ export default function OurPartnerPage() {
 
       {/* Built for Long-Term Growth */}
       <section className="w-full bg-palm relative overflow-hidden">
-        <div
-          className="absolute inset-x-0 top-0 h-[4px] bg-gradient-to-r from-cloud via-burnt to-flame"
-          aria-hidden="true"
-        />
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto animate-fade-in-up">
             <p className="label-text text-flame mb-[16px]">LONG-TERM GROWTH</p>
@@ -169,7 +165,7 @@ export default function OurPartnerPage() {
                     className="flex items-start gap-[12px] bg-palm-700/60 border border-light-500/30 rounded-[8px] px-[16px] py-[12px]"
                   >
                     <span
-                      className={`w-[10px] h-[10px] ${accent} rounded-full flex-shrink-0 mt-[6px]`}
+                      className={`w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]`}
                       aria-hidden="true"
                     />
                     <span className="text-white font-medium">{g}</span>
@@ -187,10 +183,6 @@ export default function OurPartnerPage() {
 
       {/* Learn More About Atlantis Fire — closing */}
       <section className="w-full bg-cream relative overflow-hidden">
-        <div
-          className="absolute inset-x-0 top-0 h-[4px] bg-gradient-to-r from-cloud via-burnt to-flame"
-          aria-hidden="true"
-        />
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[820px] mx-auto text-center animate-fade-in">
             <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[16px]">

@@ -62,7 +62,7 @@ export default function CareersPage() {
                     className="flex items-start gap-[12px] bg-white border border-stone-100 rounded-[8px] px-[16px] py-[12px]"
                   >
                     <span
-                      className={`w-[10px] h-[10px] ${accent} rounded-full flex-shrink-0 mt-[6px]`}
+                      className={`w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]`}
                       aria-hidden="true"
                     />
                     <span className="text-maroon font-medium">{b}</span>
@@ -85,10 +85,6 @@ export default function CareersPage() {
 
       {/* Part of the Atlantis Fire Family */}
       <section className="w-full bg-palm relative overflow-hidden">
-        <div
-          className="absolute inset-x-0 top-0 h-[4px] bg-gradient-to-r from-cloud via-burnt to-flame"
-          aria-hidden="true"
-        />
         <Container className="py-[64px] md:py-[96px]">
           <div className="grid lg:grid-cols-5 gap-[48px] items-center max-w-[1100px] mx-auto">
             <div className="lg:col-span-3 animate-fade-in-up">

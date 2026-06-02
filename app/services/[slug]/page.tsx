@@ -22,7 +22,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: svc.name,
     description: svc.tagline || svc.summary,
-    robots: svc.isPlaceholder ? { index: false, follow: true } : undefined,
     openGraph: {
       title: `${svc.name} | ${siteConfig.name}`,
       description: svc.tagline || svc.summary,
@@ -48,7 +47,7 @@ function BulletList({ items, dark = false }: { items: string[]; dark?: boolean }
             } border rounded-[8px] px-[16px] py-[12px]`}
           >
             <span
-              className={`w-[10px] h-[10px] ${accent} rounded-full flex-shrink-0 mt-[6px]`}
+              className={`w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]`}
               aria-hidden="true"
             />
             <span
@@ -145,10 +144,6 @@ export default function ServiceDetailPage({ params }: PageProps) {
     <>
       {/* Hero */}
       <section className="bg-cream section-padding relative overflow-hidden">
-        <div
-          className="absolute inset-x-0 top-0 h-[4px] bg-gradient-to-r from-cloud via-burnt to-flame"
-          aria-hidden="true"
-        />
         <Container>
           <nav
             aria-label="Breadcrumb"
@@ -195,19 +190,6 @@ export default function ServiceDetailPage({ params }: PageProps) {
           </div>
         </Container>
       </section>
-
-      {svc.isPlaceholder && (
-        <section className="bg-burnt/10 border-y border-burnt">
-          <Container>
-            <div className="py-[24px] text-center">
-              <p className="text-maroon font-semibold text-[15px]">
-                Detailed information for this service is coming soon. Contact Palmetto
-                Fire Services today to learn more.
-              </p>
-            </div>
-          </Container>
-        </section>
-      )}
 
       {svc.servicesSection && (
         <SectionBlock

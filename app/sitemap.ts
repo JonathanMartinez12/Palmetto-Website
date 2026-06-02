@@ -18,25 +18,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
   ]
 
-  // Only index services with full copy. Placeholder services set
-  // robots: { index: false } in generateMetadata and are excluded here.
-  const serviceRoutes: MetadataRoute.Sitemap = services
-    .filter((s) => !s.isPlaceholder)
-    .map((s) => ({
-      url: `${base}/services/${s.slug}`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    }))
+  const serviceRoutes: MetadataRoute.Sitemap = services.map((s) => ({
+    url: `${base}/services/${s.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }))
 
-  const applicationRoutes: MetadataRoute.Sitemap = applications
-    .filter((a) => !a.isPlaceholder)
-    .map((a) => ({
-      url: `${base}/applications/${a.slug}`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    }))
+  const applicationRoutes: MetadataRoute.Sitemap = applications.map((a) => ({
+    url: `${base}/applications/${a.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }))
 
   return [...staticRoutes, ...serviceRoutes, ...applicationRoutes]
 }

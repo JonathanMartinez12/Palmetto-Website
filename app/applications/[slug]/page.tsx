@@ -27,7 +27,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: app.tagline || app.name,
     description: app.summary,
-    robots: app.isPlaceholder ? { index: false, follow: true } : undefined,
     openGraph: {
       title: `${app.tagline || app.name} | ${siteConfig.name}`,
       description: app.summary,
@@ -52,7 +51,7 @@ function ServiceLinkGrid({ slugs }: { slugs: string[] }) {
               className="flex items-start gap-[12px] bg-white border border-stone-100 rounded-[8px] px-[16px] py-[12px] hover:border-cloud hover:shadow-sm transition-all group"
             >
               <span
-                className={`w-[10px] h-[10px] ${accent} rounded-full flex-shrink-0 mt-[6px]`}
+                className={`w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]`}
                 aria-hidden="true"
               />
               <span className="text-maroon font-medium text-[15px] group-hover:text-cloud transition-colors">
@@ -77,7 +76,7 @@ function PlainBulletList({ items }: { items: string[] }) {
             className="flex items-start gap-[12px] bg-cream border border-stone-100 rounded-[8px] px-[16px] py-[12px]"
           >
             <span
-              className={`w-[10px] h-[10px] ${accent} rounded-full flex-shrink-0 mt-[6px]`}
+              className={`w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]`}
               aria-hidden="true"
             />
             <span className="text-maroon font-medium text-[15px]">{item}</span>
@@ -176,10 +175,6 @@ export default function ApplicationDetailPage({ params }: PageProps) {
     <>
       {/* Hero */}
       <section className="bg-cream section-padding relative overflow-hidden">
-        <div
-          className="absolute inset-x-0 top-0 h-[4px] bg-gradient-to-r from-cloud via-burnt to-flame"
-          aria-hidden="true"
-        />
         <Container>
           <nav
             aria-label="Breadcrumb"
@@ -230,19 +225,6 @@ export default function ApplicationDetailPage({ params }: PageProps) {
           </div>
         </Container>
       </section>
-
-      {app.isPlaceholder && (
-        <section className="bg-burnt/10 border-y border-burnt">
-          <Container>
-            <div className="py-[24px] text-center">
-              <p className="text-maroon font-semibold text-[15px]">
-                Detailed information for this application is coming soon. Contact
-                Palmetto Fire Services today to learn more.
-              </p>
-            </div>
-          </Container>
-        </section>
-      )}
 
       {app.supportSection && (
         <SectionBlock
