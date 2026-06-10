@@ -127,7 +127,7 @@ export default function ContactForm() {
             />
           </svg>
         </div>
-        <h2 className="heading-3 text-maroon mb-[16px]">Thank You!</h2>
+        <h2 className="heading-3 text-palm mb-[16px]">Thank You!</h2>
         <p className="body-large mb-[32px]">
           Your message has been sent. A member of our team will be in touch
           shortly. For urgent service, please call us.

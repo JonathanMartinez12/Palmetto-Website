@@ -27,8 +27,8 @@ export default function CTASection({
     maroon: 'bg-maroon',
   }
   const heading = {
-    cream: 'text-maroon',
-    white: 'text-maroon',
+    cream: 'text-palm',
+    white: 'text-palm',
     palm: 'text-white',
     maroon: 'text-white',
   }

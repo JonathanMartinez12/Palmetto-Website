@@ -24,7 +24,7 @@ export default function ContactPage() {
         <Container>
           <div className="grid lg:grid-cols-2 gap-[48px] items-start">
             <div>
-              <h2 className="font-serif text-maroon text-[28px] md:text-[32px] leading-tight mb-[24px]">
+              <h2 className="font-serif text-palm text-[28px] md:text-[32px] leading-tight mb-[24px]">
                 Send us a message.
               </h2>
               <Suspense fallback={<div className="h-[400px]" aria-hidden="true" />}>

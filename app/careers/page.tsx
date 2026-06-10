@@ -50,7 +50,7 @@ export default function CareersPage() {
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[820px] mx-auto animate-fade-in-up">
             <p className="label-text text-burnt mb-[16px]">WHY JOIN</p>
-            <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Why Join Palmetto Fire Services?
             </h2>
             <ul className="grid sm:grid-cols-2 gap-[12px] mb-[32px]">
@@ -65,7 +65,7 @@ export default function CareersPage() {
                       className={`w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]`}
                       aria-hidden="true"
                     />
-                    <span className="text-maroon font-medium">{b}</span>
+                    <span className="text-palm font-medium">{b}</span>
                   </li>
                 )
               })}
@@ -119,8 +119,8 @@ export default function CareersPage() {
       <section className="w-full bg-white">
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[820px] mx-auto text-center animate-fade-in">
-            <p className="label-text text-maroon mb-[16px]">JOIN OUR TEAM</p>
-            <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <p className="label-text text-palm mb-[16px]">JOIN OUR TEAM</p>
+            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Interested in Joining Our Team?
             </h2>
             <p className="body-large text-stone-700 mb-[32px]">
@@ -145,7 +145,7 @@ export default function CareersPage() {
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[820px] mx-auto animate-fade-in-up">
             <p className="label-text text-burnt mb-[16px]">EEO STATEMENT</p>
-            <h2 className="font-serif text-maroon text-[28px] md:text-[32px] lg:text-[36px] leading-tight mb-[24px]">
+            <h2 className="font-serif text-palm text-[28px] md:text-[32px] lg:text-[36px] leading-tight mb-[24px]">
               Equal Employment Opportunity Statement
             </h2>
             <p className="body-palatino-18">

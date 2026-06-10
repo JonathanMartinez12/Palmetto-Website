@@ -12,7 +12,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-avenir text-maroon;
+    @apply font-avenir text-palm;
   }
 }
 
@@ -55,7 +55,7 @@
     font-family: 'Avenir', 'Avenir Next', 'Nunito Sans', 'Helvetica Neue', sans-serif;
     font-weight: 600;
     line-height: 1.15;
-    color: #324173;
+    color: #2F5E46;
   }
 
   .heading-1 {
@@ -63,7 +63,7 @@
     font-size: 36px;
     font-weight: 400;
     line-height: 1.25;
-    color: #324173;
+    color: #2F5E46;
   }
 
   @media (min-width: 768px) {
@@ -83,7 +83,7 @@
     font-size: 36px;
     font-weight: 400;
     line-height: 1.25;
-    color: #324173;
+    color: #2F5E46;
   }
 
   @media (min-width: 768px) {
@@ -149,7 +149,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #324173;
+    color: #2F5E46;
   }
 
   .nav-link-text {
@@ -180,7 +180,7 @@
     font-size: 28px;
     font-weight: 600;
     text-transform: uppercase;
-    color: #324173;
+    color: #2F5E46;
   }
 
   .heading-palatino-48 {
@@ -189,7 +189,7 @@
     font-style: italic;
     font-weight: 400;
     line-height: 1.15;
-    color: #324173;
+    color: #2F5E46;
   }
 
   @media (min-width: 768px) {
@@ -244,7 +244,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #324173;
+    color: #2F5E46;
   }
 
   @media (min-width: 768px) {

@@ -132,7 +132,7 @@ export default function Home() {
       <section className="w-full bg-cream relative overflow-hidden">
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto text-center animate-fade-in">
-            <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Integrated Life Safety Solutions Across Myrtle Beach and the Carolinas
             </h2>
             <p className="body-large text-stone-700 mb-[32px]">
@@ -162,8 +162,8 @@ export default function Home() {
               />
             </div>
             <div className="animate-fade-in-up">
-              <p className="label-text text-maroon mb-[16px]">ABOUT PALMETTO FIRE</p>
-              <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+              <p className="label-text text-palm mb-[16px]">ABOUT PALMETTO FIRE</p>
+              <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
                 Life Safety Systems Built Around Reliability
               </h2>
               <p className="body-palatino-18 mb-[16px]">
@@ -183,7 +183,7 @@ export default function Home() {
                 for long-term value and reliability.
               </p>
               <blockquote className="border-l-[4px] border-flame bg-cream rounded-r-[8px] pl-[20px] pr-[16px] py-[16px] my-[24px]">
-                <p className="body-palatino-18 text-maroon font-medium italic">
+                <p className="body-palatino-18 text-palm font-medium italic">
                   We don’t believe in one-size-fits-all systems. We believe every
                   facility deserves solutions designed around its specific operational
                   and safety needs.
@@ -201,8 +201,8 @@ export default function Home() {
       <section className="w-full bg-cream">
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto text-center mb-[48px] animate-fade-in">
-            <p className="label-text text-maroon mb-[16px]">WHAT WE DO</p>
-            <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <p className="label-text text-palm mb-[16px]">WHAT WE DO</p>
+            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               A Complete Life Safety Technology Partner
             </h2>
             <p className="body-large text-stone-700">
@@ -228,7 +228,7 @@ export default function Home() {
                     className={`w-[40px] h-[3px] ${accent} mb-[12px]`}
                     aria-hidden="true"
                   />
-                  <h3 className="text-maroon font-semibold text-[17px] mb-[8px] group-hover:text-cloud transition-colors">
+                  <h3 className="text-palm font-semibold text-[17px] mb-[8px] group-hover:text-cloud transition-colors">
                     {tile.name}
                   </h3>
                   <p className="text-stone-600 text-[14px] leading-relaxed">
@@ -299,8 +299,8 @@ export default function Home() {
       <section className="w-full bg-white">
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto animate-fade-in">
-            <p className="label-text text-maroon mb-[16px]">EXPERIENCE & TECHNOLOGY</p>
-            <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <p className="label-text text-palm mb-[16px]">EXPERIENCE & TECHNOLOGY</p>
+            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Experience and Technology You Can Trust
             </h2>
             <p className="body-palatino-18 mb-[16px]">
@@ -325,8 +325,8 @@ export default function Home() {
       <section className="w-full bg-cream">
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto text-center mb-[48px] animate-fade-in">
-            <p className="label-text text-maroon mb-[16px]">WHO WE SERVE</p>
-            <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <p className="label-text text-palm mb-[16px]">WHO WE SERVE</p>
+            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Who We Serve
             </h2>
             <p className="body-large text-stone-700">
@@ -352,7 +352,7 @@ export default function Home() {
                   className={`group block bg-white rounded-[8px] p-[24px] border border-stone-100 ${hoverBorder} hover:shadow-md transition-all duration-300 animate-fade-in-up`}
                   style={{ animationDelay: `${i * 60}ms` }}
                 >
-                  <h3 className="text-maroon font-semibold text-[17px] mb-[8px] group-hover:text-cloud transition-colors">
+                  <h3 className="text-palm font-semibold text-[17px] mb-[8px] group-hover:text-cloud transition-colors">
                     {app.name}
                   </h3>
                   <p className="text-stone-600 text-[14px] leading-relaxed">
@@ -420,7 +420,7 @@ export default function Home() {
       <section className="w-full bg-cream relative overflow-hidden">
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[768px] mx-auto text-center animate-fade-in">
-            <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[16px]">
+            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[16px]">
               Let’s Protect What Matters
             </h2>
             <p className="body-large text-stone-700 mb-[32px]">

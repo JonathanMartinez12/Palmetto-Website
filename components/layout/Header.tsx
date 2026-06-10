@@ -169,7 +169,7 @@ export default function Header() {
                                 <Link
                                   key={sub.href}
                                   href={sub.href}
-                                  className="block px-[20px] py-[8px] text-[14px] text-maroon hover:bg-cream hover:text-cloud transition-colors font-medium"
+                                  className="block px-[20px] py-[8px] text-[14px] text-palm hover:bg-cream hover:text-cloud transition-colors font-medium"
                                 >
                                   {sub.name}
                                 </Link>
@@ -179,7 +179,7 @@ export default function Header() {
                                 <Link
                                   key={svc.slug}
                                   href={`/services/${svc.slug}`}
-                                  className="block px-[20px] py-[8px] text-[14px] text-maroon hover:bg-cream hover:text-cloud transition-colors font-medium"
+                                  className="block px-[20px] py-[8px] text-[14px] text-palm hover:bg-cream hover:text-cloud transition-colors font-medium"
                                 >
                                   {svc.name}
                                 </Link>
@@ -189,7 +189,7 @@ export default function Header() {
                                 <Link
                                   key={app.slug}
                                   href={`/applications/${app.slug}`}
-                                  className="block px-[20px] py-[8px] text-[14px] text-maroon hover:bg-cream hover:text-cloud transition-colors font-medium"
+                                  className="block px-[20px] py-[8px] text-[14px] text-palm hover:bg-cream hover:text-cloud transition-colors font-medium"
                                 >
                                   {app.name}
                                 </Link>
@@ -221,7 +221,7 @@ export default function Header() {
 
             {/* Mobile toggle */}
             <button
-              className="lg:hidden text-maroon p-[8px] ml-auto"
+              className="lg:hidden text-palm p-[8px] ml-auto"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
@@ -281,7 +281,7 @@ export default function Header() {
                             {item.name.toUpperCase()}
                           </Link>
                           <button
-                            className="p-[10px] text-maroon"
+                            className="p-[10px] text-palm"
                             onClick={() => setMobileDropdownOpen(isOpen ? null : key)}
                             aria-expanded={isOpen}
                             aria-label={`Toggle ${item.name} submenu`}
@@ -312,7 +312,7 @@ export default function Header() {
                                   key={sub.href}
                                   href={sub.href}
                                   onClick={closeAll}
-                                  className="py-[6px] text-[14px] text-maroon hover:text-cloud"
+                                  className="py-[6px] text-[14px] text-palm hover:text-cloud"
                                 >
                                   {sub.name}
                                 </Link>
@@ -323,7 +323,7 @@ export default function Header() {
                                   key={svc.slug}
                                   href={`/services/${svc.slug}`}
                                   onClick={closeAll}
-                                  className="py-[6px] text-[14px] text-maroon hover:text-cloud"
+                                  className="py-[6px] text-[14px] text-palm hover:text-cloud"
                                 >
                                   {svc.name}
                                 </Link>
@@ -334,7 +334,7 @@ export default function Header() {
                                   key={app.slug}
                                   href={`/applications/${app.slug}`}
                                   onClick={closeAll}
-                                  className="py-[6px] text-[14px] text-maroon hover:text-cloud"
+                                  className="py-[6px] text-[14px] text-palm hover:text-cloud"
                                 >
                                   {app.name}
                                 </Link>

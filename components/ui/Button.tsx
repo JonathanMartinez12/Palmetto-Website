@@ -32,7 +32,7 @@ export default function Button({
     outline:
       'border-2 border-palm text-palm hover:bg-palm hover:text-white focus:ring-palm',
     ghost:
-      'text-maroon hover:text-cloud focus:ring-maroon',
+      'text-palm hover:text-cloud focus:ring-maroon',
     maroon:
       'bg-maroon text-white hover:bg-maroon-600 focus:ring-maroon shadow-md hover:shadow-lg',
     burnt:

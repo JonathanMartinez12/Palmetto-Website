@@ -40,7 +40,7 @@ export default function ApplicationsIndexPage() {
                   className={`group block bg-white rounded-[8px] p-[24px] border border-stone-100 ${hoverBorder} hover:shadow-md transition-all duration-300 animate-fade-in-up`}
                   style={{ animationDelay: `${i * 60}ms` }}
                 >
-                  <h2 className="text-maroon font-semibold text-[17px] mb-[8px] group-hover:text-cloud transition-colors">
+                  <h2 className="text-palm font-semibold text-[17px] mb-[8px] group-hover:text-cloud transition-colors">
                     {app.name}
                   </h2>
                   <p className="text-stone-600 text-[14px] leading-relaxed">

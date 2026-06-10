@@ -20,8 +20,8 @@ export default function PageHero({
     <section className="bg-cream section-padding overflow-hidden">
       <Container>
         <div className="max-w-[768px] mx-auto text-center animate-fade-in">
-          {label && <p className="label-text text-maroon mb-[16px]">{label}</p>}
-          <h1 className="font-serif text-maroon text-[36px] md:text-[42px] lg:text-[48px] leading-tight mb-[24px]">
+          {label && <p className="label-text text-palm mb-[16px]">{label}</p>}
+          <h1 className="font-serif text-palm text-[36px] md:text-[42px] lg:text-[48px] leading-tight mb-[24px]">
             {headline}
           </h1>
           {body && <p className="body-large mb-[32px]">{body}</p>}

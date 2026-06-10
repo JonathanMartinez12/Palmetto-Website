@@ -159,7 +159,7 @@ export default function Footer() {
 
             {/* Certifications & Associations */}
             <div className="mt-[20px]">
-              <p className="text-[12px] uppercase tracking-wide text-burnt font-semibold mb-[4px]">
+              <p className="text-[12px] uppercase tracking-wide text-flame font-semibold mb-[4px]">
                 Certifications & Associations
               </p>
               <p className="text-flame text-[13px] font-semibold leading-snug">
@@ -169,10 +169,10 @@ export default function Footer() {
 
             {/* Service Areas */}
             <div id="service-areas" className="mt-[16px] scroll-mt-[80px]">
-              <p className="text-[12px] uppercase tracking-wide text-burnt font-semibold mb-[4px]">
+              <p className="text-[12px] uppercase tracking-wide text-flame font-semibold mb-[4px]">
                 Service Areas
               </p>
-              <p className="text-cream-100 text-[14px]">
+              <p className="text-flame text-[14px] font-semibold">
                 {siteConfig.serviceAreaShort}
               </p>
             </div>

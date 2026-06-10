@@ -171,7 +171,7 @@ export default function IndustriesServedPage() {
                   <span className={`w-[40px] h-[3px] ${accent}`} aria-hidden="true" />
                   <p className="label-text text-burnt">INDUSTRY</p>
                 </div>
-                <h2 className="font-serif text-maroon text-[28px] md:text-[32px] lg:text-[36px] leading-tight mb-[24px]">
+                <h2 className="font-serif text-palm text-[28px] md:text-[32px] lg:text-[36px] leading-tight mb-[24px]">
                   {industry.heading}
                 </h2>
                 <p className="body-palatino-18 mb-[20px]">{industry.intro}</p>
@@ -188,7 +188,7 @@ export default function IndustriesServedPage() {
                           className={`w-[8px] h-[8px] bg-stone-400 rounded-full flex-shrink-0 mt-[7px]`}
                           aria-hidden="true"
                         />
-                        <span className="text-maroon font-medium text-[14px]">
+                        <span className="text-palm font-medium text-[14px]">
                           {env}
                         </span>
                       </li>

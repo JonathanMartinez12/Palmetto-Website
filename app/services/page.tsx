@@ -36,7 +36,7 @@ export default function ServicesIndexPage() {
                   style={{ animationDelay: `${i * 60}ms` }}
                 >
                   <div className={`w-[40px] h-[3px] ${accent} mb-[12px]`} aria-hidden="true" />
-                  <h2 className="text-maroon font-semibold text-[17px] mb-[8px] group-hover:text-cloud transition-colors">
+                  <h2 className="text-palm font-semibold text-[17px] mb-[8px] group-hover:text-cloud transition-colors">
                     {svc.name}
                   </h2>
                   <p className="text-stone-600 text-[14px] leading-relaxed">

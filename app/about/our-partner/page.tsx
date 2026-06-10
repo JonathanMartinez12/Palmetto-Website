@@ -68,7 +68,7 @@ export default function OurPartnerPage() {
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto animate-fade-in-up">
             <p className="label-text text-burnt mb-[16px]">THE MATCH</p>
-            <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Why Atlantis Chose Palmetto Fire Services
             </h2>
             <p className="body-palatino-18 mb-[16px]">
@@ -100,8 +100,8 @@ export default function OurPartnerPage() {
       <section className="w-full bg-white">
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto animate-fade-in-up">
-            <p className="label-text text-maroon mb-[16px]">FOR OUR CUSTOMERS</p>
-            <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <p className="label-text text-palm mb-[16px]">FOR OUR CUSTOMERS</p>
+            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               What the Partnership Means for Our Customers
             </h2>
             <p className="body-palatino-18 mb-[16px]">
@@ -127,7 +127,7 @@ export default function OurPartnerPage() {
                       className={`w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]`}
                       aria-hidden="true"
                     />
-                    <span className="text-maroon font-medium">{b}</span>
+                    <span className="text-palm font-medium">{b}</span>
                   </li>
                 )
               })}
@@ -185,7 +185,7 @@ export default function OurPartnerPage() {
       <section className="w-full bg-cream relative overflow-hidden">
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[820px] mx-auto text-center animate-fade-in">
-            <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[16px]">
+            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[16px]">
               Learn More About Atlantis Fire
             </h2>
             <p className="body-large text-stone-700 mb-[32px]">

@@ -34,7 +34,7 @@ interface ValueCardProps {
 export function ValueCard({ title, text, className = '' }: ValueCardProps) {
   return (
     <div className={`text-center ${className}`}>
-      <h3 className="heading-4 text-maroon mb-[12px]">{title}</h3>
+      <h3 className="heading-4 text-palm mb-[12px]">{title}</h3>
       <p className="body-text">{text}</p>
     </div>
   )
@@ -49,7 +49,7 @@ interface FeatureCardProps {
 export function FeatureCard({ title, text, className = '' }: FeatureCardProps) {
   return (
     <Card className={`h-full ${className}`}>
-      <h3 className="heading-4 text-maroon mb-[16px]">{title}</h3>
+      <h3 className="heading-4 text-palm mb-[16px]">{title}</h3>
       <p className="body-text">{text}</p>
     </Card>
   )

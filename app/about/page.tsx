@@ -76,7 +76,7 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-[48px] items-center">
             <div className="animate-fade-in-up">
               <p className="label-text text-burnt mb-[16px]">EXPERTISE</p>
-              <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+              <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
                 A Company Built Around Life Safety Expertise
               </h2>
               <p className="body-palatino-18 mb-[16px]">
@@ -118,8 +118,8 @@ export default function AboutPage() {
       <section className="w-full bg-white">
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto animate-fade-in-up">
-            <p className="label-text text-maroon mb-[16px]">RESPONSIVENESS</p>
-            <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <p className="label-text text-palm mb-[16px]">RESPONSIVENESS</p>
+            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Service and Responsiveness Still Matter
             </h2>
             <p className="body-palatino-18 mb-[16px]">
@@ -152,7 +152,7 @@ export default function AboutPage() {
                       className={`w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]`}
                       aria-hidden="true"
                     />
-                    <span className="text-maroon font-medium">{b}</span>
+                    <span className="text-palm font-medium">{b}</span>
                   </li>
                 )
               })}
@@ -170,8 +170,8 @@ export default function AboutPage() {
       <section className="w-full bg-cream">
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto animate-fade-in-up">
-            <p className="label-text text-maroon mb-[16px]">EXPERIENCE & TECHNOLOGY</p>
-            <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <p className="label-text text-palm mb-[16px]">EXPERIENCE & TECHNOLOGY</p>
+            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Experience and Technology That Perform When It Counts
             </h2>
             <p className="body-palatino-18 mb-[24px]">
@@ -195,7 +195,7 @@ export default function AboutPage() {
                       className={`w-[8px] h-[8px] bg-stone-400 rounded-full flex-shrink-0 mt-[8px]`}
                       aria-hidden="true"
                     />
-                    <span className="text-maroon font-medium text-[15px]">{t}</span>
+                    <span className="text-palm font-medium text-[15px]">{t}</span>
                   </li>
                 )
               })}
@@ -209,7 +209,7 @@ export default function AboutPage() {
               {facilities.map((f) => (
                 <li
                   key={f}
-                  className="text-[13px] font-semibold uppercase tracking-wide text-maroon bg-white border border-stone-200 rounded-full px-[14px] py-[6px]"
+                  className="text-[13px] font-semibold uppercase tracking-wide text-palm bg-white border border-stone-200 rounded-full px-[14px] py-[6px]"
                 >
                   {f}
                 </li>
@@ -253,7 +253,7 @@ export default function AboutPage() {
                 Simply put: Palmetto Fire Services gained additional support and
                 resources while remaining locally focused and relationship-driven.
               </p>
-              <Button href="/about/our-partner" variant="primary" size="lg">
+              <Button href="/about/our-partner" variant="burnt" size="lg">
                 Learn More
               </Button>
             </div>
@@ -274,7 +274,7 @@ export default function AboutPage() {
       <section className="w-full bg-cream relative overflow-hidden">
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[820px] mx-auto text-center animate-fade-in">
-            <h2 className="font-serif text-maroon text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[16px]">
+            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[16px]">
               Built to Protect What Matters Most
             </h2>
             <p className="body-large text-stone-700 mb-[16px]">

@@ -51,7 +51,7 @@ function BulletList({ items, dark = false }: { items: string[]; dark?: boolean }
               aria-hidden="true"
             />
             <span
-              className={`${dark ? 'text-white' : 'text-maroon'} font-medium text-[15px]`}
+              className={`${dark ? 'text-white' : 'text-palm'} font-medium text-[15px]`}
             >
               {item}
             </span>
@@ -65,7 +65,7 @@ function BulletList({ items, dark = false }: { items: string[]; dark?: boolean }
 function SectionBlock({
   section,
   labelText,
-  labelColor = 'text-maroon',
+  labelColor = 'text-palm',
   background = 'bg-white',
   dark = false,
 }: {
@@ -89,7 +89,7 @@ function SectionBlock({
           {section.heading && (
             <h2
               className={`font-serif ${
-                dark ? 'text-white' : 'text-maroon'
+                dark ? 'text-white' : 'text-palm'
               } text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]`}
             >
               {section.heading}
@@ -156,13 +156,13 @@ export default function ServiceDetailPage({ params }: PageProps) {
             <Link href="/services" className="hover:text-cloud">
               Services
             </Link>{' '}
-            / <span className="text-maroon font-medium">{svc.name}</span>
+            / <span className="text-palm font-medium">{svc.name}</span>
           </nav>
 
           <div className="grid lg:grid-cols-2 gap-[48px] items-center">
             <div className="animate-fade-in-up">
               <p className="label-text text-burnt mb-[16px]">SERVICE</p>
-              <h1 className="font-serif text-maroon text-[36px] md:text-[42px] lg:text-[52px] leading-tight mb-[16px]">
+              <h1 className="font-serif text-palm text-[36px] md:text-[42px] lg:text-[52px] leading-tight mb-[16px]">
                 {svc.name}
               </h1>
               {svc.tagline && (

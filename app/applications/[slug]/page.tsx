@@ -54,7 +54,7 @@ function ServiceLinkGrid({ slugs }: { slugs: string[] }) {
                 className={`w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]`}
                 aria-hidden="true"
               />
-              <span className="text-maroon font-medium text-[15px] group-hover:text-cloud transition-colors">
+              <span className="text-palm font-medium text-[15px] group-hover:text-cloud transition-colors">
                 {svc.name}
               </span>
             </Link>
@@ -79,7 +79,7 @@ function PlainBulletList({ items }: { items: string[] }) {
               className={`w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]`}
               aria-hidden="true"
             />
-            <span className="text-maroon font-medium text-[15px]">{item}</span>
+            <span className="text-palm font-medium text-[15px]">{item}</span>
           </li>
         )
       })}
@@ -90,7 +90,7 @@ function PlainBulletList({ items }: { items: string[] }) {
 function SectionBlock({
   section,
   labelText,
-  labelColor = 'text-maroon',
+  labelColor = 'text-palm',
   background = 'bg-white',
 }: {
   section: ApplicationSection
@@ -110,7 +110,7 @@ function SectionBlock({
             <p className={`label-text ${labelColor} mb-[16px]`}>{labelText}</p>
           )}
           {section.heading && (
-            <h2 className="font-serif text-maroon text-[28px] md:text-[34px] lg:text-[40px] leading-tight mb-[24px]">
+            <h2 className="font-serif text-palm text-[28px] md:text-[34px] lg:text-[40px] leading-tight mb-[24px]">
               {section.heading}
             </h2>
           )}
@@ -187,13 +187,13 @@ export default function ApplicationDetailPage({ params }: PageProps) {
             <Link href="/applications" className="hover:text-cloud">
               Applications
             </Link>{' '}
-            / <span className="text-maroon font-medium">{app.name}</span>
+            / <span className="text-palm font-medium">{app.name}</span>
           </nav>
 
           <div className="grid lg:grid-cols-2 gap-[48px] items-center">
             <div className="animate-fade-in-up">
               <p className="label-text text-burnt mb-[16px]">APPLICATION</p>
-              <h1 className="font-serif text-maroon text-[34px] md:text-[42px] lg:text-[50px] leading-tight mb-[16px]">
+              <h1 className="font-serif text-palm text-[34px] md:text-[42px] lg:text-[50px] leading-tight mb-[16px]">
                 {app.name}
               </h1>
               {app.tagline && (
