@@ -86,7 +86,7 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">{children}</main>
-          {/* Brand gradient strip — palm → cream → palm, per the Palmetto
+          {/* Brand gradient strip — palm → cream → palm, per the Palmetto Fire
               brand asset. Appears at the bottom of every page, above the
               footer. */}
           <div

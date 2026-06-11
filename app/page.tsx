@@ -112,7 +112,7 @@ export default function Home() {
               <div className="max-w-[760px] animate-fade-in-up">
                 <p className="label-text text-flame mb-[16px]">{siteConfig.legalName}</p>
                 <h1 className="font-serif text-white text-[40px] md:text-[52px] lg:text-[64px] leading-[1.1] mb-[24px]">
-                  Advanced Life Safety. Trusted Local Service.
+                  Advanced Life Safety. Trusted Local Service
                 </h1>
                 <p className="text-white/90 text-[17px] md:text-[19px] leading-relaxed mb-[32px] max-w-[640px]">
                   We provide integrated fire alarm and life safety solutions designed to
@@ -389,7 +389,7 @@ export default function Home() {
                 Palmetto Fire Services is proud to be part of the Atlantis Fire family
                 of companies. That partnership provides access to additional resources,
                 operational support, shared expertise, and long-term growth
-                opportunities while allowing Palmetto to remain locally focused,
+                opportunities while allowing Palmetto Fire to remain locally focused,
                 responsive, and relationship-driven.
               </p>
               <p className="text-cream-100 text-[17px] leading-relaxed mb-[32px]">
@@ -428,12 +428,9 @@ export default function Home() {
               service, dependable systems, and long-term support, Palmetto Fire Services
               is ready to help.
             </p>
-            <div className="flex flex-wrap gap-[12px] justify-center">
+            <div className="flex justify-center">
               <Button href="/contact" variant="primary" size="lg">
                 Request Service
-              </Button>
-              <Button href="/contact" variant="outline" size="lg">
-                Contact Our Team
               </Button>
             </div>
           </div>

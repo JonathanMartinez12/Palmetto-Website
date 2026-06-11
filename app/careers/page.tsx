@@ -51,7 +51,7 @@ export default function CareersPage() {
           <div className="max-w-[820px] mx-auto animate-fade-in-up">
             <p className="label-text text-burnt mb-[16px]">WHY JOIN</p>
             <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
-              Why Join Palmetto Fire Services?
+              Why Join Palmetto Fire Services
             </h2>
             <ul className="grid sm:grid-cols-2 gap-[12px] mb-[32px]">
               {whyJoinBullets.map((b, i) => {
@@ -121,7 +121,7 @@ export default function CareersPage() {
           <div className="max-w-[820px] mx-auto text-center animate-fade-in">
             <p className="label-text text-palm mb-[16px]">JOIN OUR TEAM</p>
             <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
-              Interested in Joining Our Team?
+              Interested in Joining Our Team
             </h2>
             <p className="body-large text-stone-700 mb-[32px]">
               Questions about career opportunities? Contact our recruiting team at{' '}

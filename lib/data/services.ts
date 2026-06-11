@@ -278,7 +278,7 @@ export const services: Service[] = [
         'Monitoring and support services',
       ],
       closing: [
-        'As an EST Authorized Strategic Partner, Palmetto combines advanced technology with experienced local support to help facilities maintain dependable communication systems and safe care environments.',
+        'As an EST Authorized Strategic Partner, Palmetto Fire combines advanced technology with experienced local support to help facilities maintain dependable communication systems and safe care environments.',
       ],
     },
     whoWeServeSection: {
@@ -372,7 +372,7 @@ export const services: Service[] = [
         'Life safety system integration',
       ],
       closing: [
-        'As an EST Authorized Strategic Partner, Palmetto combines advanced technologies with responsive local support to help facilities maintain dependable emergency communication capabilities.',
+        'As an EST Authorized Strategic Partner, Palmetto Fire combines advanced technologies with responsive local support to help facilities maintain dependable emergency communication capabilities.',
       ],
     },
     whoWeServeSection: {
@@ -436,7 +436,7 @@ export const services: Service[] = [
       ],
     },
     approachSection: {
-      heading: 'The Palmetto Services Approach',
+      heading: 'The Palmetto Fire Services Approach',
       intro: [
         'At Palmetto Fire, monitoring support goes beyond simply connecting a system to a central station.',
         'We work closely with customers to help ensure systems are functioning properly, communication pathways remain reliable, and issues are addressed quickly when they arise. Our team understands the importance of dependable emergency communication and responsive support.',
@@ -458,7 +458,7 @@ export const services: Service[] = [
         'EST fire alarm and notification systems',
       ],
       closing: [
-        'As an EST Authorized Strategic Partner, Palmetto combines advanced life safety technologies with dependable monitoring support and responsive local service.',
+        'As an EST Authorized Strategic Partner, Palmetto Fire combines advanced life safety technologies with dependable monitoring support and responsive local service.',
       ],
     },
     whoWeServeSection: {
@@ -638,7 +638,7 @@ export const services: Service[] = [
         'Emergency communication integration',
       ],
       closing: [
-        'As an EST Authorized Strategic Partner, Palmetto combines advanced security technologies with dependable local support to help facilities improve safety, visibility, and operational control.',
+        'As an EST Authorized Strategic Partner, Palmetto Fire combines advanced security technologies with dependable local support to help facilities improve safety, visibility, and operational control.',
       ],
     },
     whoWeServeSection: {

@@ -83,13 +83,13 @@ export default function OurPartnerPage() {
               Beach and surrounding communities.
             </p>
             <p className="body-palatino-18 mb-[16px]">
-              Palmetto’s focus on accountability, customer care, and long-term
+              Palmetto Fire’s focus on accountability, customer care, and long-term
               relationships closely aligns with Atlantis Fire’s philosophy of
               supporting exceptional operators and building companies customers can
               trust year after year.
             </p>
             <p className="body-palatino-18">
-              That alignment made Palmetto a natural fit within the Atlantis Fire
+              That alignment made Palmetto Fire a natural fit within the Atlantis Fire
               family.
             </p>
           </div>
@@ -105,7 +105,7 @@ export default function OurPartnerPage() {
               What the Partnership Means for Our Customers
             </h2>
             <p className="body-palatino-18 mb-[16px]">
-              For Palmetto customers, the Atlantis partnership strengthens what already
+              For Palmetto Fire customers, the Atlantis partnership strengthens what already
               works.
             </p>
             <p className="body-palatino-18 mb-[24px]">

@@ -46,7 +46,7 @@ export default function AboutPage() {
     <>
       <PageHero
         label={siteConfig.legalName.toUpperCase()}
-        headline="Advanced Life Safety Solutions Built on Trust and Reliability."
+        headline="Advanced Life Safety Solutions Built on Trust and Reliability"
         body="Palmetto Fire Services was built on the belief that life safety systems should do more than meet code requirements. They should provide dependable protection, clear communication, and confidence for the people who rely on them every day."
       />
 
@@ -86,18 +86,18 @@ export default function AboutPage() {
               </p>
               <p className="body-palatino-18 mb-[16px]">
                 From healthcare and education to hospitality, government, and
-                commercial facilities, Palmetto works closely with customers to design,
+                commercial facilities, Palmetto Fire works closely with customers to design,
                 install, inspect, monitor, and maintain systems that support occupant
                 safety and code compliance while remaining practical and user-friendly
                 for day-to-day operations.
               </p>
               <p className="body-palatino-18 mb-[16px]">
-                As an EST Authorized Strategic Partner, Palmetto delivers advanced
+                As an EST Authorized Strategic Partner, Palmetto Fire delivers advanced
                 technology solutions backed by trusted manufacturers, experienced
                 professionals, and responsive local support.
               </p>
               <p className="body-palatino-18">
-                Over the years, customers have continued turning to Palmetto because
+                Over the years, customers have continued turning to Palmetto Fire because
                 they know the team will be there when it matters most.
               </p>
             </div>
@@ -235,17 +235,17 @@ export default function AboutPage() {
               </h2>
               <p className="text-cream-100 text-[17px] leading-relaxed mb-[16px]">
                 In 2026, Palmetto Fire Services became part of the Atlantis Fire
-                Protection family of companies. Atlantis recognized Palmetto for its
+                Protection family of companies. Atlantis recognized Palmetto Fire for its
                 strong reputation, technical expertise, customer relationships, and
                 long-standing commitment to service.
               </p>
               <p className="text-cream-100 text-[17px] leading-relaxed mb-[16px]">
-                The partnership allows Palmetto to continue serving customers with the
+                The partnership allows Palmetto Fire to continue serving customers with the
                 same trusted local team while gaining access to additional resources,
                 operational support, and long-term growth opportunities.
               </p>
               <p className="text-cream-100 text-[17px] leading-relaxed mb-[16px]">
-                Most importantly, Palmetto remains focused on what has always mattered
+                Most importantly, Palmetto Fire remains focused on what has always mattered
                 most: responsive service, dependable systems, and protecting the
                 communities we serve.
               </p>
