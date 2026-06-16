@@ -96,7 +96,7 @@ export default function CareersPage() {
                 Palmetto Fire Services is proud to be part of Atlantis Fire, a
                 founder-friendly organization dedicated to supporting exceptional fire
                 protection companies. Through shared resources, operational expertise,
-                and a people-first approach, Atlantis helps its companies grow while
+                and a people-first approach, Atlantis Fire helps its companies grow while
                 preserving the local culture, relationships, and reputation that make
                 each business successful.
               </p>

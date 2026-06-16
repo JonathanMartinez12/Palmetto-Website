@@ -63,13 +63,13 @@ export default function OurPartnerPage() {
         </Container>
       </section>
 
-      {/* Why Atlantis Chose Palmetto Fire Services */}
+      {/* Why Atlantis Fire Chose Palmetto Fire Services */}
       <section className="w-full bg-cream">
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto animate-fade-in-up">
             <p className="label-text text-burnt mb-[16px]">THE MATCH</p>
             <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
-              Why Atlantis Chose Palmetto Fire Services
+              Why Atlantis Fire Chose Palmetto Fire Services
             </h2>
             <p className="body-palatino-18 mb-[16px]">
               What drew Atlantis Fire to Palmetto Fire Services was not just growth
@@ -105,7 +105,7 @@ export default function OurPartnerPage() {
               What the Partnership Means for Our Customers
             </h2>
             <p className="body-palatino-18 mb-[16px]">
-              For Palmetto Fire customers, the Atlantis partnership strengthens what already
+              For Palmetto Fire customers, the Atlantis Fire partnership strengthens what already
               works.
             </p>
             <p className="body-palatino-18 mb-[24px]">
@@ -114,7 +114,7 @@ export default function OurPartnerPage() {
               experienced professionals, and the same people who understand their
               systems and facilities.
             </p>
-            <p className="label-text text-burnt mb-[16px]">What Atlantis adds is support:</p>
+            <p className="label-text text-burnt mb-[16px]">What Atlantis Fire adds is support:</p>
             <ul className="grid sm:grid-cols-2 gap-[12px] mb-[24px]">
               {partnershipBenefits.map((b, i) => {
                 const accent = accentColors[i % accentColors.length]

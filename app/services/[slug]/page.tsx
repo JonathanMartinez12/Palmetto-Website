@@ -6,6 +6,7 @@ import Container from '@/components/layout/Container'
 import Button from '@/components/ui/Button'
 import CTASection from '@/components/sections/CTASection'
 import { services, getServiceBySlug, type Section } from '@/lib/data/services'
+import { getApplicationHrefForText } from '@/lib/data/applications'
 import { siteConfig } from '@/lib/data/siteConfig'
 
 interface PageProps {
@@ -32,29 +33,55 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 const accentColors = ['bg-cloud', 'bg-burnt', 'bg-flame', 'bg-light-600', 'bg-maroon'] as const
 
-function BulletList({ items, dark = false }: { items: string[]; dark?: boolean }) {
+function BulletList({
+  items,
+  dark = false,
+  linkResolver,
+}: {
+  items: string[]
+  dark?: boolean
+  linkResolver?: (text: string) => string | undefined
+}) {
   return (
     <ul className="grid sm:grid-cols-2 gap-[12px]">
-      {items.map((item, i) => {
-        const accent = accentColors[i % accentColors.length]
-        return (
-          <li
-            key={item}
-            className={`flex items-start gap-[12px] ${
-              dark
-                ? 'bg-palm-700/60 border-light-500/30'
-                : 'bg-white border-stone-100'
-            } border rounded-[8px] px-[16px] py-[12px]`}
+      {items.map((item) => {
+        const href = linkResolver?.(item)
+        const baseClass = `flex items-start gap-[12px] ${
+          dark
+            ? 'bg-palm-700/60 border-light-500/30'
+            : 'bg-white border-stone-100'
+        } border rounded-[8px] px-[16px] py-[12px]`
+        const linkClass = href
+          ? ` ${dark ? 'hover:border-flame' : 'hover:border-cloud'} hover:shadow-sm transition-all group`
+          : ''
+        const dot = (
+          <span
+            className="w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]"
+            aria-hidden="true"
+          />
+        )
+        const label = (
+          <span
+            className={`${dark ? 'text-white' : 'text-palm'} font-medium text-[15px] ${
+              href ? (dark ? 'group-hover:text-flame' : 'group-hover:text-cloud') : ''
+            } transition-colors`}
           >
-            <span
-              className={`w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]`}
-              aria-hidden="true"
-            />
-            <span
-              className={`${dark ? 'text-white' : 'text-palm'} font-medium text-[15px]`}
-            >
-              {item}
-            </span>
+            {item}
+          </span>
+        )
+        return (
+          <li key={item}>
+            {href ? (
+              <Link href={href} className={`${baseClass}${linkClass}`}>
+                {dot}
+                {label}
+              </Link>
+            ) : (
+              <div className={baseClass}>
+                {dot}
+                {label}
+              </div>
+            )}
           </li>
         )
       })}
@@ -68,12 +95,14 @@ function SectionBlock({
   labelColor = 'text-palm',
   background = 'bg-white',
   dark = false,
+  linkResolver,
 }: {
   section: Section
   labelText?: string
   labelColor?: string
   background?: string
   dark?: boolean
+  linkResolver?: (text: string) => string | undefined
 }) {
   const paragraphClass = dark
     ? 'text-cream-100 text-[17px] leading-relaxed mb-[16px] last:mb-0'
@@ -102,7 +131,7 @@ function SectionBlock({
           ))}
           {section.bullets && section.bullets.length > 0 && (
             <div className={section.intro?.length ? 'mt-[24px] mb-[24px]' : 'mb-[24px]'}>
-              <BulletList items={section.bullets} dark={dark} />
+              <BulletList items={section.bullets} dark={dark} linkResolver={linkResolver} />
             </div>
           )}
           {section.closing?.map((p, i) => (
@@ -225,6 +254,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
         <SectionBlock
           section={svc.whoWeServeSection}
           background="bg-cream"
+          linkResolver={getApplicationHrefForText}
         />
       )}
 

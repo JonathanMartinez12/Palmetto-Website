@@ -331,3 +331,25 @@ export const applications: Application[] = [
 export function getApplicationBySlug(slug: string): Application | undefined {
   return applications.find((a) => a.slug === slug)
 }
+
+// Maps free-form facility / "Who We Serve" bullet text to the matching
+// application detail page. Order matters — first regex match wins, so
+// more specific patterns (e.g. healthcare) come before more general ones
+// (e.g. government) to handle phrases like "Government & Institutional
+// Healthcare Environments" correctly.
+const facilityPatternToSlug: { test: RegExp; slug: string }[] = [
+  { test: /apartment|condo|multi.?family/i, slug: 'apartment-condo-communities' },
+  { test: /healthcare|senior|hospital|medical|assisted|long.?term care|rehab|nursing|patient/i, slug: 'healthcare-senior-housing' },
+  { test: /hotel|high.?rise/i, slug: 'hotels-high-rise' },
+  { test: /government|municipal/i, slug: 'government-facilities' },
+  { test: /educat|school|campus|college|universit/i, slug: 'educational-facilities' },
+  { test: /restaurant|hospitality|dining|entertain/i, slug: 'restaurants-hospitality' },
+  { test: /commercial|retail/i, slug: 'commercial-retail' },
+]
+
+export function getApplicationHrefForText(text: string): string | undefined {
+  for (const { test, slug } of facilityPatternToSlug) {
+    if (test.test(text)) return `/applications/${slug}`
+  }
+  return undefined
+}

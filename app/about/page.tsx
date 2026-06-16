@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 import PageHero from '@/components/sections/PageHero'
 import CTASection from '@/components/sections/CTASection'
 import Container from '@/components/layout/Container'
 import Button from '@/components/ui/Button'
+import { getApplicationHrefForText } from '@/lib/data/applications'
 import { siteConfig } from '@/lib/data/siteConfig'
 
 export const metadata: Metadata = {
@@ -206,14 +208,25 @@ export default function AboutPage() {
               facilities throughout South Carolina and surrounding areas, including:
             </p>
             <ul className="flex flex-wrap gap-[8px] mb-[24px]">
-              {facilities.map((f) => (
-                <li
-                  key={f}
-                  className="text-[13px] font-semibold uppercase tracking-wide text-palm bg-white border border-stone-200 rounded-full px-[14px] py-[6px]"
-                >
-                  {f}
-                </li>
-              ))}
+              {facilities.map((f) => {
+                const href = getApplicationHrefForText(f)
+                const chipClass =
+                  'text-[13px] font-semibold uppercase tracking-wide text-palm bg-white border border-stone-200 rounded-full px-[14px] py-[6px] transition-colors'
+                return (
+                  <li key={f}>
+                    {href ? (
+                      <Link
+                        href={href}
+                        className={`${chipClass} hover:border-cloud hover:text-cloud inline-block`}
+                      >
+                        {f}
+                      </Link>
+                    ) : (
+                      <span className={`${chipClass} inline-block`}>{f}</span>
+                    )}
+                  </li>
+                )
+              })}
             </ul>
 
             <p className="body-palatino-18">
@@ -235,7 +248,7 @@ export default function AboutPage() {
               </h2>
               <p className="text-cream-100 text-[17px] leading-relaxed mb-[16px]">
                 In 2026, Palmetto Fire Services became part of the Atlantis Fire
-                Protection family of companies. Atlantis recognized Palmetto Fire for its
+                Protection family of companies. Atlantis Fire recognized Palmetto Fire for its
                 strong reputation, technical expertise, customer relationships, and
                 long-standing commitment to service.
               </p>
