@@ -406,8 +406,8 @@ export default function Home() {
                 <Image
                   src="/images/atlantis-logo.png"
                   alt="Atlantis Fire Protection"
-                  width={400}
-                  height={200}
+                  width={600}
+                  height={523}
                   className="w-full h-auto max-w-[280px]"
                 />
               </div>
