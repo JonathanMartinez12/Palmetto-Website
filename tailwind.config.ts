@@ -121,15 +121,22 @@ const config: Config = {
           400: '#EBE3D4',
         },
       },
-      // Single typeface site-wide. `avenir` is the canonical alias used by
-      // globals.css (`@apply font-avenir`); `sans` and `serif` both resolve to
-      // the same stack so no stray `font-sans` / `font-serif` can reintroduce
-      // a second typeface. Avenir is a licensed desktop font, so in practice
-      // browsers land on Nunito Sans — the only family actually loaded.
+      // Palatino site-wide, 100%. `palatino` is the canonical alias used by
+      // globals.css (`@apply font-palatino`); `sans`, `serif` and `avenir` all
+      // resolve to the identical stack so no stray utility class can
+      // reintroduce a second typeface.
+      //
+      // Palatino is a system font, not a webfont: it ships with Windows
+      // (Palatino Linotype / Book Antiqua) and macOS + iOS (Palatino), but NOT
+      // Android, Linux or ChromeOS. Gelasio sits in the stack as the loaded
+      // Google webfont fallback for those platforms — it is metric-compatible
+      // with Georgia, so it drops in cleanly ahead of the Georgia fallback
+      // rather than letting the device pick an arbitrary serif.
       fontFamily: {
-        avenir: ['Avenir', 'Avenir Next', 'Nunito Sans', 'Helvetica Neue', 'sans-serif'],
-        sans: ['Avenir', 'Avenir Next', 'Nunito Sans', 'Helvetica Neue', 'sans-serif'],
-        serif: ['Avenir', 'Avenir Next', 'Nunito Sans', 'Helvetica Neue', 'sans-serif'],
+        palatino: ['Palatino Linotype', 'Palatino', 'Book Antiqua', 'Gelasio', 'Georgia', 'serif'],
+        sans: ['Palatino Linotype', 'Palatino', 'Book Antiqua', 'Gelasio', 'Georgia', 'serif'],
+        serif: ['Palatino Linotype', 'Palatino', 'Book Antiqua', 'Gelasio', 'Georgia', 'serif'],
+        avenir: ['Palatino Linotype', 'Palatino', 'Book Antiqua', 'Gelasio', 'Georgia', 'serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
