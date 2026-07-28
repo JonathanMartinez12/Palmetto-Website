@@ -254,7 +254,7 @@ export default function AboutPage() {
               </p>
               <p className="text-cream-100 text-[17px] leading-relaxed mb-[16px]">
                 The partnership allows Palmetto Fire to continue serving customers with the
-                same trusted local team while gaining access to additional resources,
+                same trusted, local team while gaining access to additional resources,
                 operational support, and long-term growth opportunities.
               </p>
               <p className="text-cream-100 text-[17px] leading-relaxed mb-[16px]">

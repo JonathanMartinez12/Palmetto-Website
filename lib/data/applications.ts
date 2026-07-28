@@ -339,11 +339,16 @@ export function getApplicationBySlug(slug: string): Application | undefined {
 // Healthcare Environments" correctly.
 const facilityPatternToSlug: { test: RegExp; slug: string }[] = [
   { test: /apartment|condo|multi.?family/i, slug: 'apartment-condo-communities' },
-  { test: /healthcare|senior|hospital|medical|assisted|long.?term care|rehab|nursing|patient/i, slug: 'healthcare-senior-housing' },
+  // Restaurants/hospitality MUST be tested before healthcare: "Hospitality"
+  // contains the substring "hospital", so a bare /hospital/ in the healthcare
+  // pattern would otherwise swallow "Restaurants & Hospitality Environments"
+  // and route it to Healthcare. The healthcare pattern below also guards with
+  // a negative lookahead as a second line of defense.
+  { test: /restaurant|hospitality|dining|entertain/i, slug: 'restaurants-hospitality' },
   { test: /hotel|high.?rise/i, slug: 'hotels-high-rise' },
+  { test: /healthcare|senior|hospital(?!ity)|medical|assisted|long.?term care|rehab|nursing|patient/i, slug: 'healthcare-senior-housing' },
   { test: /government|municipal/i, slug: 'government-facilities' },
   { test: /educat|school|campus|college|universit/i, slug: 'educational-facilities' },
-  { test: /restaurant|hospitality|dining|entertain/i, slug: 'restaurants-hospitality' },
   { test: /commercial|retail/i, slug: 'commercial-retail' },
 ]
 

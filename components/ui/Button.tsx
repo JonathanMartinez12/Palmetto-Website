@@ -60,6 +60,17 @@ export default function Button({
         </a>
       )
     }
+    // Protocol links (mailto:, tel:, sms:) must be plain anchors. Next's
+    // <Link> intercepts the click for client-side routing, which silently
+    // does nothing for these — the button looks dead. No target="_blank",
+    // since opening a mail/dialer app in a new tab leaves a blank window.
+    if (/^(mailto|tel|sms):/i.test(href)) {
+      return (
+        <a href={href} className={buttonClasses}>
+          {children}
+        </a>
+      )
+    }
     return (
       <Link href={href} className={buttonClasses}>
         {children}

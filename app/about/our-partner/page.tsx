@@ -173,10 +173,6 @@ export default function OurPartnerPage() {
                 )
               })}
             </ul>
-            <p className="text-cream-100 text-[17px] leading-relaxed">
-              All while staying true to the culture and reputation that built Palmetto
-              Fire Services.
-            </p>
           </div>
         </Container>
       </section>
