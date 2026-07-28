@@ -111,7 +111,7 @@ export default function Home() {
             <div className="max-w-[1440px] h-full mx-auto px-[24px] md:px-[40px] lg:px-[80px] flex items-center">
               <div className="max-w-[760px] animate-fade-in-up">
                 <p className="label-text text-flame mb-[16px]">{siteConfig.legalName}</p>
-                <h1 className="font-serif text-white text-[40px] md:text-[52px] lg:text-[64px] leading-[1.1] mb-[24px]">
+                <h1 className="text-white text-[40px] md:text-[52px] lg:text-[64px] leading-[1.1] mb-[24px]">
                   Advanced Life Safety. Trusted Local Service
                 </h1>
                 <p className="text-white/90 text-[17px] md:text-[19px] leading-relaxed mb-[32px] max-w-[640px]">
@@ -132,7 +132,7 @@ export default function Home() {
       <section className="w-full bg-cream relative overflow-hidden">
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto text-center animate-fade-in">
-            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Integrated Life Safety Solutions Across Myrtle Beach and the Carolinas
             </h2>
             <p className="body-large text-stone-700 mb-[32px]">
@@ -163,27 +163,27 @@ export default function Home() {
             </div>
             <div className="animate-fade-in-up">
               <p className="label-text text-palm mb-[16px]">ABOUT PALMETTO FIRE</p>
-              <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+              <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
                 Life Safety Systems Built Around Reliability
               </h2>
-              <p className="body-palatino-18 mb-[16px]">
+              <p className="body-18 mb-[16px]">
                 Palmetto Fire has built its reputation by helping customers navigate
                 complex life safety requirements with dependable systems and responsive
                 local support.
               </p>
-              <p className="body-palatino-18 mb-[16px]">
+              <p className="body-18 mb-[16px]">
                 Founded more than 17 years ago, Palmetto Fire specializes in commercial
                 fire alarm systems, nurse call systems, mass notification, and area of
                 rescue solutions for facilities where code compliance, occupant safety,
                 and system performance are critical.
               </p>
-              <p className="body-palatino-18 mb-[16px]">
+              <p className="body-18 mb-[16px]">
                 As an EST Authorized Strategic Partner, Palmetto Fire provides advanced
                 technology solutions that are user-friendly, code-compliant, and designed
                 for long-term value and reliability.
               </p>
               <blockquote className="border-l-[4px] border-flame bg-cream rounded-r-[8px] pl-[20px] pr-[16px] py-[16px] my-[24px]">
-                <p className="body-palatino-18 text-palm font-medium italic">
+                <p className="body-18 text-palm font-medium italic">
                   We don’t believe in one-size-fits-all systems. We believe every
                   facility deserves solutions designed around its specific operational
                   and safety needs.
@@ -202,7 +202,7 @@ export default function Home() {
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto text-center mb-[48px] animate-fade-in">
             <p className="label-text text-palm mb-[16px]">WHAT WE DO</p>
-            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               A Complete Life Safety Technology Partner
             </h2>
             <p className="body-large text-stone-700">
@@ -239,7 +239,7 @@ export default function Home() {
             })}
           </div>
 
-          <p className="max-w-[900px] mx-auto text-center body-palatino-18 text-stone-700 mt-[48px]">
+          <p className="max-w-[900px] mx-auto text-center body-18 text-stone-700 mt-[48px]">
             As technology and code requirements evolve, Palmetto Fire continues investing
             in solutions that help customers protect people, simplify operations, and
             support long-term facility performance.
@@ -252,7 +252,7 @@ export default function Home() {
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto animate-fade-in-up">
             <p className="label-text text-flame mb-[16px]">OUR COMMITMENT</p>
-            <h2 className="font-serif text-white text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <h2 className="text-white text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Built on Long-Term Relationships and Responsive Service
             </h2>
             <p className="text-cream-100 text-[17px] leading-relaxed mb-[16px]">
@@ -300,20 +300,20 @@ export default function Home() {
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto animate-fade-in">
             <p className="label-text text-palm mb-[16px]">EXPERIENCE & TECHNOLOGY</p>
-            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Experience and Technology You Can Trust
             </h2>
-            <p className="body-palatino-18 mb-[16px]">
+            <p className="body-18 mb-[16px]">
               The Palmetto Fire team includes experienced professionals trained to
               support complex commercial fire alarm and life safety systems across
               multiple industries and facility types.
             </p>
-            <p className="body-palatino-18 mb-[16px]">
+            <p className="body-18 mb-[16px]">
               As an EST Authorized Strategic Partner, Palmetto Fire works with leading
               technologies and manufacturers including Edwards EST, Talk-A-Phone,
               Stanley Healthcare, RS2 Technologies, Telecor, and IDenticard systems.
             </p>
-            <p className="body-palatino-18">
+            <p className="body-18">
               We invest in training, technology, and long-term customer support because
               life safety systems require experience, precision, and accountability.
             </p>
@@ -326,7 +326,7 @@ export default function Home() {
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto text-center mb-[48px] animate-fade-in">
             <p className="label-text text-palm mb-[16px]">WHO WE SERVE</p>
-            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Who We Serve
             </h2>
             <p className="body-large text-stone-700">
@@ -364,7 +364,7 @@ export default function Home() {
           </div>
 
           <div className="max-w-[900px] mx-auto text-center mt-[48px]">
-            <p className="body-palatino-18 text-stone-700 mb-[24px]">
+            <p className="body-18 text-stone-700 mb-[24px]">
               Whether you operate a single facility or manage multiple properties,
               Palmetto Fire delivers dependable life safety solutions tailored to your
               environment and operational needs.
@@ -382,7 +382,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-5 gap-[48px] items-center">
             <div className="lg:col-span-3 animate-fade-in-up">
               <p className="label-text text-flame mb-[16px]">OUR PARTNER</p>
-              <h2 className="font-serif text-white text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+              <h2 className="text-white text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
                 Proud to be part of Atlantis Fire Protection
               </h2>
               <p className="text-cream-100 text-[17px] leading-relaxed mb-[16px]">
@@ -420,7 +420,7 @@ export default function Home() {
       <section className="w-full bg-cream relative overflow-hidden">
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[768px] mx-auto text-center animate-fade-in">
-            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[16px]">
+            <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[16px]">
               Let’s Protect What Matters
             </h2>
             <p className="body-large text-stone-700 mb-[32px]">

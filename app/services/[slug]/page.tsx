@@ -106,7 +106,7 @@ function SectionBlock({
 }) {
   const paragraphClass = dark
     ? 'text-cream-100 text-[17px] leading-relaxed mb-[16px] last:mb-0'
-    : 'body-palatino-18 mb-[16px] last:mb-0'
+    : 'body-18 mb-[16px] last:mb-0'
 
   return (
     <section className={`w-full ${background}`}>
@@ -117,7 +117,7 @@ function SectionBlock({
           )}
           {section.heading && (
             <h2
-              className={`font-serif ${
+              className={`${
                 dark ? 'text-white' : 'text-palm'
               } text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]`}
             >
@@ -191,11 +191,11 @@ export default function ServiceDetailPage({ params }: PageProps) {
           <div className="grid lg:grid-cols-2 gap-[48px] items-center">
             <div className="animate-fade-in-up">
               <p className="label-text text-burnt mb-[16px]">SERVICE</p>
-              <h1 className="font-serif text-palm text-[36px] md:text-[42px] lg:text-[52px] leading-tight mb-[16px]">
+              <h1 className="text-palm text-[36px] md:text-[42px] lg:text-[52px] leading-tight mb-[16px]">
                 {svc.name}
               </h1>
               {svc.tagline && (
-                <p className="font-serif text-stone-700 text-[20px] md:text-[24px] leading-snug mb-[24px]">
+                <p className="text-stone-700 text-[20px] md:text-[24px] leading-snug mb-[24px]">
                   {svc.tagline}
                 </p>
               )}

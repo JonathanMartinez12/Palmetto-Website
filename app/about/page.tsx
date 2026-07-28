@@ -56,7 +56,7 @@ export default function AboutPage() {
       <section className="w-full bg-white">
         <Container className="py-[48px] md:py-[64px]">
           <div className="max-w-[820px] mx-auto animate-fade-in">
-            <p className="body-palatino-18 mb-[16px]">
+            <p className="body-18 mb-[16px]">
               For more than 17 years, Palmetto Fire has served Myrtle Beach and
               surrounding communities with integrated fire alarm and life safety
               solutions designed to protect people, properties, and critical facilities.
@@ -64,7 +64,7 @@ export default function AboutPage() {
               responsive service, technical expertise, and long-term customer
               relationships grounded in trust.
             </p>
-            <p className="body-palatino-18">
+            <p className="body-18">
               Today, that commitment to reliability and accountability continues to
               define who we are.
             </p>
@@ -78,27 +78,27 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-[48px] items-center">
             <div className="animate-fade-in-up">
               <p className="label-text text-burnt mb-[16px]">EXPERTISE</p>
-              <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+              <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
                 A Company Built Around Life Safety Expertise
               </h2>
-              <p className="body-palatino-18 mb-[16px]">
+              <p className="body-18 mb-[16px]">
                 Palmetto Fire specializes in commercial fire alarm systems, mass
                 notification systems, nurse call systems, area of rescue systems,
                 monitoring, inspections, and integrated life safety technologies.
               </p>
-              <p className="body-palatino-18 mb-[16px]">
+              <p className="body-18 mb-[16px]">
                 From healthcare and education to hospitality, government, and
                 commercial facilities, Palmetto Fire works closely with customers to design,
                 install, inspect, monitor, and maintain systems that support occupant
                 safety and code compliance while remaining practical and user-friendly
                 for day-to-day operations.
               </p>
-              <p className="body-palatino-18 mb-[16px]">
+              <p className="body-18 mb-[16px]">
                 As an EST Authorized Strategic Partner, Palmetto Fire delivers advanced
                 technology solutions backed by trusted manufacturers, experienced
                 professionals, and responsive local support.
               </p>
-              <p className="body-palatino-18">
+              <p className="body-18">
                 Over the years, customers have continued turning to Palmetto Fire because
                 they know the team will be there when it matters most.
               </p>
@@ -121,19 +121,19 @@ export default function AboutPage() {
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto animate-fade-in-up">
             <p className="label-text text-palm mb-[16px]">RESPONSIVENESS</p>
-            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Service and Responsiveness Still Matter
             </h2>
-            <p className="body-palatino-18 mb-[16px]">
+            <p className="body-18 mb-[16px]">
               At Palmetto Fire, we understand that life safety systems are critical
               systems. Customers depend on them to function properly during
               emergencies, inspections, and everyday operations.
             </p>
-            <p className="body-palatino-18 mb-[16px]">
+            <p className="body-18 mb-[16px]">
               That’s why responsiveness, communication, and accountability remain
               central to how we operate.
             </p>
-            <p className="body-palatino-18 mb-[24px]">
+            <p className="body-18 mb-[24px]">
               Our customers work with people who understand their facilities, their
               systems, and their expectations. We believe long-term relationships
               matter, and we work hard to earn and maintain trust through consistent
@@ -159,7 +159,7 @@ export default function AboutPage() {
                 )
               })}
             </ul>
-            <p className="body-palatino-18">
+            <p className="body-18">
               At Palmetto Fire, we believe customers deserve more than a vendor. They
               deserve a partner who understands the importance of protecting people and
               supporting critical operations.
@@ -173,10 +173,10 @@ export default function AboutPage() {
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto animate-fade-in-up">
             <p className="label-text text-palm mb-[16px]">EXPERIENCE & TECHNOLOGY</p>
-            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Experience and Technology That Perform When It Counts
             </h2>
-            <p className="body-palatino-18 mb-[24px]">
+            <p className="body-18 mb-[24px]">
               Palmetto Fire works with leading manufacturers and technologies to
               deliver dependable fire alarm and life safety systems tailored to each
               facility’s needs.
@@ -203,7 +203,7 @@ export default function AboutPage() {
               })}
             </ul>
 
-            <p className="body-palatino-18 mb-[16px]">
+            <p className="body-18 mb-[16px]">
               Our experience spans a wide range of commercial and institutional
               facilities throughout South Carolina and surrounding areas, including:
             </p>
@@ -229,7 +229,7 @@ export default function AboutPage() {
               })}
             </ul>
 
-            <p className="body-palatino-18">
+            <p className="body-18">
               Every system we support reflects our commitment to reliability, code
               compliance, and long-term customer support.
             </p>
@@ -243,7 +243,7 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-[48px] items-center">
             <div className="animate-fade-in-up">
               <p className="label-text text-flame mb-[16px]">ATLANTIS FIRE FAMILY</p>
-              <h2 className="font-serif text-white text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+              <h2 className="text-white text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
                 Growing with Purpose as Part of the Atlantis Fire Family
               </h2>
               <p className="text-cream-100 text-[17px] leading-relaxed mb-[16px]">
@@ -287,7 +287,7 @@ export default function AboutPage() {
       <section className="w-full bg-cream relative overflow-hidden">
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[820px] mx-auto text-center animate-fade-in">
-            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[16px]">
+            <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[16px]">
               Built to Protect What Matters Most
             </h2>
             <p className="body-large text-stone-700 mb-[16px]">

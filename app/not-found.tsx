@@ -8,7 +8,7 @@ export default function NotFound() {
       <Container>
         <div className="max-w-[640px] mx-auto text-center animate-fade-in">
           <p className="label-text text-cloud mb-[16px]">404</p>
-          <h1 className="font-serif text-palm text-[36px] md:text-[48px] leading-tight mb-[16px]">
+          <h1 className="text-palm text-[36px] md:text-[48px] leading-tight mb-[16px]">
             Page not found.
           </h1>
           <p className="body-large mb-[32px]">

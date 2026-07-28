@@ -43,7 +43,7 @@ export default function OurPartnerPage() {
         <Container className="py-[48px] md:py-[64px]">
           <div className="grid lg:grid-cols-5 gap-[48px] items-center">
             <div className="lg:col-span-3 max-w-[720px] animate-fade-in">
-              <p className="body-palatino-18">
+              <p className="body-18">
                 Atlantis Fire is not a private equity roll-up or short-term investment
                 platform. It is a fire protection-focused organization built to support
                 strong local operating companies, preserve culture, invest in people,
@@ -68,27 +68,27 @@ export default function OurPartnerPage() {
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto animate-fade-in-up">
             <p className="label-text text-burnt mb-[16px]">THE MATCH</p>
-            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Why Atlantis Fire Chose Palmetto Fire Services
             </h2>
-            <p className="body-palatino-18 mb-[16px]">
+            <p className="body-18 mb-[16px]">
               What drew Atlantis Fire to Palmetto Fire Services was not just growth
               potential. It was reputation, technical expertise, and a long-standing
               commitment to customer relationships.
             </p>
-            <p className="body-palatino-18 mb-[16px]">
+            <p className="body-18 mb-[16px]">
               Over more than 17 years, Paul and Sara Brown built Palmetto Fire Services
               into a respected life safety company known for responsive service,
               trusted technology solutions, and dependable support throughout Myrtle
               Beach and surrounding communities.
             </p>
-            <p className="body-palatino-18 mb-[16px]">
+            <p className="body-18 mb-[16px]">
               Palmetto Fire’s focus on accountability, customer care, and long-term
               relationships closely aligns with Atlantis Fire’s philosophy of
               supporting exceptional operators and building companies customers can
               trust year after year.
             </p>
-            <p className="body-palatino-18">
+            <p className="body-18">
               That alignment made Palmetto Fire a natural fit within the Atlantis Fire
               family.
             </p>
@@ -101,14 +101,14 @@ export default function OurPartnerPage() {
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto animate-fade-in-up">
             <p className="label-text text-palm mb-[16px]">FOR OUR CUSTOMERS</p>
-            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               What the Partnership Means for Our Customers
             </h2>
-            <p className="body-palatino-18 mb-[16px]">
+            <p className="body-18 mb-[16px]">
               For Palmetto Fire customers, the Atlantis Fire partnership strengthens what already
               works.
             </p>
-            <p className="body-palatino-18 mb-[24px]">
+            <p className="body-18 mb-[24px]">
               Palmetto Fire remains locally led, responsive, and relationship-driven.
               Customers continue working with the same trusted team, the same
               experienced professionals, and the same people who understand their
@@ -132,7 +132,7 @@ export default function OurPartnerPage() {
                 )
               })}
             </ul>
-            <p className="body-palatino-18">
+            <p className="body-18">
               The result is a stronger Palmetto Fire while maintaining the local
               accountability and responsive service customers have trusted for years.
             </p>
@@ -145,7 +145,7 @@ export default function OurPartnerPage() {
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[900px] mx-auto animate-fade-in-up">
             <p className="label-text text-flame mb-[16px]">LONG-TERM GROWTH</p>
-            <h2 className="font-serif text-white text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <h2 className="text-white text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Built for Long-Term Growth
             </h2>
             <p className="text-cream-100 text-[17px] leading-relaxed mb-[16px]">
@@ -185,7 +185,7 @@ export default function OurPartnerPage() {
       <section className="w-full bg-cream relative overflow-hidden">
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[820px] mx-auto text-center animate-fade-in">
-            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[16px]">
+            <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[16px]">
               Learn More About Atlantis Fire
             </h2>
             <p className="body-large text-stone-700 mb-[32px]">

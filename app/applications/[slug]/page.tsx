@@ -110,12 +110,12 @@ function SectionBlock({
             <p className={`label-text ${labelColor} mb-[16px]`}>{labelText}</p>
           )}
           {section.heading && (
-            <h2 className="font-serif text-palm text-[28px] md:text-[34px] lg:text-[40px] leading-tight mb-[24px]">
+            <h2 className="text-palm text-[28px] md:text-[34px] lg:text-[40px] leading-tight mb-[24px]">
               {section.heading}
             </h2>
           )}
           {section.intro?.map((p, i) => (
-            <p key={`intro-${i}`} className="body-palatino-18 mb-[16px] last:mb-0">
+            <p key={`intro-${i}`} className="body-18 mb-[16px] last:mb-0">
               {p}
             </p>
           ))}
@@ -135,7 +135,7 @@ function SectionBlock({
           {section.closing && section.closing.length > 0 && (
             <div className={hasContentBlock ? 'mt-[24px]' : ''}>
               {section.closing.map((p, i) => (
-                <p key={`closing-${i}`} className="body-palatino-18 mb-[16px] last:mb-0">
+                <p key={`closing-${i}`} className="body-18 mb-[16px] last:mb-0">
                   {p}
                 </p>
               ))}
@@ -193,11 +193,11 @@ export default function ApplicationDetailPage({ params }: PageProps) {
           <div className="grid lg:grid-cols-2 gap-[48px] items-center">
             <div className="animate-fade-in-up">
               <p className="label-text text-burnt mb-[16px]">APPLICATION</p>
-              <h1 className="font-serif text-palm text-[34px] md:text-[42px] lg:text-[50px] leading-tight mb-[16px]">
+              <h1 className="text-palm text-[34px] md:text-[42px] lg:text-[50px] leading-tight mb-[16px]">
                 {app.name}
               </h1>
               {app.tagline && (
-                <p className="font-serif text-stone-700 text-[20px] md:text-[24px] leading-snug mb-[24px]">
+                <p className="text-stone-700 text-[20px] md:text-[24px] leading-snug mb-[24px]">
                   {app.tagline}
                 </p>
               )}

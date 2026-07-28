@@ -7,7 +7,7 @@ export default function ContactInfo() {
 
   return (
     <div className="bg-cream rounded-[8px] p-[32px]">
-      <h2 className="font-serif text-palm text-[28px] md:text-[32px] leading-tight mb-[24px]">
+      <h2 className="text-palm text-[28px] md:text-[32px] leading-tight mb-[24px]">
         Visit, call, or write.
       </h2>
 

@@ -142,7 +142,7 @@ export default function IndustriesServedPage() {
       <section className="w-full bg-white">
         <Container className="py-[48px] md:py-[64px]">
           <div className="max-w-[820px] mx-auto text-center animate-fade-in">
-            <p className="body-palatino-18 mb-[32px]">
+            <p className="body-18 mb-[32px]">
               Throughout Myrtle Beach and surrounding communities, customers rely on
               Palmetto Fire for responsive service, dependable support, and long-term
               life safety system expertise across a variety of commercial and
@@ -171,10 +171,10 @@ export default function IndustriesServedPage() {
                   <span className={`w-[40px] h-[3px] ${accent}`} aria-hidden="true" />
                   <p className="label-text text-burnt">INDUSTRY</p>
                 </div>
-                <h2 className="font-serif text-palm text-[28px] md:text-[32px] lg:text-[36px] leading-tight mb-[24px]">
+                <h2 className="text-palm text-[28px] md:text-[32px] lg:text-[36px] leading-tight mb-[24px]">
                   {industry.heading}
                 </h2>
-                <p className="body-palatino-18 mb-[20px]">{industry.intro}</p>
+                <p className="body-18 mb-[20px]">{industry.intro}</p>
                 <p className="label-text text-burnt mb-[12px]">{industry.envLabel}</p>
                 <ul className="grid sm:grid-cols-2 gap-[8px] mb-[24px]">
                   {industry.environments.map((env, j) => {
@@ -196,7 +196,7 @@ export default function IndustriesServedPage() {
                   })}
                 </ul>
                 {industry.closing && (
-                  <p className="body-palatino-18 mb-[24px]">{industry.closing}</p>
+                  <p className="body-18 mb-[24px]">{industry.closing}</p>
                 )}
                 <Link
                   href={industry.href}
@@ -215,7 +215,7 @@ export default function IndustriesServedPage() {
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[820px] mx-auto text-center animate-fade-in">
             <p className="label-text text-flame mb-[16px]">ACROSS INDUSTRIES</p>
-            <h2 className="font-serif text-white text-[28px] md:text-[34px] lg:text-[40px] leading-tight mb-[24px]">
+            <h2 className="text-white text-[28px] md:text-[34px] lg:text-[40px] leading-tight mb-[24px]">
               A Trusted Life Safety Partner Across Industries
             </h2>
             <p className="text-cream-100 text-[17px] leading-relaxed mb-[16px]">

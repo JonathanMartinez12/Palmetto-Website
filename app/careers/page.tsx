@@ -35,7 +35,7 @@ export default function CareersPage() {
       <section className="w-full bg-white">
         <Container className="py-[48px] md:py-[64px]">
           <div className="max-w-[820px] mx-auto animate-fade-in">
-            <p className="body-palatino-18">
+            <p className="body-18">
               At Palmetto Fire Services, our people are the foundation of everything we
               do. We’re committed to building a team of skilled professionals who take
               pride in their work, support one another, and deliver exceptional
@@ -50,7 +50,7 @@ export default function CareersPage() {
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[820px] mx-auto animate-fade-in-up">
             <p className="label-text text-burnt mb-[16px]">WHY JOIN</p>
-            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Why Join Palmetto Fire Services
             </h2>
             <ul className="grid sm:grid-cols-2 gap-[12px] mb-[32px]">
@@ -70,12 +70,12 @@ export default function CareersPage() {
                 )
               })}
             </ul>
-            <p className="body-palatino-18 mb-[16px]">
+            <p className="body-18 mb-[16px]">
               We’re always interested in connecting with talented professionals across
               field operations, inspections, service, sales, administration, and
               support functions.
             </p>
-            <p className="body-palatino-18">
+            <p className="body-18">
               If you’re looking for a rewarding career with a company that values its
               people, we’d love to hear from you.
             </p>
@@ -89,7 +89,7 @@ export default function CareersPage() {
           <div className="grid lg:grid-cols-5 gap-[48px] items-center max-w-[1100px] mx-auto">
             <div className="lg:col-span-3 animate-fade-in-up">
               <p className="label-text text-flame mb-[16px]">ATLANTIS FIRE FAMILY</p>
-              <h2 className="font-serif text-white text-[28px] md:text-[34px] lg:text-[40px] leading-tight mb-[24px]">
+              <h2 className="text-white text-[28px] md:text-[34px] lg:text-[40px] leading-tight mb-[24px]">
                 Part of the Atlantis Fire Family
               </h2>
               <p className="text-cream-100 text-[17px] leading-relaxed">
@@ -120,7 +120,7 @@ export default function CareersPage() {
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[820px] mx-auto text-center animate-fade-in">
             <p className="label-text text-palm mb-[16px]">JOIN OUR TEAM</p>
-            <h2 className="font-serif text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
+            <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Interested in Joining Our Team
             </h2>
             <p className="body-large text-stone-700 mb-[32px]">
@@ -145,10 +145,10 @@ export default function CareersPage() {
         <Container className="py-[64px] md:py-[96px]">
           <div className="max-w-[820px] mx-auto animate-fade-in-up">
             <p className="label-text text-burnt mb-[16px]">EEO STATEMENT</p>
-            <h2 className="font-serif text-palm text-[28px] md:text-[32px] lg:text-[36px] leading-tight mb-[24px]">
+            <h2 className="text-palm text-[28px] md:text-[32px] lg:text-[36px] leading-tight mb-[24px]">
               Equal Employment Opportunity Statement
             </h2>
-            <p className="body-palatino-18">
+            <p className="body-18">
               Palmetto Fire Services is an Equal Opportunity Employer. We are committed
               to providing equal employment opportunities to all applicants and
               employees and to fostering an inclusive workplace. Employment decisions

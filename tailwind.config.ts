@@ -121,11 +121,15 @@ const config: Config = {
           400: '#EBE3D4',
         },
       },
+      // Single typeface site-wide. `avenir` is the canonical alias used by
+      // globals.css (`@apply font-avenir`); `sans` and `serif` both resolve to
+      // the same stack so no stray `font-sans` / `font-serif` can reintroduce
+      // a second typeface. Avenir is a licensed desktop font, so in practice
+      // browsers land on Nunito Sans — the only family actually loaded.
       fontFamily: {
-        serif: ['Playfair Display', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
         avenir: ['Avenir', 'Avenir Next', 'Nunito Sans', 'Helvetica Neue', 'sans-serif'],
-        palatino: ['Palatino Linotype', 'Palatino', 'Book Antiqua', 'Georgia', 'serif'],
+        sans: ['Avenir', 'Avenir Next', 'Nunito Sans', 'Helvetica Neue', 'sans-serif'],
+        serif: ['Avenir', 'Avenir Next', 'Nunito Sans', 'Helvetica Neue', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
