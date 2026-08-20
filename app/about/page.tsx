@@ -154,7 +154,7 @@ export default function AboutPage() {
                       className={`w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]`}
                       aria-hidden="true"
                     />
-                    <span className="text-palm font-medium">{b}</span>
+                    <span className="text-palm">{b}</span>
                   </li>
                 )
               })}
@@ -197,7 +197,7 @@ export default function AboutPage() {
                       className={`w-[8px] h-[8px] bg-stone-400 rounded-full flex-shrink-0 mt-[8px]`}
                       aria-hidden="true"
                     />
-                    <span className="text-palm font-medium text-[15px]">{t}</span>
+                    <span className="text-palm text-[15px]">{t}</span>
                   </li>
                 )
               })}
@@ -211,7 +211,7 @@ export default function AboutPage() {
               {facilities.map((f) => {
                 const href = getApplicationHrefForText(f)
                 const chipClass =
-                  'text-[13px] font-semibold uppercase tracking-wide text-palm bg-white border border-stone-200 rounded-full px-[14px] py-[6px] transition-colors'
+                  'text-[13px] font-bold uppercase tracking-wide text-palm bg-white border border-stone-200 rounded-full px-[14px] py-[6px] transition-colors'
                 return (
                   <li key={f}>
                     {href ? (
@@ -290,12 +290,12 @@ export default function AboutPage() {
             <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[16px]">
               Built to Protect What Matters Most
             </h2>
-            <p className="body-large text-stone-700 mb-[16px]">
+            <p className="body-large mb-[16px]">
               Whether you need a trusted partner for fire alarm systems, emergency
               communication technologies, inspections, monitoring, or long-term life
               safety support, Palmetto Fire is ready to help.
             </p>
-            <p className="body-large text-stone-700 mb-[32px]">
+            <p className="body-large mb-[32px]">
               We believe reliability matters. Responsiveness matters. And the people
               behind the systems matter too.
             </p>

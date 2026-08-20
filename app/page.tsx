@@ -135,7 +135,7 @@ export default function Home() {
             <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Integrated Life Safety Solutions Across Myrtle Beach and the Carolinas
             </h2>
-            <p className="body-large text-stone-700 mb-[32px]">
+            <p className="body-large mb-[32px]">
               When it comes to life safety systems, reliability and responsiveness matter.
               From fire alarm systems and emergency communication to monitoring,
               inspections, and preventative maintenance, Palmetto Fire helps protect your
@@ -183,7 +183,7 @@ export default function Home() {
                 for long-term value and reliability.
               </p>
               <blockquote className="border-l-[4px] border-flame bg-cream rounded-r-[8px] pl-[20px] pr-[16px] py-[16px] my-[24px]">
-                <p className="body-18 text-palm font-medium italic">
+                <p className="body-18 text-palm italic">
                   We don’t believe in one-size-fits-all systems. We believe every
                   facility deserves solutions designed around its specific operational
                   and safety needs.
@@ -205,7 +205,7 @@ export default function Home() {
             <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               A Complete Life Safety Technology Partner
             </h2>
-            <p className="body-large text-stone-700">
+            <p className="body-large">
               Palmetto Fire Services provides integrated fire alarm and life safety
               solutions under one roof, helping customers simplify compliance, improve
               communication, and maintain dependable protection across their facilities.
@@ -228,7 +228,7 @@ export default function Home() {
                     className={`w-[40px] h-[3px] ${accent} mb-[12px]`}
                     aria-hidden="true"
                   />
-                  <h3 className="text-palm font-semibold text-[17px] mb-[8px] group-hover:text-cloud transition-colors">
+                  <h3 className="text-palm font-bold text-[17px] mb-[8px] group-hover:text-cloud transition-colors">
                     {tile.name}
                   </h3>
                   <p className="text-stone-600 text-[14px] leading-relaxed">
@@ -239,7 +239,7 @@ export default function Home() {
             })}
           </div>
 
-          <p className="max-w-[900px] mx-auto text-center body-18 text-stone-700 mt-[48px]">
+          <p className="max-w-[900px] mx-auto text-center body-18 mt-[48px]">
             As technology and code requirements evolve, Palmetto Fire continues investing
             in solutions that help customers protect people, simplify operations, and
             support long-term facility performance.
@@ -278,7 +278,7 @@ export default function Home() {
                       className={`w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]`}
                       aria-hidden="true"
                     />
-                    <span className="text-white font-medium">{b}</span>
+                    <span className="text-white">{b}</span>
                   </li>
                 )
               })}
@@ -329,7 +329,7 @@ export default function Home() {
             <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Who We Serve
             </h2>
-            <p className="body-large text-stone-700">
+            <p className="body-large">
               Palmetto Fire proudly supports a wide range of facilities and industries,
               including:
             </p>
@@ -352,7 +352,7 @@ export default function Home() {
                   className={`group block bg-white rounded-[8px] p-[24px] border border-stone-100 ${hoverBorder} hover:shadow-md transition-all duration-300 animate-fade-in-up`}
                   style={{ animationDelay: `${i * 60}ms` }}
                 >
-                  <h3 className="text-palm font-semibold text-[17px] mb-[8px] group-hover:text-cloud transition-colors">
+                  <h3 className="text-palm font-bold text-[17px] mb-[8px] group-hover:text-cloud transition-colors">
                     {app.name}
                   </h3>
                   <p className="text-stone-600 text-[14px] leading-relaxed">
@@ -364,7 +364,7 @@ export default function Home() {
           </div>
 
           <div className="max-w-[900px] mx-auto text-center mt-[48px]">
-            <p className="body-18 text-stone-700 mb-[24px]">
+            <p className="body-18 mb-[24px]">
               Whether you operate a single facility or manage multiple properties,
               Palmetto Fire delivers dependable life safety solutions tailored to your
               environment and operational needs.
@@ -423,7 +423,7 @@ export default function Home() {
             <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[16px]">
               Let’s Protect What Matters
             </h2>
-            <p className="body-large text-stone-700 mb-[32px]">
+            <p className="body-large mb-[32px]">
               If you’re looking for a life safety partner who delivers responsive
               service, dependable systems, and long-term support, Palmetto Fire Services
               is ready to help.

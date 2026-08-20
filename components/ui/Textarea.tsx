@@ -12,7 +12,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     return (
       <div className="w-full">
         {label && (
-          <label className="block text-sm font-medium text-stone-700 mb-2">
+          <label className="block text-sm text-stone-700 mb-2">
             {label}
             {props.required && <span className="text-cloud ml-1">*</span>}
           </label>

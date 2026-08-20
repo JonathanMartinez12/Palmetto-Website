@@ -33,10 +33,10 @@ export default function CTASection({
     maroon: 'text-white',
   }
   const body = {
-    cream: 'text-stone-600',
-    white: 'text-stone-600',
-    palm: 'text-cream-200',
-    maroon: 'text-cream-200',
+    cream: '',
+    white: '',
+    palm: 'text-cream-100',
+    maroon: 'text-cream-100',
   }
   const isDark = variant === 'palm' || variant === 'maroon'
 

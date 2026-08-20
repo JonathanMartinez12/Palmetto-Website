@@ -54,7 +54,7 @@ function ServiceLinkGrid({ slugs }: { slugs: string[] }) {
                 className={`w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]`}
                 aria-hidden="true"
               />
-              <span className="text-palm font-medium text-[15px] group-hover:text-cloud transition-colors">
+              <span className="text-palm text-[15px] group-hover:text-cloud transition-colors">
                 {svc.name}
               </span>
             </Link>
@@ -79,7 +79,7 @@ function PlainBulletList({ items }: { items: string[] }) {
               className={`w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]`}
               aria-hidden="true"
             />
-            <span className="text-palm font-medium text-[15px]">{item}</span>
+            <span className="text-palm text-[15px]">{item}</span>
           </li>
         )
       })}
@@ -187,7 +187,7 @@ export default function ApplicationDetailPage({ params }: PageProps) {
             <Link href="/applications" className="hover:text-cloud">
               Applications
             </Link>{' '}
-            / <span className="text-palm font-medium">{app.name}</span>
+            / <span className="text-palm">{app.name}</span>
           </nav>
 
           <div className="grid lg:grid-cols-2 gap-[48px] items-center">
@@ -197,7 +197,7 @@ export default function ApplicationDetailPage({ params }: PageProps) {
                 {app.name}
               </h1>
               {app.tagline && (
-                <p className="text-stone-700 text-[20px] md:text-[24px] leading-snug mb-[24px]">
+                <p className="text-[20px] md:text-[24px] leading-snug mb-[24px]">
                   {app.tagline}
                 </p>
               )}

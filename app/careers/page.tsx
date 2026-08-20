@@ -65,7 +65,7 @@ export default function CareersPage() {
                       className={`w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]`}
                       aria-hidden="true"
                     />
-                    <span className="text-palm font-medium">{b}</span>
+                    <span className="text-palm">{b}</span>
                   </li>
                 )
               })}
@@ -123,11 +123,11 @@ export default function CareersPage() {
             <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[24px]">
               Interested in Joining Our Team
             </h2>
-            <p className="body-large text-stone-700 mb-[32px]">
+            <p className="body-large mb-[32px]">
               Questions about career opportunities? Contact our recruiting team at{' '}
               <a
                 href={`mailto:${hrEmail}`}
-                className="text-cloud font-semibold hover:underline"
+                className="text-cloud font-bold hover:underline"
               >
                 {hrEmail}
               </a>

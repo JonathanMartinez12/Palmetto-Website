@@ -188,7 +188,7 @@ export default function IndustriesServedPage() {
                           className={`w-[8px] h-[8px] bg-stone-400 rounded-full flex-shrink-0 mt-[7px]`}
                           aria-hidden="true"
                         />
-                        <span className="text-palm font-medium text-[14px]">
+                        <span className="text-palm text-[14px]">
                           {env}
                         </span>
                       </li>
@@ -200,7 +200,7 @@ export default function IndustriesServedPage() {
                 )}
                 <Link
                   href={industry.href}
-                  className="inline-flex items-center text-cloud font-semibold hover:text-cloud-600 transition-colors text-[15px]"
+                  className="inline-flex items-center text-cloud font-bold hover:text-cloud-600 transition-colors text-[15px]"
                 >
                   Learn More →
                 </Link>

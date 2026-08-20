@@ -127,7 +127,7 @@ export default function OurPartnerPage() {
                       className={`w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]`}
                       aria-hidden="true"
                     />
-                    <span className="text-palm font-medium">{b}</span>
+                    <span className="text-palm">{b}</span>
                   </li>
                 )
               })}
@@ -168,7 +168,7 @@ export default function OurPartnerPage() {
                       className={`w-[10px] h-[10px] bg-stone-400 rounded-full flex-shrink-0 mt-[6px]`}
                       aria-hidden="true"
                     />
-                    <span className="text-white font-medium">{g}</span>
+                    <span className="text-white">{g}</span>
                   </li>
                 )
               })}
@@ -184,7 +184,7 @@ export default function OurPartnerPage() {
             <h2 className="text-palm text-[30px] md:text-[36px] lg:text-[42px] leading-tight mb-[16px]">
               Learn More About Atlantis Fire
             </h2>
-            <p className="body-large text-stone-700 mb-[32px]">
+            <p className="body-large mb-[32px]">
               To learn more about Atlantis Fire, including its mission, leadership
               team, and growing family of operating companies.
             </p>

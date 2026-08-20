@@ -169,7 +169,7 @@ export default function Header() {
                                 <Link
                                   key={sub.href}
                                   href={sub.href}
-                                  className="block px-[20px] py-[8px] text-[14px] text-palm hover:bg-cream hover:text-cloud transition-colors font-medium"
+                                  className="block px-[20px] py-[8px] text-[14px] text-palm hover:bg-cream hover:text-cloud transition-colors"
                                 >
                                   {sub.name}
                                 </Link>
@@ -179,7 +179,7 @@ export default function Header() {
                                 <Link
                                   key={svc.slug}
                                   href={`/services/${svc.slug}`}
-                                  className="block px-[20px] py-[8px] text-[14px] text-palm hover:bg-cream hover:text-cloud transition-colors font-medium"
+                                  className="block px-[20px] py-[8px] text-[14px] text-palm hover:bg-cream hover:text-cloud transition-colors"
                                 >
                                   {svc.name}
                                 </Link>
@@ -189,7 +189,7 @@ export default function Header() {
                                 <Link
                                   key={app.slug}
                                   href={`/applications/${app.slug}`}
-                                  className="block px-[20px] py-[8px] text-[14px] text-palm hover:bg-cream hover:text-cloud transition-colors font-medium"
+                                  className="block px-[20px] py-[8px] text-[14px] text-palm hover:bg-cream hover:text-cloud transition-colors"
                                 >
                                   {app.name}
                                 </Link>

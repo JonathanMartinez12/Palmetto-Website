@@ -26,7 +26,7 @@ export default function ContactInfo() {
           <p className="label-text text-palm mb-[4px]">PHONE</p>
           <a
             href={siteConfig.phoneHref}
-            className="text-palm text-[18px] font-semibold hover:text-cloud transition-colors"
+            className="text-palm text-[18px] font-bold hover:text-cloud transition-colors"
           >
             {siteConfig.phone}
           </a>
@@ -48,7 +48,7 @@ export default function ContactInfo() {
             {siteConfig.serviceAreas.map((s) => (
               <span
                 key={s}
-                className="bg-white border border-maroon/20 text-palm text-[13px] font-semibold uppercase tracking-wide px-[12px] py-[4px] rounded-full"
+                className="bg-white border border-maroon/20 text-palm text-[13px] font-bold uppercase tracking-wide px-[12px] py-[4px] rounded-full"
               >
                 {s}
               </span>

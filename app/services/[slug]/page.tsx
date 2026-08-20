@@ -62,7 +62,7 @@ function BulletList({
         )
         const label = (
           <span
-            className={`${dark ? 'text-white' : 'text-palm'} font-medium text-[15px] ${
+            className={`${dark ? 'text-white' : 'text-palm'} text-[15px] ${
               href ? (dark ? 'group-hover:text-flame' : 'group-hover:text-cloud') : ''
             } transition-colors`}
           >
@@ -185,7 +185,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
             <Link href="/services" className="hover:text-cloud">
               Services
             </Link>{' '}
-            / <span className="text-palm font-medium">{svc.name}</span>
+            / <span className="text-palm">{svc.name}</span>
           </nav>
 
           <div className="grid lg:grid-cols-2 gap-[48px] items-center">
@@ -195,7 +195,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
                 {svc.name}
               </h1>
               {svc.tagline && (
-                <p className="text-stone-700 text-[20px] md:text-[24px] leading-snug mb-[24px]">
+                <p className="text-[20px] md:text-[24px] leading-snug mb-[24px]">
                   {svc.tagline}
                 </p>
               )}

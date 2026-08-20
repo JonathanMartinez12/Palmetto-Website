@@ -42,14 +42,14 @@ export default function Footer() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block text-center text-[13px] uppercase tracking-wide font-semibold text-cream-100 hover:text-flame transition-colors px-[12px] py-[8px] border border-light-500/30 rounded-[6px]"
+                    className="block text-center text-[13px] uppercase tracking-wide font-bold text-cream-100 hover:text-flame transition-colors px-[12px] py-[8px] border border-light-500/30 rounded-[6px]"
                   >
                     {item.label}
                   </a>
                 ) : (
                   <Link
                     href={item.href}
-                    className="block text-center text-[13px] uppercase tracking-wide font-semibold text-cream-100 hover:text-flame transition-colors px-[12px] py-[8px] border border-light-500/30 rounded-[6px]"
+                    className="block text-center text-[13px] uppercase tracking-wide font-bold text-cream-100 hover:text-flame transition-colors px-[12px] py-[8px] border border-light-500/30 rounded-[6px]"
                   >
                     {item.label}
                   </Link>
@@ -83,7 +83,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold text-[16px] mb-[16px] uppercase tracking-wide">
+            <h3 className="text-white font-bold text-[16px] mb-[16px] uppercase tracking-wide">
               Quick Links
             </h3>
             <ul className="space-y-[8px]">
@@ -102,7 +102,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-white font-semibold text-[16px] mb-[16px] uppercase tracking-wide">
+            <h3 className="text-white font-bold text-[16px] mb-[16px] uppercase tracking-wide">
               Services
             </h3>
             <ul className="space-y-[8px]">
@@ -119,7 +119,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="text-flame hover:text-white transition-colors duration-200 text-[14px] font-semibold"
+                  className="text-flame hover:text-white transition-colors duration-200 text-[14px] font-bold"
                 >
                   All Services →
                 </Link>
@@ -129,7 +129,7 @@ export default function Footer() {
 
           {/* Contact + Certifications + Service Areas */}
           <div>
-            <h3 className="text-white font-semibold text-[16px] mb-[16px] uppercase tracking-wide">
+            <h3 className="text-white font-bold text-[16px] mb-[16px] uppercase tracking-wide">
               Contact
             </h3>
             <address className="not-italic space-y-[10px] text-[14px] text-cream-100/80">
@@ -159,20 +159,20 @@ export default function Footer() {
 
             {/* Certifications & Associations */}
             <div className="mt-[20px]">
-              <p className="text-[12px] uppercase tracking-wide text-flame font-semibold mb-[4px]">
+              <p className="text-[12px] uppercase tracking-wide text-flame font-bold mb-[4px]">
                 Certifications & Associations
               </p>
-              <p className="text-flame text-[13px] font-semibold leading-snug">
+              <p className="text-flame text-[13px] font-bold leading-snug">
                 {siteConfig.certifications.join(' • ')}
               </p>
             </div>
 
             {/* Service Areas */}
             <div id="service-areas" className="mt-[16px] scroll-mt-[80px]">
-              <p className="text-[12px] uppercase tracking-wide text-flame font-semibold mb-[4px]">
+              <p className="text-[12px] uppercase tracking-wide text-flame font-bold mb-[4px]">
                 Service Areas
               </p>
-              <p className="text-flame text-[14px] font-semibold">
+              <p className="text-flame text-[14px] font-bold">
                 {siteConfig.serviceAreaShort}
               </p>
             </div>
