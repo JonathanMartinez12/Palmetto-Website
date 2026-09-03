@@ -1,9 +1,23 @@
 import { siteConfig } from '@/lib/data/siteConfig'
 
 export default function ContactInfo() {
-  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(
+  const { latitude, longitude } = siteConfig.geo
+  // Google's unauthenticated `/maps?q=...&output=embed` endpoint has become
+  // unreliable and now frequently returns its own "Oops! Something went
+  // wrong" error page in the iframe. We don't have a Google Maps API key on
+  // file, so use OpenStreetMap's free, keyless embed instead — it never
+  // requires billing/auth and renders the same pin at our known coordinates.
+  const delta = 0.01
+  const bbox = [
+    longitude - delta,
+    latitude - delta,
+    longitude + delta,
+    latitude + delta,
+  ].join('%2C')
+  const mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${latitude}%2C${longitude}`
+  const googleMapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
     siteConfig.address.full
-  )}&output=embed`
+  )}`
 
   return (
     <div className="bg-cream rounded-[8px] p-[32px]">
@@ -56,6 +70,15 @@ export default function ContactInfo() {
           </div>
         </div>
       </div>
+
+      <a
+        href={googleMapsHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block mb-[8px] text-cloud text-[14px] font-bold hover:text-cloud-600 transition-colors"
+      >
+        Open in Google Maps ↗
+      </a>
 
       <div className="rounded-[8px] overflow-hidden border border-maroon/10 aspect-video">
         <iframe
